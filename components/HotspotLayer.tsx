@@ -88,7 +88,7 @@ export default function HotspotLayer({
   const hintActive = autoHintActive || manualHintActive;
   const [hoveredNpc, setHoveredNpc] = useState<string | null>(null);
 
-  const warmRegions = frame.regions.filter((region) => isInteractive(manifest, frame, region));
+  const allRegions = frame.regions;
 
   return (
     <svg
@@ -96,16 +96,16 @@ export default function HotspotLayer({
       className="absolute inset-0 h-full w-full"
       style={{ pointerEvents: interactive ? "auto" : "none" }}
     >
-      {warmRegions.map((region) => {
+      {allRegions.map((region) => {
+        const warm = isInteractive(manifest, frame, region);
+        const glow = hintActive && (warm || manualHintActive);
         const isNpc = region.kind === "npc";
         const npc = isNpc && region.npc ? manifest.npcs[region.npc] : undefined;
         const [cx, cy] = polygonCentroid(region.polygon);
         return (
           <g key={region.id}>
-            {hintActive && (
+            {glow && (
               <path
-                // Keyed on the signal so a re-tap of Hints remounts the path
-                // and the pulse animation replays instead of staying finished.
                 key={`hint-${hintSignal}`}
                 d={polygonToPath(region.polygon)}
                 vectorEffect="non-scaling-stroke"

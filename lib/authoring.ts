@@ -124,18 +124,23 @@ export function addPathBlock(input: {
   stillWidth: number;
   stillHeight: number;
   bbox: [number, number, number, number];
+  regionId?: string;
+  labelEn?: string;
 }): string {
   const location = input.locationId
     ? input.locationName
       ? `${input.locationId} (${input.locationName})`
       : input.locationId
     : "unknown";
-  return [
+  const lines = [
     "ADD PATH",
     `frame: ${input.frameHash}`,
     `location: ${location}`,
     `still: ${input.stillWidth}x${input.stillHeight}`,
     `bbox: [${input.bbox.join(", ")}]`,
-    "ACTION: ",
-  ].join("\n");
+  ];
+  if (input.regionId) lines.push(`region: ${input.regionId}`);
+  if (input.labelEn) lines.push(`label: ${input.labelEn}`);
+  lines.push("ACTION: ");
+  return lines.join("\n");
 }
