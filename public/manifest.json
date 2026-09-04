@@ -59,6 +59,13 @@
       "ambientAudio": null
     },
     {
+      "id": "far-stilt-houses",
+      "nameEn": "Toward the Stilt Houses",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
+      "ambientAudio": null
+    },
+    {
       "id": "flagstone-old-street",
       "nameEn": "Flagstone Old Street",
       "nameZh": "\u77f3\u677f\u8001\u8857",
@@ -1916,7 +1923,8 @@
         }
       ],
       "edges": {
-        "onto-bridge": "08c70ec1dc6b9e90"
+        "onto-bridge": "08c70ec1dc6b9e90",
+        "far-stilt-houses": "dc7a2ad14b81d4db"
       }
     },
     "b31589ee8f44515d": {
@@ -3610,6 +3618,118 @@
         }
       ],
       "edges": {}
+    },
+    "538f642ccc3693ed": {
+      "hash": "538f642ccc3693ed",
+      "location": "far-stilt-houses",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "538f642ccc3693ed",
+        "jpg": "538f642ccc3693ed"
+      },
+      "regions": [
+        {
+          "id": "through-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              280,
+              40
+            ],
+            [
+              680,
+              40
+            ],
+            [
+              680,
+              560
+            ],
+            [
+              280,
+              560
+            ]
+          ],
+          "bbox": [
+            280,
+            40,
+            400,
+            520
+          ],
+          "labelEn": "through the covered pavilion",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-along-bridge",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              200
+            ],
+            [
+              1200,
+              200
+            ],
+            [
+              1200,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bbox": [
+            700,
+            200,
+            500,
+            400
+          ],
+          "labelEn": "right along the bridge toward the stilts",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-right-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              620,
+              80
+            ],
+            [
+              820,
+              80
+            ],
+            [
+              820,
+              320
+            ],
+            [
+              620,
+              320
+            ]
+          ],
+          "bbox": [
+            620,
+            80,
+            200,
+            240
+          ],
+          "labelEn": "look at the right red lantern",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -3948,6 +4068,20 @@
         "firstFrameSimilarity": 0.9849161050463265
       },
       "approvedAt": "2026-09-04T11:57:33Z"
+    },
+    "dc7a2ad14b81d4db": {
+      "id": "dc7a2ad14b81d4db",
+      "from": "b1ef30f10531b230",
+      "region": "far-stilt-houses",
+      "to": "538f642ccc3693ed",
+      "durationS": 6.583333333333333,
+      "prompt": "She looks across the river and walks toward the far stilt-house walkway. Camera pushes toward the houses. Keep her on solid ground or the walkway, never wading. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1834344021,
+        "firstFrameSimilarity": 0.9839997831248471
+      },
+      "approvedAt": "2026-09-04T12:22:31Z"
     }
   },
   "npcs": {}
