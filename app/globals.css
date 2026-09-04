@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Landscape-phone budget: every phone lying down (Safari chrome eats down to
+   ~300px dvh) matches; the smallest portrait phone (~550px dvh) never does.
+   Used by the menu to trade 44px rows for 40px and to sit beside the FAB
+   instead of above it — the main menu must fit dvh with no inner scroll. */
+@custom-variant short (@media (max-height: 480px));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

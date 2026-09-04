@@ -18,9 +18,10 @@ export const STRINGS = {
     unmute: "Unmute",
     fullscreen: "Full screen",
     exitFullscreen: "Exit full screen",
-    fullscreenUnavailable:
-      "Safari can't hide the address bar. Add to Home Screen (Share menu) to play full screen.",
+    // One short footnote line — the menu must fit landscape dvh with no scroll.
+    fullscreenUnavailable: "Add to Home Screen to play full screen.",
     path: "Path",
+    addPath: "Add path",
     pathBack: "Back",
     pathStart: "The beginning",
     pathHere: "here",
@@ -32,6 +33,15 @@ export const STRINGS = {
   },
   npcCard: {
     close: "Close",
+  },
+  /** The "Add path" draw mode — an authoring utility, not player UI. */
+  authoring: {
+    hint: "Drag a box over the painting",
+    done: "Done",
+    copied: "Copied",
+    copyFallback: "Clipboard blocked — copy this by hand:",
+    close: "Close",
+    exit: "Exit draw mode",
   },
   foggyToast: {
     message: "The path is foggy…",

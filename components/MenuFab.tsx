@@ -22,14 +22,18 @@ function fullscreenActive(): boolean {
   return Boolean(doc.fullscreenElement ?? doc.webkitFullscreenElement);
 }
 
+/* 44px rows, traded down to 40px on landscape phones (`short:`) — still
+   comfortably tappable, and the whole menu must fit dvh with no scroll. */
 const itemClass =
-  "flex min-h-11 w-full touch-manipulation items-center px-4 text-left text-sm text-zinc-200 hover:bg-zinc-800 active:bg-zinc-800";
+  "flex min-h-11 w-full touch-manipulation items-center px-4 text-left text-sm text-zinc-200 hover:bg-zinc-800 active:bg-zinc-800 short:min-h-10";
+const confirmButtonClass =
+  "flex min-h-11 flex-1 touch-manipulation items-center justify-center rounded-lg bg-zinc-900 text-sm hover:bg-zinc-800 active:bg-zinc-800 short:min-h-10";
 
 /**
  * The one piece of chrome on /play: a round bottom-right toggle (thumb
  * territory, clear of the home indicator) that opens a compact menu with
  * everything the old top HUD row held. The trail lives one level down, in
- * the Path sub-view (PathCarousel), so the main menu stays five short rows.
+ * the Path sub-view (PathCarousel), so the main menu stays a few short rows.
  * Always mounted, even during clips, so the painting keeps the whole
  * viewport.
  */
@@ -40,6 +44,9 @@ export default function MenuFab({
   onReset,
   onHints,
   onJumpTo,
+  onAddPath,
+  authoring,
+  onExitAuthoring,
 }: {
   manifest: Manifest;
   state: PlayerState;
@@ -48,6 +55,11 @@ export default function MenuFab({
   onHints: () => void;
   /** Jump back to trail step `index` (the engine truncates what follows). */
   onJumpTo: (index: number) => void;
+  /** Enter the "Add path" draw mode (authoring utility); the menu closes. */
+  onAddPath: () => void;
+  /** True while draw mode is active — the FAB becomes its exit button. */
+  authoring: boolean;
+  onExitAuthoring: () => void;
 }) {
   const [open, setOpen] = useState(false);
   // The popover is two views: the short main menu, and the Path carousel.
@@ -118,14 +130,18 @@ export default function MenuFab({
         />
       )}
       {open && (
-        /* Bottom-anchored above the FAB, growing upward. The max-height cap —
-           dvh minus both safe areas minus the FAB zone (4.5rem) minus a
-           0.75rem top margin — is what keeps landscape Safari from clipping
-           the top of the menu; anything that doesn't fit scrolls inside. */
+        /* Portrait: bottom-anchored above the FAB, growing upward, capped at
+           dvh minus safe areas minus the FAB zone (4.5rem) + 0.75rem margin.
+           Landscape phones (`short:`): that cap can't hold the whole menu, so
+           the sheet moves BESIDE the FAB (width is the axis landscape has
+           spare) and gets the full dvh minus 1.5rem margins. Rows are sized
+           so the main menu always fits the cap — the overflow-y-auto is an
+           emergency valve for pathological viewports (tiny split-screen), not
+           a layout tool; on real phones it never engages. */
         <div
-          className={`fixed right-[calc(env(safe-area-inset-right)+0.75rem)] bottom-[calc(env(safe-area-inset-bottom)+4.5rem)] z-30 flex max-h-[calc(100dvh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-5.25rem)] flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-950/95 shadow-xl backdrop-blur ${
+          className={`fixed right-[calc(env(safe-area-inset-right)+0.75rem)] bottom-[calc(env(safe-area-inset-bottom)+4.5rem)] z-30 flex max-h-[calc(100dvh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-5.25rem)] flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-950/95 shadow-xl backdrop-blur short:right-[calc(env(safe-area-inset-right)+4.5rem)] short:bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] short:max-h-[calc(100dvh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-1.5rem)] ${
             view === "path"
-              ? "w-[min(24rem,calc(100vw-env(safe-area-inset-left)-env(safe-area-inset-right)-1.5rem))]"
+              ? "w-[min(24rem,calc(100vw-env(safe-area-inset-left)-env(safe-area-inset-right)-1.5rem))] short:w-[min(24rem,calc(100vw-env(safe-area-inset-left)-env(safe-area-inset-right)-5.25rem))]"
               : "w-60"
           }`}
         >
@@ -185,31 +201,46 @@ export default function MenuFab({
                 </button>
               ) : (
                 !standalone && (
-                  <p className="px-4 py-2 text-xs leading-snug text-zinc-500">
+                  <p className="px-4 py-1.5 text-[11px] leading-snug text-zinc-500">
                     {STRINGS.menu.fullscreenUnavailable}
                   </p>
                 )
               )}
+              <button
+                type="button"
+                onClick={() => {
+                  close();
+                  onAddPath();
+                }}
+                className={itemClass}
+              >
+                {STRINGS.menu.addPath}
+              </button>
               {confirmingReset ? (
-                <div className="border-t border-zinc-800">
-                  <div className="px-4 pt-2 text-xs text-zinc-400">{STRINGS.menu.resetConfirm}</div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      onReset();
-                      close();
-                    }}
-                    className={`${itemClass} text-amber-300`}
-                  >
-                    {STRINGS.menu.resetConfirmYes}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setConfirmingReset(false)}
-                    className={`${itemClass} text-zinc-400`}
-                  >
-                    {STRINGS.menu.resetConfirmNo}
-                  </button>
+                /* One question line + Cancel/Yes side by side — a stacked
+                   confirm was what pushed "Forget your progress?" past the
+                   landscape cap. Both buttons are full rows, never clipped. */
+                <div className="border-t border-zinc-800 px-2 pt-1.5 pb-1.5">
+                  <p className="px-2 pb-1.5 text-xs text-zinc-400">{STRINGS.menu.resetConfirm}</p>
+                  <div className="flex gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setConfirmingReset(false)}
+                      className={`${confirmButtonClass} text-zinc-300`}
+                    >
+                      {STRINGS.menu.resetConfirmNo}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onReset();
+                        close();
+                      }}
+                      className={`${confirmButtonClass} text-amber-300`}
+                    >
+                      {STRINGS.menu.resetConfirmYes}
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <button type="button" onClick={() => setConfirmingReset(true)} className={itemClass}>
@@ -222,13 +253,20 @@ export default function MenuFab({
       )}
       <button
         type="button"
-        aria-label={open ? STRINGS.menu.close : STRINGS.menu.open}
+        aria-label={authoring ? STRINGS.authoring.exit : open ? STRINGS.menu.close : STRINGS.menu.open}
         aria-expanded={open}
-        onClick={() => (open ? close() : setOpen(true))}
+        onClick={() => {
+          if (authoring) {
+            onExitAuthoring();
+            return;
+          }
+          if (open) close();
+          else setOpen(true);
+        }}
         className="fixed right-[calc(env(safe-area-inset-right)+0.75rem)] bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-30 flex h-12 w-12 touch-manipulation items-center justify-center rounded-full border border-zinc-600 bg-black/60 text-zinc-200 shadow-lg backdrop-blur hover:bg-zinc-800/80"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-          {open ? (
+          {open || authoring ? (
             <>
               <path d="M6 6l12 12" />
               <path d="M18 6L6 18" />

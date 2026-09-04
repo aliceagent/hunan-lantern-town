@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import AddPathOverlay from "@/components/AddPathOverlay";
 import FoggyToast from "@/components/FoggyToast";
 import MenuFab from "@/components/MenuFab";
 import NpcCard from "@/components/NpcCard";
@@ -16,6 +17,8 @@ export default function PlayPage() {
   const [npc, setNpc] = useState<Npc | null>(null);
   const [foggy, setFoggy] = useState(false);
   const [gestured, setGestured] = useState(false);
+  // "Add path" draw mode (authoring utility) — locks hotspots, arms the overlay.
+  const [authoring, setAuthoring] = useState(false);
   // Monotonic counter; each bump asks HotspotLayer to flash the hint glow.
   const [hintSignal, setHintSignal] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -74,7 +77,7 @@ export default function PlayPage() {
           <Stage
             manifest={manifest}
             state={state}
-            interactionEnabled={!npc}
+            interactionEnabled={!npc && !authoring}
             hintSignal={hintSignal}
             onAdvance={(next) => setState(next)}
             onNpcClick={setNpc}
@@ -85,11 +88,25 @@ export default function PlayPage() {
             <NpcCard npc={npc} mediaBase={manifest.meta.mediaBase} onClose={() => setNpc(null)} />
           ) : null}
           {foggy ? <FoggyToast onDismiss={() => setFoggy(false)} /> : null}
+          {authoring && frame ? (
+            <AddPathOverlay
+              frame={frame}
+              locationId={frame.location}
+              locationName={location?.nameEn}
+              onExit={() => setAuthoring(false)}
+            />
+          ) : null}
         </div>
       </div>
       <MenuFab
         manifest={manifest}
         state={state}
+        authoring={authoring}
+        onAddPath={() => {
+          setNpc(null);
+          setAuthoring(true);
+        }}
+        onExitAuthoring={() => setAuthoring(false)}
         onToggleMute={() => setState((s) => (s ? { ...s, muted: !s.muted } : s))}
         onHints={() => setHintSignal((n) => n + 1)}
         onJumpTo={(index) => setState((s) => (s ? jumpToTrailStep(manifest, s, index) : s))}
