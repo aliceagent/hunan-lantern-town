@@ -24,6 +24,13 @@
       "ambientAudio": null
     },
     {
+      "id": "back-down-street",
+      "nameEn": "Shop Street by the River",
+      "nameZh": "\u6cb3\u8fb9\u8857",
+      "pinyin": "H\u00e9bi\u0101n Ji\u0113",
+      "ambientAudio": null
+    },
+    {
       "id": "bridge-house-left",
       "nameEn": "Near End of the Bridge",
       "nameZh": "\u6865\u5934",
@@ -343,7 +350,9 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "back-down-street": "8f9106318847dbc5"
+      }
     },
     "27bae1ff9c26fd1a": {
       "hash": "27bae1ff9c26fd1a",
@@ -3850,6 +3859,118 @@
         }
       ],
       "edges": {}
+    },
+    "b7e4085802264a3a": {
+      "hash": "b7e4085802264a3a",
+      "location": "back-down-street",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "b7e4085802264a3a",
+        "jpg": "b7e4085802264a3a"
+      },
+      "regions": [
+        {
+          "id": "up-the-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              360,
+              20
+            ],
+            [
+              580,
+              20
+            ],
+            [
+              580,
+              260
+            ],
+            [
+              360,
+              260
+            ]
+          ],
+          "bbox": [
+            360,
+            20,
+            220,
+            240
+          ],
+          "labelEn": "up the stairs to the temple house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-right-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              620,
+              80
+            ],
+            [
+              1000,
+              80
+            ],
+            [
+              1000,
+              440
+            ],
+            [
+              620,
+              440
+            ]
+          ],
+          "bbox": [
+            620,
+            80,
+            380,
+            360
+          ],
+          "labelEn": "into the lantern shop on the right",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "along-river-left",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              200
+            ],
+            [
+              280,
+              200
+            ],
+            [
+              280,
+              480
+            ],
+            [
+              0,
+              480
+            ]
+          ],
+          "bbox": [
+            0,
+            200,
+            280,
+            280
+          ],
+          "labelEn": "along the river railing",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -4216,6 +4337,20 @@
         "firstFrameSimilarity": 0.9876802467521597
       },
       "approvedAt": "2026-09-04T12:47:50Z"
+    },
+    "8f9106318847dbc5": {
+      "id": "8f9106318847dbc5",
+      "from": "0af7e80235596dc2",
+      "region": "back-down-street",
+      "to": "b7e4085802264a3a",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns and walks back down the wet flagstone street the way she came. Camera follows her away from the shops. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 237621460,
+        "firstFrameSimilarity": 0.9884307552189826
+      },
+      "approvedAt": "2026-09-04T12:52:27Z"
     }
   },
   "npcs": {}
