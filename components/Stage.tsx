@@ -5,8 +5,6 @@ import { applyClipEnd, isWorldEdge, resolveClick, type PlayerState } from "@/lib
 import type { Manifest, Npc } from "@/lib/manifest";
 import { bufferedProgress, clipUrl, stillUrl } from "@/lib/media";
 import { idlePlayback, onClick as onPlaybackClick, onEnded, onFailure, onPlaying } from "@/lib/playback";
-import { addPathBlock } from "@/lib/authoring";
-import { STRINGS } from "@/lib/strings";
 import HotspotLayer from "./HotspotLayer";
 import ProgressBar from "./ProgressBar";
 import WorldEdgeBanner from "./WorldEdgeBanner";
@@ -39,7 +37,6 @@ export default function Stage({
   // event), then held through the frame advance until the next still has
   // loaded. This is what prevents the tap→black-screen gap on slow networks.
   const [videoVisible, setVideoVisible] = useState(false);
-  const [copied, setCopied] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const activeClipIdRef = useRef<string | null>(null);
   const stateRef = useRef(state);
@@ -75,31 +72,6 @@ export default function Stage({
 
     if (result.kind === "npc") {
       onNpcClick(result.npc);
-      return;
-    }
-
-    if (result.kind === "cold") {
-      const location = manifest.locations.find((l) => l.id === frame.location);
-      const text = addPathBlock({
-        frameHash: frame.hash,
-        locationId: frame.location,
-        locationName: location?.nameEn,
-        stillWidth: frame.width,
-        stillHeight: frame.height,
-        bbox: result.region.bbox,
-        regionId: result.regionId,
-        labelEn: result.region.labelEn,
-      });
-      const clipboard = typeof navigator === "undefined" ? undefined : navigator.clipboard;
-      if (clipboard?.writeText) {
-        clipboard.writeText(text).then(
-          () => setCopied(true),
-          () => setCopied(true),
-        );
-      } else {
-        setCopied(true);
-      }
-      window.setTimeout(() => setCopied(false), 1800);
       return;
     }
 
@@ -198,18 +170,8 @@ export default function Stage({
           onRegionClick={handleRegionClick}
         />
       )}
-      {playback.phase === "still" && interactionEnabled && isWorldEdge(manifest, frame) && (
+      {playback.phase === "still" && isWorldEdge(manifest, frame) && (
         <WorldEdgeBanner hintSignal={hintSignal} />
-      )}
-      {copied && (
-        <div
-          role="status"
-          className="pointer-events-none absolute inset-x-0 top-4 z-20 flex justify-center"
-        >
-          <p className="rounded-full bg-black/80 px-3 py-1 text-xs text-amber-100">
-            {STRINGS.authoring.copiedCold}
-          </p>
-        </div>
       )}
       {(playback.phase === "loading" || playback.phase === "playing") && (
         <div className="absolute inset-x-0 bottom-0 z-10">

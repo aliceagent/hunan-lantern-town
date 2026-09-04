@@ -35,10 +35,8 @@ describe("resolveClick", () => {
     expect(result).toEqual({ kind: "clip", regionId: "red-lanterns", clip: manifest.clips[CLIP] });
   });
 
-  it("resolves a cold region to authoring copy — defined box, no video yet", () => {
-    const result = resolveClick(manifest, state, "moored-boat");
-    expect(result?.kind).toBe("cold");
-    expect(result && result.kind === "cold" && result.regionId).toBe("moored-boat");
+  it("resolves a cold region to null — no dead-end clicks, ever", () => {
+    expect(resolveClick(manifest, state, "moored-boat")).toBeNull();
   });
 
   it("resolves an npc region to its npc, no video edge required", () => {
@@ -62,11 +60,10 @@ describe("resolveClick", () => {
     ).toBeNull();
   });
 
-  it("treats a dangling edge as cold (copy the box, do not play a missing clip)", () => {
+  it("is null when an edge points at a clip the manifest does not carry", () => {
     const orphaned = structuredClone(manifest);
     delete orphaned.clips[CLIP];
-    const result = resolveClick(orphaned, state, "red-lanterns");
-    expect(result?.kind).toBe("cold");
+    expect(resolveClick(orphaned, state, "red-lanterns")).toBeNull();
   });
 
   it("drives the shipped S1 demo", () => {
@@ -93,8 +90,8 @@ describe("isWorldEdge", () => {
     expect(isWorldEdge(manifest, manifest.frames[START])).toBe(false);
   });
 
-  it("is false on a leaf still whose regions are defined but still cold", () => {
-    expect(isWorldEdge(manifest, manifest.frames[DEST])).toBe(false);
+  it("is true on a leaf still whose regions are all cold", () => {
+    expect(isWorldEdge(manifest, manifest.frames[DEST])).toBe(true);
   });
 
   it("is true on a frame with no regions at all", () => {

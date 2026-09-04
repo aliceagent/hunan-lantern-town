@@ -88,7 +88,7 @@ export default function HotspotLayer({
   const hintActive = autoHintActive || manualHintActive;
   const [hoveredNpc, setHoveredNpc] = useState<string | null>(null);
 
-  const allRegions = frame.regions;
+  const warmRegions = frame.regions.filter((region) => isInteractive(manifest, frame, region));
 
   return (
     <svg
@@ -96,15 +96,13 @@ export default function HotspotLayer({
       className="absolute inset-0 h-full w-full"
       style={{ pointerEvents: interactive ? "auto" : "none" }}
     >
-      {allRegions.map((region) => {
-        const warm = isInteractive(manifest, frame, region);
-        const glow = hintActive && (warm || manualHintActive);
+      {warmRegions.map((region) => {
         const isNpc = region.kind === "npc";
         const npc = isNpc && region.npc ? manifest.npcs[region.npc] : undefined;
         const [cx, cy] = polygonCentroid(region.polygon);
         return (
           <g key={region.id}>
-            {glow && (
+            {hintActive && (
               <path
                 key={`hint-${hintSignal}`}
                 d={polygonToPath(region.polygon)}

@@ -63,6 +63,38 @@ export function cssRectToStillBbox(
   return [left, top, w, h];
 }
 
+/** CSS pixel over the letterboxed stage → still pixel, or null if in the void. */
+export function cssPointToStill(
+  cssX: number,
+  cssY: number,
+  containerW: number,
+  containerH: number,
+  frameW: number,
+  frameH: number,
+): [number, number] | null {
+  if (containerW <= 0 || containerH <= 0 || frameW <= 0 || frameH <= 0) return null;
+  const { scale, offsetX, offsetY } = containLayout(containerW, containerH, frameW, frameH);
+  const x = (cssX - offsetX) / scale;
+  const y = (cssY - offsetY) / scale;
+  if (x < 0 || y < 0 || x > frameW || y > frameH) return null;
+  return [x, y];
+}
+
+/** First region whose AABB contains the still-space point, else null. */
+export function regionContainingPoint(
+  x: number,
+  y: number,
+  regions: readonly RegionFootprint[],
+): string | null {
+  for (const region of regions) {
+    const aabb = regionAabb(region);
+    if (!aabb) continue;
+    const [rx, ry, rw, rh] = aabb;
+    if (x >= rx && x <= rx + rw && y >= ry && y <= ry + rh) return region.id;
+  }
+  return null;
+}
+
 /** `[x, y, w, h]` in still pixels — the same shape as manifest `region.bbox`. */
 export type StillBbox = [number, number, number, number];
 

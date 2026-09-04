@@ -3,9 +3,11 @@ import {
   addPathBlock,
   bboxesConflict,
   containLayout,
+  cssPointToStill,
   cssRectToStillBbox,
   overlappingRegionIds,
   regionAabb,
+  regionContainingPoint,
   type StillBbox,
 } from "../authoring";
 
@@ -220,5 +222,28 @@ describe("addPathBlock", () => {
       "location: lantern-shops\n",
     );
     expect(addPathBlock(base)).toContain("location: unknown\n");
+  });
+});
+
+describe("cssPointToStill", () => {
+  it("maps 1:1 when the container matches the frame", () => {
+    expect(cssPointToStill(100, 50, 1344, 768, 1344, 768)).toEqual([100, 50]);
+  });
+
+  it("returns null in the letterbox void", () => {
+    expect(cssPointToStill(10, 10, 672, 584, 1344, 768)).toBeNull();
+  });
+});
+
+describe("regionContainingPoint", () => {
+  const regions = [
+    { id: "a", bbox: [0, 0, 100, 100] as const },
+    { id: "b", bbox: [50, 50, 100, 100] as const },
+  ];
+  it("hits the first matching AABB", () => {
+    expect(regionContainingPoint(10, 10, regions)).toBe("a");
+    expect(regionContainingPoint(80, 80, regions)).toBe("a");
+    expect(regionContainingPoint(140, 140, regions)).toBe("b");
+    expect(regionContainingPoint(400, 400, regions)).toBeNull();
   });
 });

@@ -36,10 +36,11 @@ export const STRINGS = {
   },
   /** The "Add path" draw mode — an authoring utility, not player UI. */
   authoring: {
-    hint: "Drag a box over the painting",
+    hint: "Teal = no video (tap to copy). Amber already has a video.",
     done: "Done",
     copied: "Copied",
     copiedCold: "Copied — no video on this tap yet.",
+    warmTap: "That box already has a video.",
     overlap: "Overlaps an existing tap — pick empty space.",
     copyFallback: "Clipboard blocked — copy this by hand:",
     close: "Close",

@@ -36,7 +36,6 @@ export function trailFor(manifest: Manifest, frameHash: string): TrailStep[] {
 export type ClickResult =
   | { kind: "clip"; regionId: string; clip: Clip }
   | { kind: "npc"; regionId: string; npc: Npc }
-  | { kind: "cold"; regionId: string; region: Region }
   | null;
 
 export function initialState(manifest: Manifest): PlayerState {
@@ -63,15 +62,12 @@ export function isInteractive(manifest: Manifest, frame: Frame, region: Region):
 }
 
 /**
- * The end of the visual world: nothing on this still can be tapped — no
- * warm hotspot, no known NPC, no defined (even cold) region. Cold boxes
- * copy their details; they are not a dead painting.
+ * The end of the visual world: nothing on this still is interactive — no
+ * warm hotspot, no known NPC. Defined boxes without video still count as a
+ * leaf: the player is at the edge until a clip is approved.
  */
 export function isWorldEdge(manifest: Manifest, frame: Frame): boolean {
-  if (frame.regions.length === 0) return true;
-  return !frame.regions.some(
-    (region) => isInteractive(manifest, frame, region) || region.kind !== "npc",
-  );
+  return frame.regions.every((region) => !isInteractive(manifest, frame, region));
 }
 
 /**
@@ -97,11 +93,11 @@ export function resolveClick(
   }
 
   const clipId = frame.edges[regionId];
-  const clip = clipId ? manifest.clips[clipId] : undefined;
-  if (clip) return { kind: "clip", regionId, clip };
+  if (!clipId) return null;
+  const clip = manifest.clips[clipId];
+  if (!clip) return null;
 
-  // Defined box, no video yet: authoring copy, not a foggy miss.
-  return { kind: "cold", regionId, region };
+  return { kind: "clip", regionId, clip };
 }
 
 /**

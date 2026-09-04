@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { addPathBlock, cssRectToStillBbox, overlappingRegionIds } from "@/lib/authoring";
-import type { Frame } from "@/lib/manifest";
+import { addPathBlock, cssPointToStill, cssRectToStillBbox, overlappingRegionIds, regionContainingPoint } from "@/lib/authoring";
+import { isInteractive } from "@/lib/engine";
+import type { Frame, Manifest } from "@/lib/manifest";
 import { STRINGS } from "@/lib/strings";
 import { polygonCentroid, polygonToPath } from "@/lib/svg";
 
@@ -36,11 +37,13 @@ function labelFits(region: Frame["regions"][number]): boolean {
  * paste.
  */
 export default function AddPathOverlay({
+  manifest,
   frame,
   locationId,
   locationName,
   onExit,
 }: {
+  manifest: Manifest;
   frame: Frame;
   locationId?: string;
   locationName?: string;
@@ -49,6 +52,8 @@ export default function AddPathOverlay({
   const boxRef = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState<DragRect | null>(null);
   const [copied, setCopied] = useState(false);
+  const [warmTap, setWarmTap] = useState(false);
+  const pendingTap = useRef<string | null>(null);
   // The last release that overlapped existing taps: flashes those regions red
   // and shows the overlap line; nothing is copied. Cleared by timer or a new drag.
   const [conflict, setConflict] = useState<Conflict | null>(null);
@@ -76,11 +81,43 @@ export default function AddPathOverlay({
     return () => clearTimeout(timer);
   }, [conflict]);
 
+  useEffect(() => {
+    if (!warmTap) return;
+    const timer = setTimeout(() => setWarmTap(false), 2000);
+    return () => clearTimeout(timer);
+  }, [warmTap]);
+
   function localPoint(event: React.PointerEvent): { x: number; y: number } | null {
     const el = boxRef.current;
     if (!el) return null;
     const rect = el.getBoundingClientRect();
     return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+  }
+
+  function copyText(text: string) {
+    const clipboard = typeof navigator === "undefined" ? undefined : navigator.clipboard;
+    if (clipboard?.writeText) {
+      clipboard.writeText(text).then(
+        () => setCopied(true),
+        () => setFallbackText(text),
+      );
+    } else {
+      setFallbackText(text);
+    }
+  }
+
+  function stillPointFromEvent(event: React.PointerEvent): [number, number] | null {
+    const el = boxRef.current;
+    if (!el) return null;
+    const rect = el.getBoundingClientRect();
+    return cssPointToStill(
+      event.clientX - rect.left,
+      event.clientY - rect.top,
+      rect.width,
+      rect.height,
+      frame.width,
+      frame.height,
+    );
   }
 
   function onPointerDown(event: React.PointerEvent<HTMLDivElement>) {
@@ -90,6 +127,15 @@ export default function AddPathOverlay({
     if (!point) return;
     event.currentTarget.setPointerCapture(event.pointerId);
     setConflict(null);
+    setWarmTap(false);
+    const still = stillPointFromEvent(event);
+    const hitId = still ? regionContainingPoint(still[0], still[1], frame.regions) : null;
+    if (hitId) {
+      pendingTap.current = hitId;
+      setDrag(null);
+      return;
+    }
+    pendingTap.current = null;
     setDrag({ x1: point.x, y1: point.y, x2: point.x, y2: point.y });
   }
 
@@ -101,6 +147,31 @@ export default function AddPathOverlay({
   }
 
   function onPointerUp(event: React.PointerEvent<HTMLDivElement>) {
+    const tapId = pendingTap.current;
+    pendingTap.current = null;
+    if (tapId) {
+      setDrag(null);
+      const region = frame.regions.find((r) => r.id === tapId);
+      if (!region) return;
+      if (isInteractive(manifest, frame, region)) {
+        setCopied(false);
+        setWarmTap(true);
+        return;
+      }
+      copyText(
+        addPathBlock({
+          frameHash: frame.hash,
+          locationId,
+          locationName,
+          stillWidth: frame.width,
+          stillHeight: frame.height,
+          bbox: region.bbox,
+          regionId: region.id,
+          labelEn: region.labelEn,
+        }),
+      );
+      return;
+    }
     if (!drag) return;
     setDrag(null);
     const el = boxRef.current;
@@ -113,35 +184,23 @@ export default function AddPathOverlay({
       frame.width,
       frame.height,
     );
-    // A tap or a rect entirely in the letterbox void: not a path, stay armed.
     if (!bbox) return;
-    // A draw over an existing tap is a conflict, never a copy: flash the
-    // offending regions red, say why, and stay armed for another try.
     const overlapIds = overlappingRegionIds(bbox, frame.regions);
     if (overlapIds.length > 0) {
       setCopied(false);
       setConflict((prev) => ({ ids: overlapIds, nonce: (prev?.nonce ?? 0) + 1 }));
       return;
     }
-    const text = addPathBlock({
-      frameHash: frame.hash,
-      locationId,
-      locationName,
-      stillWidth: frame.width,
-      stillHeight: frame.height,
-      bbox,
-    });
-    // The write must start synchronously inside the pointerup gesture or
-    // Safari rejects it; any rejection falls back to manual copy.
-    const clipboard = typeof navigator === "undefined" ? undefined : navigator.clipboard;
-    if (clipboard?.writeText) {
-      clipboard.writeText(text).then(
-        () => setCopied(true),
-        () => setFallbackText(text),
-      );
-    } else {
-      setFallbackText(text);
-    }
+    copyText(
+      addPathBlock({
+        frameHash: frame.hash,
+        locationId,
+        locationName,
+        stillWidth: frame.width,
+        stillHeight: frame.height,
+        bbox,
+      }),
+    );
   }
 
   const rectStyle = drag
@@ -172,26 +231,32 @@ export default function AddPathOverlay({
       >
         {frame.regions.map((region) => {
           const flashing = conflict?.ids.includes(region.id) ?? false;
+          const warm = isInteractive(manifest, frame, region);
           const [cx, cy] = polygonCentroid(region.polygon);
+          const paintClass = flashing
+            ? "authoring-region-conflict"
+            : warm
+              ? "authoring-region-warm"
+              : "authoring-region";
           return (
             <g key={region.id}>
               <path
-                // Keyed on the nonce so a repeat conflict remounts the path
-                // and the red flash replays instead of staying finished.
                 key={flashing ? `flash-${conflict!.nonce}` : "calm"}
                 d={polygonToPath(region.polygon)}
                 vectorEffect="non-scaling-stroke"
-                className={flashing ? "authoring-region-conflict" : "authoring-region"}
+                className={paintClass}
               />
               {labelFits(region) && (
                 <text
                   x={cx}
                   y={cy}
                   textAnchor="middle"
-                  className={`text-[14px] ${flashing ? "fill-red-200" : "fill-teal-100"}`}
+                  className={`text-[14px] ${
+                    flashing ? "fill-red-200" : warm ? "fill-amber-100" : "fill-teal-100"
+                  }`}
                   style={{ paintOrder: "stroke", stroke: "rgb(0 0 0 / 0.7)", strokeWidth: 3 }}
                 >
-                  {region.labelEn}
+                  {warm ? `${region.labelEn} · video` : region.labelEn}
                 </text>
               )}
             </g>
@@ -224,6 +289,17 @@ export default function AddPathOverlay({
         >
           <span className="rounded-full border border-amber-300/40 bg-zinc-950/90 px-4 py-1.5 text-sm text-amber-200 shadow-lg">
             {STRINGS.authoring.copied}
+          </span>
+        </div>
+      )}
+      {warmTap && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-4"
+        >
+          <span className="rounded-full border border-amber-400/50 bg-zinc-950/90 px-4 py-1.5 text-center text-sm text-amber-200 shadow-lg">
+            {STRINGS.authoring.warmTap}
           </span>
         </div>
       )}

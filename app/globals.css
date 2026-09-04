@@ -96,6 +96,11 @@ body {
   stroke: rgb(153 246 228 / 0.8);
   stroke-width: 1.5px;
 }
+.authoring-region-warm {
+  fill: rgb(251 191 36 / 0.28);
+  stroke: rgb(252 211 77 / 0.95);
+  stroke-width: 1.5px;
+}
 
 /* A released drag hit this region: blink it red for the ~2s the error line
    is up. Remounted per conflict (keyed) so a repeat offense replays. */

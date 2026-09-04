@@ -90,6 +90,7 @@ export default function PlayPage() {
           {foggy ? <FoggyToast onDismiss={() => setFoggy(false)} /> : null}
           {authoring && frame ? (
             <AddPathOverlay
+              manifest={manifest}
               frame={frame}
               locationId={frame.location}
               locationName={location?.nameEn}
