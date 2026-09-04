@@ -12,6 +12,7 @@ export default function Stage({
   manifest,
   state,
   interactionEnabled,
+  hintSignal,
   onAdvance,
   onNpcClick,
   onFoggy,
@@ -21,6 +22,8 @@ export default function Stage({
   state: PlayerState;
   /** False while a modal (NpcCard) has focus — hotspots stay locked. */
   interactionEnabled: boolean;
+  /** Bumped by the HUD Hints button; HotspotLayer flashes the hint glow. */
+  hintSignal: number;
   onAdvance: (next: PlayerState) => void;
   onNpcClick: (npc: Npc) => void;
   onFoggy: () => void;
@@ -161,6 +164,7 @@ export default function Stage({
         manifest={manifest}
         frame={frame}
         interactive={interactionEnabled && playback.phase === "still"}
+        hintSignal={hintSignal}
         onRegionClick={handleRegionClick}
       />
       {(playback.phase === "loading" || playback.phase === "playing") && (

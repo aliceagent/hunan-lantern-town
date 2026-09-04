@@ -10,11 +10,13 @@ export default function Hud({
   state,
   onToggleMute,
   onReset,
+  onHints,
 }: {
   manifest: Manifest;
   state: PlayerState;
   onToggleMute: () => void;
   onReset: () => void;
+  onHints: () => void;
 }) {
   const [confirmingReset, setConfirmingReset] = useState(false);
   const frame = manifest.frames[state.currentFrame];
@@ -28,6 +30,16 @@ export default function Hud({
         <span className="shrink-0 text-zinc-400">{STRINGS.hud.moves(state.moves)}</span>
       </div>
       <div className="flex shrink-0 items-center gap-1.5">
+        {/* Hidden during reset confirmation so four buttons never crowd a 390px row. */}
+        {!confirmingReset && (
+          <button
+            type="button"
+            onClick={onHints}
+            className="min-h-11 touch-manipulation rounded-full border border-amber-600/60 px-3.5 text-amber-200 hover:bg-amber-500/10"
+          >
+            {STRINGS.hud.hints}
+          </button>
+        )}
         <button
           type="button"
           onClick={onToggleMute}

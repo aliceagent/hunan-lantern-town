@@ -45,6 +45,11 @@ body {
   animation: hotspot-hint-pulse 1.5s ease-in-out both;
 }
 
+/* The HUD "Hints" button holds the glow for the full ~2s it is mounted. */
+.hotspot-hint-glow--long {
+  animation-duration: 2s;
+}
+
 @keyframes hotspot-hint-pulse {
   0%,
   100% {

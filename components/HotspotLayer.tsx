@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { isInteractive } from "@/lib/engine";
 import type { Frame, Manifest } from "@/lib/manifest";
 import { polygonCentroid, polygonToPath } from "@/lib/svg";
@@ -53,15 +53,39 @@ export default function HotspotLayer({
   manifest,
   frame,
   interactive,
+  hintSignal,
   onRegionClick,
 }: {
   manifest: Manifest;
   frame: Frame;
   /** False while a clip is loading/playing or a modal is open — input is locked. */
   interactive: boolean;
+  /** Counter bumped by the HUD Hints button; each bump flashes the glow. */
+  hintSignal: number;
   onRegionClick: (regionId: string) => void;
 }) {
-  const hintActive = useHintPulse(frame.hash);
+  const autoHintActive = useHintPulse(frame.hash);
+  const [manualHintActive, setManualHintActive] = useState(false);
+  // Read through a ref so a signal bump fires only in the moment it happens;
+  // hotspots unlocking later must not replay a stale press.
+  const interactiveRef = useRef(interactive);
+  useEffect(() => {
+    interactiveRef.current = interactive;
+  }, [interactive]);
+
+  useEffect(() => {
+    // No-op while a clip is loading/playing or a modal is open (hotspots are
+    // locked then, so glowing them would advertise dead targets).
+    if (hintSignal === 0 || !interactiveRef.current) return;
+    setManualHintActive(true);
+    const timer = setTimeout(() => setManualHintActive(false), 2000);
+    return () => {
+      clearTimeout(timer);
+      setManualHintActive(false);
+    };
+  }, [hintSignal]);
+
+  const hintActive = autoHintActive || manualHintActive;
   const [hoveredNpc, setHoveredNpc] = useState<string | null>(null);
 
   const warmRegions = frame.regions.filter((region) => isInteractive(manifest, frame, region));
@@ -80,9 +104,14 @@ export default function HotspotLayer({
           <g key={region.id}>
             {hintActive && (
               <path
+                // Keyed on the signal so a re-tap of Hints remounts the path
+                // and the pulse animation replays instead of staying finished.
+                key={`hint-${hintSignal}`}
                 d={polygonToPath(region.polygon)}
                 vectorEffect="non-scaling-stroke"
-                className="hotspot-hint-glow pointer-events-none"
+                className={`hotspot-hint-glow pointer-events-none ${
+                  manualHintActive ? "hotspot-hint-glow--long" : ""
+                }`}
               />
             )}
             <path

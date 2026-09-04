@@ -11,6 +11,7 @@ export const STRINGS = {
   hud: {
     unknownLocation: "Somewhere in the mist",
     moves: (n: number) => `${n} ${n === 1 ? "step" : "steps"}`,
+    hints: "Hints",
     mute: "Mute",
     unmute: "Unmute",
     reset: "Reset",

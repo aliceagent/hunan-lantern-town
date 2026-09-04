@@ -16,6 +16,8 @@ export default function PlayPage() {
   const [npc, setNpc] = useState<Npc | null>(null);
   const [foggy, setFoggy] = useState(false);
   const [gestured, setGestured] = useState(false);
+  // Monotonic counter; each bump asks HotspotLayer to flash the hint glow.
+  const [hintSignal, setHintSignal] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -67,18 +69,24 @@ export default function PlayPage() {
         manifest={manifest}
         state={state}
         onToggleMute={() => setState((s) => (s ? { ...s, muted: !s.muted } : s))}
+        onHints={() => setHintSignal((n) => n + 1)}
         onReset={() => {
           clearSave();
           setNpc(null);
           setState({ ...initialState(manifest), muted: state.muted });
         }}
       />
-      <div className="flex min-h-0 w-full flex-1 items-center justify-center">
-        <div className="relative h-full max-h-[768px] w-full max-w-[1344px]">
+      {/* Portrait: the stage box hugs the 7:4 art (width-driven) and pins to
+          the top so the letterbox void falls below the painting, not around
+          it. Landscape keeps the height-filling centered box. Never crops:
+          the box matches the art's aspect, media stays object-contain. */}
+      <div className="flex min-h-0 w-full flex-1 items-center justify-center portrait:items-start">
+        <div className="relative h-full max-h-[768px] w-full max-w-[1344px] portrait:aspect-[7/4] portrait:h-auto portrait:max-h-full">
           <Stage
             manifest={manifest}
             state={state}
             interactionEnabled={!npc}
+            hintSignal={hintSignal}
             onAdvance={(next) => setState(next)}
             onNpcClick={setNpc}
             onFoggy={() => setFoggy(true)}
