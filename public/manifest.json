@@ -1,0 +1,3349 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Lantern River Town",
+    "titleZh": "河灯小镇",
+    "mediaBase": "/media",
+    "start": {
+      "frame": "daf1a2609185d63d"
+    }
+  },
+  "locations": [
+    {
+      "id": "center-house-door",
+      "nameEn": "Center House Door",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "center-stilt-house-fall",
+      "nameEn": "Center Stilt House Fall",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "covered-bridge",
+      "nameEn": "The Covered Bridge",
+      "nameZh": "风雨桥",
+      "pinyin": "Fēngyǔ Qiáo",
+      "ambientAudio": null
+    },
+    {
+      "id": "down-stairs",
+      "nameEn": "Down Stairs",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "far-bank-walk",
+      "nameEn": "Far Bank Walk",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "flagstone-old-street",
+      "nameEn": "Flagstone Old Street",
+      "nameZh": "石板老街",
+      "pinyin": "Shíbǎn Lǎojiē",
+      "ambientAudio": null
+    },
+    {
+      "id": "food-stall",
+      "nameEn": "Food Stall",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "hall-doorway",
+      "nameEn": "Hall Doorway",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "lantern-shops",
+      "nameEn": "Lantern Shops",
+      "nameZh": "灯笼铺",
+      "pinyin": "Dēnglong Pù",
+      "ambientAudio": null
+    },
+    {
+      "id": "left-pavilion",
+      "nameEn": "Left Pavilion",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "left-pier",
+      "nameEn": "Left Pier",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "moored-boat",
+      "nameEn": "Moored Boat",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "noodle-stall",
+      "nameEn": "The Noodle Stall",
+      "nameZh": "米粉摊",
+      "pinyin": "Mǐfěn Tān",
+      "ambientAudio": null
+    },
+    {
+      "id": "right-lantern-shop",
+      "nameEn": "Right Lantern Shop",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "riverside-stall",
+      "nameEn": "Riverside Stall",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "stilt-houses",
+      "nameEn": "Stilt Houses",
+      "nameZh": "吊脚楼",
+      "pinyin": "Diàojiǎolóu",
+      "ambientAudio": null
+    },
+    {
+      "id": "stilt-row",
+      "nameEn": "Stilt Row",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "stone-stairs",
+      "nameEn": "Stone Stairs",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "street-ahead",
+      "nameEn": "Street Ahead",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "temple-stairs",
+      "nameEn": "Temple Stairs",
+      "nameZh": "庙前石阶",
+      "pinyin": "Miào Qián Shíjiē",
+      "ambientAudio": null
+    }
+  ],
+  "frames": {
+    "0af7e80235596dc2": {
+      "hash": "0af7e80235596dc2",
+      "location": "lantern-shops",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "0af7e80235596dc2",
+        "jpg": "0af7e80235596dc2"
+      },
+      "regions": [
+        {
+          "id": "shop-interior",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              620,
+              40
+            ],
+            [
+              1120,
+              40
+            ],
+            [
+              1120,
+              720
+            ],
+            [
+              620,
+              720
+            ]
+          ],
+          "bbox": [
+            620,
+            40,
+            500,
+            680
+          ],
+          "labelEn": "inside the lantern shop",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "street-to-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              280,
+              80
+            ],
+            [
+              280,
+              640
+            ],
+            [
+              0,
+              640
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            280,
+            560
+          ],
+          "labelEn": "street toward the far stairs",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "next-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              200,
+              80
+            ],
+            [
+              480,
+              80
+            ],
+            [
+              480,
+              600
+            ],
+            [
+              200,
+              600
+            ]
+          ],
+          "bbox": [
+            200,
+            80,
+            280,
+            520
+          ],
+          "labelEn": "next lantern shop along the street",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-down-street",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              560
+            ],
+            [
+              420,
+              560
+            ],
+            [
+              420,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            560,
+            420,
+            200
+          ],
+          "labelEn": "back down the street",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "3043201145eae0df": {
+      "hash": "3043201145eae0df",
+      "location": "street-ahead",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "3043201145eae0df",
+        "jpg": "3043201145eae0df"
+      },
+      "regions": [
+        {
+          "id": "up-the-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              480,
+              80
+            ],
+            [
+              840,
+              80
+            ],
+            [
+              840,
+              480
+            ],
+            [
+              480,
+              480
+            ]
+          ],
+          "bbox": [
+            480,
+            80,
+            360,
+            400
+          ],
+          "labelEn": "up the stone stairs into the doorway",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-shopfront",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              0
+            ],
+            [
+              1340,
+              0
+            ],
+            [
+              1340,
+              520
+            ],
+            [
+              900,
+              520
+            ]
+          ],
+          "bbox": [
+            900,
+            0,
+            440,
+            520
+          ],
+          "labelEn": "shop on the right",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-lanterns",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              0
+            ],
+            [
+              1300,
+              0
+            ],
+            [
+              1300,
+              220
+            ],
+            [
+              900,
+              220
+            ]
+          ],
+          "bbox": [
+            900,
+            0,
+            400,
+            220
+          ],
+          "labelEn": "close-up of the red lanterns",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              520,
+              40
+            ],
+            [
+              800,
+              40
+            ],
+            [
+              800,
+              240
+            ],
+            [
+              520,
+              240
+            ]
+          ],
+          "bbox": [
+            520,
+            40,
+            280,
+            200
+          ],
+          "labelEn": "close-up of the lit doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "36fecaeb673f2900": {
+      "hash": "36fecaeb673f2900",
+      "location": "stilt-houses",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "36fecaeb673f2900",
+        "jpg": "36fecaeb673f2900"
+      },
+      "regions": [
+        {
+          "id": "center-stilt-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              380,
+              40
+            ],
+            [
+              740,
+              40
+            ],
+            [
+              740,
+              400
+            ],
+            [
+              380,
+              400
+            ]
+          ],
+          "bbox": [
+            380,
+            40,
+            360,
+            360
+          ],
+          "labelEn": "center stilt house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              280,
+              0
+            ],
+            [
+              280,
+              520
+            ],
+            [
+              0,
+              520
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            280,
+            520
+          ],
+          "labelEn": "left bridge pavilion",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "food-stall",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              360
+            ],
+            [
+              1060,
+              360
+            ],
+            [
+              1060,
+              720
+            ],
+            [
+              700,
+              720
+            ]
+          ],
+          "bbox": [
+            700,
+            360,
+            360,
+            360
+          ],
+          "labelEn": "steaming food stall",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "far-dock",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              300
+            ],
+            [
+              1200,
+              300
+            ],
+            [
+              1200,
+              460
+            ],
+            [
+              900,
+              460
+            ]
+          ],
+          "bbox": [
+            900,
+            300,
+            300,
+            160
+          ],
+          "labelEn": "far dock and boat",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "center-stilt-house": "8c0309cde8459cc7",
+        "food-stall": "23e2a9af06cae282",
+        "left-pavilion": "5b4bf7d911436c69"
+      }
+    },
+    "39fa13e1e64ec12f": {
+      "hash": "39fa13e1e64ec12f",
+      "location": "left-pavilion",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "39fa13e1e64ec12f",
+        "jpg": "39fa13e1e64ec12f"
+      },
+      "regions": [
+        {
+          "id": "through-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              80
+            ],
+            [
+              780,
+              80
+            ],
+            [
+              780,
+              480
+            ],
+            [
+              420,
+              480
+            ]
+          ],
+          "bbox": [
+            420,
+            80,
+            360,
+            400
+          ],
+          "labelEn": "through the pavilion to the house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-stilt-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              780,
+              40
+            ],
+            [
+              1280,
+              40
+            ],
+            [
+              1280,
+              440
+            ],
+            [
+              780,
+              440
+            ]
+          ],
+          "bbox": [
+            780,
+            40,
+            500,
+            400
+          ],
+          "labelEn": "stilt house on the right",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-bridge-arm",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              280
+            ],
+            [
+              280,
+              280
+            ],
+            [
+              280,
+              680
+            ],
+            [
+              0,
+              680
+            ]
+          ],
+          "bbox": [
+            0,
+            280,
+            280,
+            400
+          ],
+          "labelEn": "left arm of the bridge",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-out-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              200,
+              520
+            ],
+            [
+              700,
+              520
+            ],
+            [
+              700,
+              760
+            ],
+            [
+              200,
+              760
+            ]
+          ],
+          "bbox": [
+            200,
+            520,
+            500,
+            240
+          ],
+          "labelEn": "back out of the pavilion",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "5e9e9aec2b964b3b": {
+      "hash": "5e9e9aec2b964b3b",
+      "location": "hall-doorway",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "5e9e9aec2b964b3b",
+        "jpg": "5e9e9aec2b964b3b"
+      },
+      "regions": [
+        {
+          "id": "into-the-room",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              80
+            ],
+            [
+              920,
+              80
+            ],
+            [
+              920,
+              720
+            ],
+            [
+              420,
+              720
+            ]
+          ],
+          "bbox": [
+            420,
+            80,
+            500,
+            640
+          ],
+          "labelEn": "into the room",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-bowl",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              520,
+              400
+            ],
+            [
+              720,
+              400
+            ],
+            [
+              720,
+              520
+            ],
+            [
+              520,
+              520
+            ]
+          ],
+          "bbox": [
+            520,
+            400,
+            200,
+            120
+          ],
+          "labelEn": "close-up of the bowl on the table",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-shelf",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              180
+            ],
+            [
+              640,
+              180
+            ],
+            [
+              640,
+              400
+            ],
+            [
+              420,
+              400
+            ]
+          ],
+          "bbox": [
+            420,
+            180,
+            220,
+            220
+          ],
+          "labelEn": "close-up of the shelf jars",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-out-doors",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              280,
+              0
+            ],
+            [
+              280,
+              768
+            ],
+            [
+              0,
+              768
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            280,
+            768
+          ],
+          "labelEn": "back out through the doors",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "83ebdc9112aeb95a": {
+      "hash": "83ebdc9112aeb95a",
+      "location": "noodle-stall",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "83ebdc9112aeb95a",
+        "jpg": "83ebdc9112aeb95a"
+      },
+      "regions": [
+        {
+          "id": "stone-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              860,
+              80
+            ],
+            [
+              1280,
+              80
+            ],
+            [
+              1280,
+              440
+            ],
+            [
+              860,
+              440
+            ]
+          ],
+          "bbox": [
+            860,
+            80,
+            420,
+            360
+          ],
+          "labelEn": "stone stairs to the lit house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "moored-boat",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              620,
+              280
+            ],
+            [
+              900,
+              280
+            ],
+            [
+              900,
+              460
+            ],
+            [
+              620,
+              460
+            ]
+          ],
+          "bbox": [
+            620,
+            280,
+            280,
+            180
+          ],
+          "labelEn": "moored boat at the dock",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "stilt-row",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              280,
+              0
+            ],
+            [
+              280,
+              280
+            ],
+            [
+              0,
+              280
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            280,
+            280
+          ],
+          "labelEn": "stilt houses across the water",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "street-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              400
+            ],
+            [
+              1200,
+              400
+            ],
+            [
+              1200,
+              700
+            ],
+            [
+              700,
+              700
+            ]
+          ],
+          "bbox": [
+            700,
+            400,
+            500,
+            300
+          ],
+          "labelEn": "flagstone street ahead",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "moored-boat": "6cfa6d5c29830e5f",
+        "stilt-row": "26c50a57f02873a2",
+        "stone-stairs": "71740f7b8d105bfd",
+        "street-ahead": "a4c2b4a9bd02910f"
+      }
+    },
+    "9c8fca79f9372fd2": {
+      "hash": "9c8fca79f9372fd2",
+      "location": "left-pier",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "9c8fca79f9372fd2",
+        "jpg": "9c8fca79f9372fd2"
+      },
+      "regions": [
+        {
+          "id": "up-quay-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              780,
+              80
+            ],
+            [
+              1280,
+              80
+            ],
+            [
+              1280,
+              600
+            ],
+            [
+              780,
+              600
+            ]
+          ],
+          "bbox": [
+            780,
+            80,
+            500,
+            520
+          ],
+          "labelEn": "up the stone stairs",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              400
+            ],
+            [
+              420,
+              400
+            ],
+            [
+              420,
+              680
+            ],
+            [
+              0,
+              680
+            ]
+          ],
+          "bbox": [
+            0,
+            400,
+            420,
+            280
+          ],
+          "labelEn": "along the wooden pier",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "step-onto-covered-boat",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              480
+            ],
+            [
+              420,
+              480
+            ],
+            [
+              420,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            480,
+            420,
+            280
+          ],
+          "labelEn": "onto the covered boat",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              400,
+              600
+            ],
+            [
+              900,
+              600
+            ],
+            [
+              900,
+              760
+            ],
+            [
+              400,
+              760
+            ]
+          ],
+          "bbox": [
+            400,
+            600,
+            500,
+            160
+          ],
+          "labelEn": "back along the pier",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "ae3ca595f42fde95": {
+      "hash": "ae3ca595f42fde95",
+      "location": "center-stilt-house-fall",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "ae3ca595f42fde95",
+        "jpg": "ae3ca595f42fde95"
+      },
+      "regions": [
+        {
+          "id": "climb-onto-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              80,
+              280
+            ],
+            [
+              780,
+              280
+            ],
+            [
+              780,
+              460
+            ],
+            [
+              80,
+              460
+            ]
+          ],
+          "bbox": [
+            80,
+            280,
+            700,
+            180
+          ],
+          "labelEn": "climb onto the wooden pier",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "center-house-door",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              40
+            ],
+            [
+              780,
+              40
+            ],
+            [
+              780,
+              320
+            ],
+            [
+              420,
+              320
+            ]
+          ],
+          "bbox": [
+            420,
+            40,
+            360,
+            280
+          ],
+          "labelEn": "door of the center house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-stilt-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              280,
+              0
+            ],
+            [
+              280,
+              420
+            ],
+            [
+              0,
+              420
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            280,
+            420
+          ],
+          "labelEn": "left stilt house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-stall-roof",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              280
+            ],
+            [
+              1340,
+              280
+            ],
+            [
+              1340,
+              760
+            ],
+            [
+              900,
+              760
+            ]
+          ],
+          "bbox": [
+            900,
+            280,
+            440,
+            480
+          ],
+          "labelEn": "stall roof on the right",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "center-house-door": "39869fbe8a64db3d"
+      }
+    },
+    "afd451e6797f68b1": {
+      "hash": "afd451e6797f68b1",
+      "location": "food-stall",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "afd451e6797f68b1",
+        "jpg": "afd451e6797f68b1"
+      },
+      "regions": [
+        {
+          "id": "left-stilt-row",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              420,
+              0
+            ],
+            [
+              420,
+              400
+            ],
+            [
+              0,
+              400
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            420,
+            400
+          ],
+          "labelEn": "stilt houses on the left bank",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "stone-path-right",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              780,
+              400
+            ],
+            [
+              1280,
+              400
+            ],
+            [
+              1280,
+              760
+            ],
+            [
+              780,
+              760
+            ]
+          ],
+          "bbox": [
+            780,
+            400,
+            500,
+            360
+          ],
+          "labelEn": "stone path along the right bank",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "passing-boat",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              860,
+              220
+            ],
+            [
+              1260,
+              220
+            ],
+            [
+              1260,
+              440
+            ],
+            [
+              860,
+              440
+            ]
+          ],
+          "bbox": [
+            860,
+            220,
+            400,
+            220
+          ],
+          "labelEn": "boat on the river",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-stall",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              500,
+              180
+            ],
+            [
+              920,
+              180
+            ],
+            [
+              920,
+              680
+            ],
+            [
+              500,
+              680
+            ]
+          ],
+          "bbox": [
+            500,
+            180,
+            420,
+            500
+          ],
+          "labelEn": "close-up of the steaming pot",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "b1ef30f10531b230": {
+      "hash": "b1ef30f10531b230",
+      "location": "riverside-stall",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "b1ef30f10531b230",
+        "jpg": "b1ef30f10531b230"
+      },
+      "regions": [
+        {
+          "id": "onto-bridge",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              480,
+              80
+            ],
+            [
+              480,
+              720
+            ],
+            [
+              0,
+              720
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            480,
+            640
+          ],
+          "labelEn": "onto the wooden bridge",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "far-stilt-houses",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              200,
+              0
+            ],
+            [
+              1100,
+              0
+            ],
+            [
+              1100,
+              280
+            ],
+            [
+              200,
+              280
+            ]
+          ],
+          "bbox": [
+            200,
+            0,
+            900,
+            280
+          ],
+          "labelEn": "stilt houses across the water",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "closer-to-cook",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              180
+            ],
+            [
+              1240,
+              180
+            ],
+            [
+              1240,
+              680
+            ],
+            [
+              700,
+              680
+            ]
+          ],
+          "bbox": [
+            700,
+            180,
+            540,
+            500
+          ],
+          "labelEn": "close-up of the steaming pot",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "path-right",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              520
+            ],
+            [
+              1300,
+              520
+            ],
+            [
+              1300,
+              760
+            ],
+            [
+              900,
+              760
+            ]
+          ],
+          "bbox": [
+            900,
+            520,
+            400,
+            240
+          ],
+          "labelEn": "dirt path to the right",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "b31589ee8f44515d": {
+      "hash": "b31589ee8f44515d",
+      "location": "covered-bridge",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "b31589ee8f44515d",
+        "jpg": "b31589ee8f44515d"
+      },
+      "regions": [
+        {
+          "id": "far-bank-walk",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              520,
+              280
+            ],
+            [
+              1040,
+              280
+            ],
+            [
+              1040,
+              440
+            ],
+            [
+              520,
+              440
+            ]
+          ],
+          "bbox": [
+            520,
+            280,
+            520,
+            160
+          ],
+          "labelEn": "boardwalk to stilt houses",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "bridge-house-left",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              40
+            ],
+            [
+              280,
+              40
+            ],
+            [
+              280,
+              400
+            ],
+            [
+              0,
+              400
+            ]
+          ],
+          "bbox": [
+            0,
+            40,
+            280,
+            360
+          ],
+          "labelEn": "house at the near end of the bridge",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "riverside-stall",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              1040,
+              380
+            ],
+            [
+              1340,
+              380
+            ],
+            [
+              1340,
+              740
+            ],
+            [
+              1040,
+              740
+            ]
+          ],
+          "bbox": [
+            1040,
+            380,
+            300,
+            360
+          ],
+          "labelEn": "steaming stall at the river edge",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-down-bridge",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              80,
+              520
+            ],
+            [
+              600,
+              520
+            ],
+            [
+              600,
+              740
+            ],
+            [
+              80,
+              740
+            ]
+          ],
+          "bbox": [
+            80,
+            520,
+            520,
+            220
+          ],
+          "labelEn": "back down the arched bridge",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "far-bank-walk": "8b9ffdf2a8f39091",
+        "riverside-stall": "9da16d71a63b5f64"
+      }
+    },
+    "bb49ea2e711cb615": {
+      "hash": "bb49ea2e711cb615",
+      "location": "temple-stairs",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "bb49ea2e711cb615",
+        "jpg": "bb49ea2e711cb615"
+      },
+      "regions": [
+        {
+          "id": "hall-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              80
+            ],
+            [
+              700,
+              80
+            ],
+            [
+              700,
+              360
+            ],
+            [
+              420,
+              360
+            ]
+          ],
+          "bbox": [
+            420,
+            80,
+            280,
+            280
+          ],
+          "labelEn": "lit hall doorway",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-lantern-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              820,
+              180
+            ],
+            [
+              1240,
+              180
+            ],
+            [
+              1240,
+              680
+            ],
+            [
+              820,
+              680
+            ]
+          ],
+          "bbox": [
+            820,
+            180,
+            420,
+            500
+          ],
+          "labelEn": "lantern shop on the right",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              280
+            ],
+            [
+              320,
+              280
+            ],
+            [
+              320,
+              700
+            ],
+            [
+              0,
+              700
+            ]
+          ],
+          "bbox": [
+            0,
+            280,
+            320,
+            420
+          ],
+          "labelEn": "pier and boat below",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "down-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              300,
+              520
+            ],
+            [
+              700,
+              520
+            ],
+            [
+              700,
+              720
+            ],
+            [
+              300,
+              720
+            ]
+          ],
+          "bbox": [
+            300,
+            520,
+            400,
+            200
+          ],
+          "labelEn": "back down the stairs",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "down-stairs": "e544c17d0732cda8",
+        "hall-doorway": "51cb948f1a5f1305",
+        "left-pier": "66605855d9cc7a3e",
+        "right-lantern-shop": "4fa42c62bcf5f9ff"
+      }
+    },
+    "be6c8028a10377e8": {
+      "hash": "be6c8028a10377e8",
+      "location": "stilt-row",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "be6c8028a10377e8",
+        "jpg": "be6c8028a10377e8"
+      },
+      "regions": [
+        {
+          "id": "along-pier-left",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              400
+            ],
+            [
+              420,
+              400
+            ],
+            [
+              420,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            400,
+            420,
+            360
+          ],
+          "labelEn": "along the pier to the left",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "toward-lit-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              80,
+              40
+            ],
+            [
+              580,
+              40
+            ],
+            [
+              580,
+              320
+            ],
+            [
+              80,
+              320
+            ]
+          ],
+          "bbox": [
+            80,
+            40,
+            500,
+            280
+          ],
+          "labelEn": "toward the lit shop across the water via the pier",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-noodle-stall",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              80
+            ],
+            [
+              1340,
+              80
+            ],
+            [
+              1340,
+              680
+            ],
+            [
+              900,
+              680
+            ]
+          ],
+          "bbox": [
+            900,
+            80,
+            440,
+            600
+          ],
+          "labelEn": "steaming stall on the right",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              200,
+              520
+            ],
+            [
+              700,
+              520
+            ],
+            [
+              700,
+              760
+            ],
+            [
+              200,
+              760
+            ]
+          ],
+          "bbox": [
+            200,
+            520,
+            500,
+            240
+          ],
+          "labelEn": "back along the pier",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "c4037c1d66772b8f": {
+      "hash": "c4037c1d66772b8f",
+      "location": "center-house-door",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "c4037c1d66772b8f",
+        "jpg": "c4037c1d66772b8f"
+      },
+      "regions": [
+        {
+          "id": "into-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              520,
+              80
+            ],
+            [
+              800,
+              80
+            ],
+            [
+              800,
+              600
+            ],
+            [
+              520,
+              600
+            ]
+          ],
+          "bbox": [
+            520,
+            80,
+            280,
+            520
+          ],
+          "labelEn": "through the open doorway into the house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-along-facade",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              400,
+              80
+            ],
+            [
+              400,
+              600
+            ],
+            [
+              0,
+              600
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            400,
+            520
+          ],
+          "labelEn": "left along the front",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-along-facade",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              80
+            ],
+            [
+              1340,
+              80
+            ],
+            [
+              1340,
+              600
+            ],
+            [
+              900,
+              600
+            ]
+          ],
+          "bbox": [
+            900,
+            80,
+            440,
+            520
+          ],
+          "labelEn": "right along the front",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "c8c114a60dc97d74": {
+      "hash": "c8c114a60dc97d74",
+      "location": "down-stairs",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "c8c114a60dc97d74",
+        "jpg": "c8c114a60dc97d74"
+      },
+      "regions": [
+        {
+          "id": "back-up-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              280,
+              80
+            ],
+            [
+              780,
+              80
+            ],
+            [
+              780,
+              500
+            ],
+            [
+              280,
+              500
+            ]
+          ],
+          "bbox": [
+            280,
+            80,
+            500,
+            420
+          ],
+          "labelEn": "back up the stone stairs",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-to-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              200
+            ],
+            [
+              280,
+              200
+            ],
+            [
+              280,
+              600
+            ],
+            [
+              0,
+              600
+            ]
+          ],
+          "bbox": [
+            0,
+            200,
+            280,
+            400
+          ],
+          "labelEn": "left toward the pier",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-street-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              0
+            ],
+            [
+              1300,
+              0
+            ],
+            [
+              1300,
+              280
+            ],
+            [
+              900,
+              280
+            ]
+          ],
+          "bbox": [
+            900,
+            0,
+            400,
+            280
+          ],
+          "labelEn": "close-up of the red lantern",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-shop-eaves",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              200
+            ],
+            [
+              1340,
+              200
+            ],
+            [
+              1340,
+              700
+            ],
+            [
+              900,
+              700
+            ]
+          ],
+          "bbox": [
+            900,
+            200,
+            440,
+            500
+          ],
+          "labelEn": "shop under the eaves on the right",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "daf1a2609185d63d": {
+      "hash": "daf1a2609185d63d",
+      "location": "flagstone-old-street",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "daf1a2609185d63d",
+        "jpg": "daf1a2609185d63d"
+      },
+      "regions": [
+        {
+          "id": "covered-bridge",
+          "objectId": "covered-bridge",
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              20,
+              260
+            ],
+            [
+              440,
+              260
+            ],
+            [
+              440,
+              560
+            ],
+            [
+              20,
+              560
+            ]
+          ],
+          "bbox": [
+            20,
+            260,
+            420,
+            300
+          ],
+          "labelEn": "covered wooden bridge",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "stilt-houses",
+          "objectId": "stilt-houses",
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              80,
+              170
+            ],
+            [
+              440,
+              170
+            ],
+            [
+              440,
+              330
+            ],
+            [
+              80,
+              330
+            ]
+          ],
+          "bbox": [
+            80,
+            170,
+            360,
+            160
+          ],
+          "labelEn": "stilt houses across the water",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "noodle-stall",
+          "objectId": "noodle-stall",
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              500,
+              360
+            ],
+            [
+              740,
+              360
+            ],
+            [
+              740,
+              580
+            ],
+            [
+              500,
+              580
+            ]
+          ],
+          "bbox": [
+            500,
+            360,
+            240,
+            220
+          ],
+          "labelEn": "steaming breakfast stall",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "temple-stairs",
+          "objectId": "temple-stairs",
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              180
+            ],
+            [
+              980,
+              180
+            ],
+            [
+              980,
+              440
+            ],
+            [
+              700,
+              440
+            ]
+          ],
+          "bbox": [
+            700,
+            180,
+            280,
+            260
+          ],
+          "labelEn": "temple stairs and doorway",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "lantern-shops",
+          "objectId": "lantern-shops",
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              980,
+              220
+            ],
+            [
+              1320,
+              220
+            ],
+            [
+              1320,
+              560
+            ],
+            [
+              980,
+              560
+            ]
+          ],
+          "bbox": [
+            980,
+            220,
+            340,
+            340
+          ],
+          "labelEn": "lantern shops on the right",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {
+        "covered-bridge": "5df6f37e77a8a8ae",
+        "lantern-shops": "3758963bbd02c160",
+        "noodle-stall": "9784133b7b2ce8a3",
+        "stilt-houses": "081eb2cfe7d0203f",
+        "temple-stairs": "5075255d07c5a4bc"
+      }
+    },
+    "dc72b39a1ce63157": {
+      "hash": "dc72b39a1ce63157",
+      "location": "stone-stairs",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "dc72b39a1ce63157",
+        "jpg": "dc72b39a1ce63157"
+      },
+      "regions": [
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              480,
+              40
+            ],
+            [
+              760,
+              40
+            ],
+            [
+              760,
+              320
+            ],
+            [
+              480,
+              320
+            ]
+          ],
+          "bbox": [
+            480,
+            40,
+            280,
+            280
+          ],
+          "labelEn": "through the open doorway",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-lantern-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              0
+            ],
+            [
+              1340,
+              0
+            ],
+            [
+              1340,
+              500
+            ],
+            [
+              900,
+              500
+            ]
+          ],
+          "bbox": [
+            900,
+            0,
+            440,
+            500
+          ],
+          "labelEn": "shop on the right with red lanterns",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "left-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              200
+            ],
+            [
+              420,
+              200
+            ],
+            [
+              420,
+              480
+            ],
+            [
+              0,
+              480
+            ]
+          ],
+          "bbox": [
+            0,
+            200,
+            420,
+            280
+          ],
+          "labelEn": "wooden pier on the left",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "down-to-boat",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              480
+            ],
+            [
+              420,
+              480
+            ],
+            [
+              420,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            480,
+            420,
+            280
+          ],
+          "labelEn": "down to the moored boat",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "e6c105a55927a012": {
+      "hash": "e6c105a55927a012",
+      "location": "far-bank-walk",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "e6c105a55927a012",
+        "jpg": "e6c105a55927a012"
+      },
+      "regions": [
+        {
+          "id": "left-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              360,
+              0
+            ],
+            [
+              360,
+              520
+            ],
+            [
+              0,
+              520
+            ]
+          ],
+          "bbox": [
+            0,
+            0,
+            360,
+            520
+          ],
+          "labelEn": "left house doorway",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "alley-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              360,
+              80
+            ],
+            [
+              640,
+              80
+            ],
+            [
+              640,
+              440
+            ],
+            [
+              360,
+              440
+            ]
+          ],
+          "bbox": [
+            360,
+            80,
+            280,
+            360
+          ],
+          "labelEn": "misty alley between the houses",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-lantern-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              0
+            ],
+            [
+              1200,
+              0
+            ],
+            [
+              1200,
+              480
+            ],
+            [
+              700,
+              480
+            ]
+          ],
+          "bbox": [
+            700,
+            0,
+            500,
+            480
+          ],
+          "labelEn": "right house with hanging lanterns",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              520
+            ],
+            [
+              700,
+              520
+            ],
+            [
+              700,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            520,
+            700,
+            240
+          ],
+          "labelEn": "back along the pier",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "f8be08a2e7b4db35": {
+      "hash": "f8be08a2e7b4db35",
+      "location": "moored-boat",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "f8be08a2e7b4db35",
+        "jpg": "f8be08a2e7b4db35"
+      },
+      "regions": [
+        {
+          "id": "up-stone-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              40
+            ],
+            [
+              1340,
+              40
+            ],
+            [
+              1340,
+              540
+            ],
+            [
+              900,
+              540
+            ]
+          ],
+          "bbox": [
+            900,
+            40,
+            440,
+            500
+          ],
+          "labelEn": "up the stone stairs",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              700,
+              80
+            ],
+            [
+              700,
+              280
+            ],
+            [
+              0,
+              280
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            700,
+            200
+          ],
+          "labelEn": "along the wooden pier",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "step-onto-boat",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              200,
+              280
+            ],
+            [
+              700,
+              280
+            ],
+            [
+              700,
+              580
+            ],
+            [
+              200,
+              580
+            ]
+          ],
+          "bbox": [
+            200,
+            280,
+            500,
+            300
+          ],
+          "labelEn": "step onto the moored boat",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-along-path",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              520
+            ],
+            [
+              1200,
+              520
+            ],
+            [
+              1200,
+              760
+            ],
+            [
+              700,
+              760
+            ]
+          ],
+          "bbox": [
+            700,
+            520,
+            500,
+            240
+          ],
+          "labelEn": "back along the stone path",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "fa3bf5e0f6746c91": {
+      "hash": "fa3bf5e0f6746c91",
+      "location": "right-lantern-shop",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "fa3bf5e0f6746c91",
+        "jpg": "fa3bf5e0f6746c91"
+      },
+      "regions": [
+        {
+          "id": "into-shop",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              180
+            ],
+            [
+              980,
+              180
+            ],
+            [
+              980,
+              660
+            ],
+            [
+              700,
+              660
+            ]
+          ],
+          "bbox": [
+            700,
+            180,
+            280,
+            480
+          ],
+          "labelEn": "through the open shop door",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "up-left-stairs",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              360,
+              80
+            ],
+            [
+              360,
+              580
+            ],
+            [
+              0,
+              580
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            360,
+            500
+          ],
+          "labelEn": "stone stairs on the left",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-red-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              900,
+              0
+            ],
+            [
+              1300,
+              0
+            ],
+            [
+              1300,
+              280
+            ],
+            [
+              900,
+              280
+            ]
+          ],
+          "bbox": [
+            900,
+            0,
+            400,
+            280
+          ],
+          "labelEn": "close-up of the red lantern",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back-down-street",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              520
+            ],
+            [
+              500,
+              520
+            ],
+            [
+              500,
+              760
+            ],
+            [
+              0,
+              760
+            ]
+          ],
+          "bbox": [
+            0,
+            520,
+            500,
+            240
+          ],
+          "labelEn": "back down the cobblestone street",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    }
+  },
+  "clips": {
+    "39869fbe8a64db3d": {
+      "id": "39869fbe8a64db3d",
+      "from": "ae3ca595f42fde95",
+      "region": "center-house-door",
+      "to": "c4037c1d66772b8f",
+      "durationS": 6.583333333333333,
+      "prompt": "She climbs onto the pier and walks to the door of the center stilt house. End at the doorway on the boards, never standing in the river. Camera pushes to the door. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 785981607,
+        "firstFrameSimilarity": 0.9917237877717742
+      },
+      "approvedAt": "2026-09-04T10:44:12Z"
+    },
+    "8c0309cde8459cc7": {
+      "id": "8c0309cde8459cc7",
+      "from": "36fecaeb673f2900",
+      "region": "center-stilt-house",
+      "to": "ae3ca595f42fde95",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks toward the center stilt house with three red lanterns. Camera pushes forward across the water so the house grows. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 445491965,
+        "firstFrameSimilarity": 0.990621684572946
+      },
+      "approvedAt": "2026-09-04T09:59:31Z"
+    },
+    "5df6f37e77a8a8ae": {
+      "id": "5df6f37e77a8a8ae",
+      "from": "daf1a2609185d63d",
+      "region": "covered-bridge",
+      "to": "b31589ee8f44515d",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left and walks onto the covered wooden bridge toward the lanterns. Camera pans left and eases forward with her. End on the bridge, stilt houses closer. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1744296042,
+        "firstFrameSimilarity": 0.983571693807969
+      },
+      "approvedAt": "2026-09-04T08:21:36Z"
+    },
+    "e544c17d0732cda8": {
+      "id": "e544c17d0732cda8",
+      "from": "bb49ea2e711cb615",
+      "region": "down-stairs",
+      "to": "c8c114a60dc97d74",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns and walks back down the stone stairs toward the street. Camera follows her down the steps. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 103925948,
+        "firstFrameSimilarity": 0.9928790797077729
+      },
+      "approvedAt": "2026-09-04T10:25:44Z"
+    },
+    "8b9ffdf2a8f39091": {
+      "id": "8b9ffdf2a8f39091",
+      "from": "b31589ee8f44515d",
+      "region": "far-bank-walk",
+      "to": "e6c105a55927a012",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks forward off the covered bridge onto the far-bank wooden boardwalk toward the stilt houses. Camera eases forward with her. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1497453311,
+        "firstFrameSimilarity": 0.9859059390411425
+      },
+      "approvedAt": "2026-09-04T09:20:47Z"
+    },
+    "23e2a9af06cae282": {
+      "id": "23e2a9af06cae282",
+      "from": "36fecaeb673f2900",
+      "region": "food-stall",
+      "to": "afd451e6797f68b1",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks right to the steaming food stall and looks at the pots. Camera dollies in on the stall. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 181652136,
+        "firstFrameSimilarity": 0.9908783907108623
+      },
+      "approvedAt": "2026-09-04T09:20:51Z"
+    },
+    "51cb948f1a5f1305": {
+      "id": "51cb948f1a5f1305",
+      "from": "bb49ea2e711cb615",
+      "region": "hall-doorway",
+      "to": "5e9e9aec2b964b3b",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks up the last steps and into the warmly lit doorway. Camera follows her over the threshold into the interior. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1905700533,
+        "firstFrameSimilarity": 0.9922263376213712
+      },
+      "approvedAt": "2026-09-04T10:07:25Z"
+    },
+    "3758963bbd02c160": {
+      "id": "3758963bbd02c160",
+      "from": "daf1a2609185d63d",
+      "region": "lantern-shops",
+      "to": "0af7e80235596dc2",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks right to the open lantern shops and looks into the warm interior. Camera pans right into the shop front. End at the shop threshold, street behind her. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1491082061,
+        "firstFrameSimilarity": 0.9824500551936314
+      },
+      "approvedAt": "2026-09-04T08:28:54Z"
+    },
+    "5b4bf7d911436c69": {
+      "id": "5b4bf7d911436c69",
+      "from": "36fecaeb673f2900",
+      "region": "left-pavilion",
+      "to": "39fa13e1e64ec12f",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left onto the wooden pavilion walkway under the hanging red lantern. Camera pans left along the rail. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1789327639,
+        "firstFrameSimilarity": 0.9899398211003841
+      },
+      "approvedAt": "2026-09-04T09:20:50Z"
+    },
+    "66605855d9cc7a3e": {
+      "id": "66605855d9cc7a3e",
+      "from": "bb49ea2e711cb615",
+      "region": "left-pier",
+      "to": "9c8fca79f9372fd2",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left down toward the wooden pier and the moored boat. Camera pans left and down to the water. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1935975182,
+        "firstFrameSimilarity": 0.9926299836046236
+      },
+      "approvedAt": "2026-09-04T10:25:42Z"
+    },
+    "6cfa6d5c29830e5f": {
+      "id": "6cfa6d5c29830e5f",
+      "from": "83ebdc9112aeb95a",
+      "region": "moored-boat",
+      "to": "f8be08a2e7b4db35",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks toward the moored wooden boat at the stone dock. Camera pans to the boat. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 449843455,
+        "firstFrameSimilarity": 0.9906377560860834
+      },
+      "approvedAt": "2026-09-04T10:04:25Z"
+    },
+    "9784133b7b2ce8a3": {
+      "id": "9784133b7b2ce8a3",
+      "from": "daf1a2609185d63d",
+      "region": "noodle-stall",
+      "to": "83ebdc9112aeb95a",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks up to the steaming breakfast stall and looks at the pots. Camera dollies in so the stall fills more of the frame. End at the counter. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 89179618,
+        "firstFrameSimilarity": 0.9820592757428652
+      },
+      "approvedAt": "2026-09-04T08:21:39Z"
+    },
+    "4fa42c62bcf5f9ff": {
+      "id": "4fa42c62bcf5f9ff",
+      "from": "bb49ea2e711cb615",
+      "region": "right-lantern-shop",
+      "to": "fa3bf5e0f6746c91",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns right toward the building with the large red lantern and latticed windows. Camera pans right into the shop front. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1774714184,
+        "firstFrameSimilarity": 0.9924239264676933
+      },
+      "approvedAt": "2026-09-04T10:25:41Z"
+    },
+    "9da16d71a63b5f64": {
+      "id": "9da16d71a63b5f64",
+      "from": "b31589ee8f44515d",
+      "region": "riverside-stall",
+      "to": "b1ef30f10531b230",
+      "durationS": 6.583333333333333,
+      "prompt": "She steps off the right side of the bridge toward the steaming food stall. Camera pans right to the stall. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 58451211,
+        "firstFrameSimilarity": 0.9891396697441642
+      },
+      "approvedAt": "2026-09-04T09:20:49Z"
+    },
+    "081eb2cfe7d0203f": {
+      "id": "081eb2cfe7d0203f",
+      "from": "daf1a2609185d63d",
+      "region": "stilt-houses",
+      "to": "36fecaeb673f2900",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks toward the stilt houses on the far bank. Camera pushes past the bridge lanterns so the diaojiaolou grow larger. End closer to the water houses. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 366098413,
+        "firstFrameSimilarity": 0.9827335041430664
+      },
+      "approvedAt": "2026-09-04T08:21:38Z"
+    },
+    "26c50a57f02873a2": {
+      "id": "26c50a57f02873a2",
+      "from": "83ebdc9112aeb95a",
+      "region": "stilt-row",
+      "to": "be6c8028a10377e8",
+      "durationS": 6.583333333333333,
+      "prompt": "She looks left and walks toward the stilt houses over the water. Camera pans left across the river. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1531492787,
+        "firstFrameSimilarity": 0.9903698230796181
+      },
+      "approvedAt": "2026-09-04T10:04:27Z"
+    },
+    "71740f7b8d105bfd": {
+      "id": "71740f7b8d105bfd",
+      "from": "83ebdc9112aeb95a",
+      "region": "stone-stairs",
+      "to": "dc72b39a1ce63157",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns and walks up the flagstone path to the stone stairs and the warmly lit doorway. Camera follows her up the street. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 451467359,
+        "firstFrameSimilarity": 0.9905379295841128
+      },
+      "approvedAt": "2026-09-04T10:04:24Z"
+    },
+    "a4c2b4a9bd02910f": {
+      "id": "a4c2b4a9bd02910f",
+      "from": "83ebdc9112aeb95a",
+      "region": "street-ahead",
+      "to": "3043201145eae0df",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks forward along the wet flagstone street into town, past the stall. Camera tracks beside her down the street. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1885980622,
+        "firstFrameSimilarity": 0.9900804174798014
+      },
+      "approvedAt": "2026-09-04T10:07:23Z"
+    },
+    "5075255d07c5a4bc": {
+      "id": "5075255d07c5a4bc",
+      "from": "daf1a2609185d63d",
+      "region": "temple-stairs",
+      "to": "bb49ea2e711cb615",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks up the wet street to the stone stairs and starts climbing toward the lit doorway. Camera follows down the street then tilts up the steps. End at the threshold. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1249565379,
+        "firstFrameSimilarity": 0.9817000526450141
+      },
+      "approvedAt": "2026-09-04T08:21:41Z"
+    }
+  },
+  "npcs": {}
+}
