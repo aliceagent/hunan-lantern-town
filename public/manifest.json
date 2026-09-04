@@ -178,6 +178,20 @@
       "ambientAudio": null
     },
     {
+      "id": "look-ahead",
+      "nameEn": "Look Ahead",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
+      "ambientAudio": null
+    },
+    {
+      "id": "look-doorway",
+      "nameEn": "Look Doorway",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
+      "ambientAudio": null
+    },
+    {
       "id": "moored-boat",
       "nameEn": "Moored Boat",
       "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
@@ -610,7 +624,8 @@
         }
       ],
       "edges": {
-        "up-the-stairs": "3b35aac13d03406d"
+        "up-the-stairs": "3b35aac13d03406d",
+        "look-doorway": "f828394c8b3fe96a"
       }
     },
     "36fecaeb673f2900": {
@@ -4448,10 +4463,80 @@
           "labelEn": "look closer",
           "tags": [],
           "dialogue": []
+        },
+        {
+          "id": "along-street",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              195
+            ],
+            [
+              265,
+              195
+            ],
+            [
+              265,
+              356
+            ],
+            [
+              40,
+              356
+            ]
+          ],
+          "bbox": [
+            40,
+            195,
+            225,
+            161
+          ],
+          "labelEn": "along the street",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
         }
       ],
       "edges": {
-        "back": "866cd0606c10f255"
+        "back": "866cd0606c10f255",
+        "along-street": "87ebc8ab6781f9b3",
+        "forward": "4fbe5ef6006531ea",
+        "into-doorway": "05c2922c7381690e",
+        "look-ahead": "e595eeb6b68f6a49"
       }
     },
     "0838bb45270a75a1": {
@@ -4971,7 +5056,9 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "look-ahead": "4e51619171710512"
+      }
     },
     "4c0fb6ca98365083": {
       "hash": "4c0fb6ca98365083",
@@ -5670,6 +5757,480 @@
         }
       ],
       "edges": {}
+    },
+    "1a05c2a3efc928e2": {
+      "hash": "1a05c2a3efc928e2",
+      "location": "along-street",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "1a05c2a3efc928e2",
+        "jpg": "1a05c2a3efc928e2"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "3ce7e59d954bffd0": {
+      "hash": "3ce7e59d954bffd0",
+      "location": "forward",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "3ce7e59d954bffd0",
+        "jpg": "3ce7e59d954bffd0"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "b7fad45c7aad1418": {
+      "hash": "b7fad45c7aad1418",
+      "location": "into-doorway",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "b7fad45c7aad1418",
+        "jpg": "b7fad45c7aad1418"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "4fa77ebba7001911": {
+      "hash": "4fa77ebba7001911",
+      "location": "look-ahead",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "4fa77ebba7001911",
+        "jpg": "4fa77ebba7001911"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "3bf178c299920028": {
+      "hash": "3bf178c299920028",
+      "location": "look-ahead",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "3bf178c299920028",
+        "jpg": "3bf178c299920028"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "d840e964c2c7e553": {
+      "hash": "d840e964c2c7e553",
+      "location": "look-doorway",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "d840e964c2c7e553",
+        "jpg": "d840e964c2c7e553"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -6260,6 +6821,90 @@
         "firstFrameSimilarity": 0.9960916904222892
       },
       "approvedAt": "2026-09-04T15:08:20Z"
+    },
+    "87ebc8ab6781f9b3": {
+      "id": "87ebc8ab6781f9b3",
+      "from": "1d3daa37baab7d5c",
+      "region": "along-street",
+      "to": "1a05c2a3efc928e2",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks along the existing street or boardwalk deeper into town. Stay on wood, stone, or dirt \u2014 never in the water. Camera follows. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 780358164,
+        "firstFrameSimilarity": 0.9958564562430783
+      },
+      "approvedAt": "2026-09-04T15:12:46Z"
+    },
+    "4fbe5ef6006531ea": {
+      "id": "4fbe5ef6006531ea",
+      "from": "1d3daa37baab7d5c",
+      "region": "forward",
+      "to": "3ce7e59d954bffd0",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks forward on the existing path. Stay on wood, stone, or dirt \u2014 never in the water. Camera eases forward. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 2060336599,
+        "firstFrameSimilarity": 0.99615056490439
+      },
+      "approvedAt": "2026-09-04T15:12:52Z"
+    },
+    "05c2922c7381690e": {
+      "id": "05c2922c7381690e",
+      "from": "1d3daa37baab7d5c",
+      "region": "into-doorway",
+      "to": "b7fad45c7aad1418",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks into the nearest open doorway of the building in front of her. Feet on wood or stone, never in the water. Camera eases with her through the threshold. Keep Ghibli painting, same clothes, whole figure visible. Last frame is inside or in the doorway.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1208776198,
+        "firstFrameSimilarity": 0.9954582291873297
+      },
+      "approvedAt": "2026-09-04T15:13:00Z"
+    },
+    "e595eeb6b68f6a49": {
+      "id": "e595eeb6b68f6a49",
+      "from": "1d3daa37baab7d5c",
+      "region": "look-ahead",
+      "to": "4fa77ebba7001911",
+      "durationS": 6.583333333333333,
+      "prompt": "She leans in and looks at what is in front of her. Close-up filling the last frame. Same clothes, same Ghibli paint.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 500873627,
+        "firstFrameSimilarity": 0.9958466673610367
+      },
+      "approvedAt": "2026-09-04T15:13:08Z"
+    },
+    "4e51619171710512": {
+      "id": "4e51619171710512",
+      "from": "2ad158de5146a2da",
+      "region": "look-ahead",
+      "to": "3bf178c299920028",
+      "durationS": 6.583333333333333,
+      "prompt": "She leans in and looks at what is in front of her. Close-up filling the last frame. Same clothes, same Ghibli paint.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1000764851,
+        "firstFrameSimilarity": 0.989795293874896
+      },
+      "approvedAt": "2026-09-04T15:13:25Z"
+    },
+    "f828394c8b3fe96a": {
+      "id": "f828394c8b3fe96a",
+      "from": "3043201145eae0df",
+      "region": "look-doorway",
+      "to": "d840e964c2c7e553",
+      "durationS": 6.583333333333333,
+      "prompt": "She looks into the warmly lit doorway. Camera dollies in until the interior doorway fills the frame. Keep Ghibli painting.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1594856503,
+        "firstFrameSimilarity": 0.9873380271474439
+      },
+      "approvedAt": "2026-09-04T15:13:32Z"
     }
   },
   "npcs": {}
