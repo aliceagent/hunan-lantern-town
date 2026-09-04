@@ -161,13 +161,15 @@ export default function Stage({
           videoVisible ? "opacity-100" : "opacity-0"
         }`}
       />
-      <HotspotLayer
-        manifest={manifest}
-        frame={frame}
-        interactive={interactionEnabled && playback.phase === "still"}
-        hintSignal={hintSignal}
-        onRegionClick={handleRegionClick}
-      />
+      {playback.phase === "still" && (
+        <HotspotLayer
+          manifest={manifest}
+          frame={frame}
+          interactive={interactionEnabled}
+          hintSignal={hintSignal}
+          onRegionClick={handleRegionClick}
+        />
+      )}
       {playback.phase === "still" && isWorldEdge(manifest, frame) && (
         <WorldEdgeBanner hintSignal={hintSignal} />
       )}

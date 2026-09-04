@@ -50,6 +50,11 @@ body {
    screen pixels regardless of how far the 1344-unit viewBox is scaled down. */
 .hotspot-region {
   stroke-width: 24px;
+  outline: none;
+}
+.hotspot-region:focus,
+.hotspot-region:focus-visible {
+  outline: none;
 }
 
 /* The §10-S3 lantern-glow hint: a brief amber outline so touch players (no

@@ -121,7 +121,10 @@ export default function HotspotLayer({
               aria-label={npc ? npc.nameEn : region.labelEn}
               vectorEffect="non-scaling-stroke"
               className="hotspot-region fill-transparent stroke-transparent"
-              onClick={() => onRegionClick(region.id)}
+              onClick={(event) => {
+                (event.currentTarget as SVGElement).blur();
+                onRegionClick(region.id);
+              }}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
