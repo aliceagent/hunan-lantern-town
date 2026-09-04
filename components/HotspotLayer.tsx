@@ -77,12 +77,20 @@ export default function HotspotLayer({
         const npc = isNpc && region.npc ? manifest.npcs[region.npc] : undefined;
         const [cx, cy] = polygonCentroid(region.polygon);
         return (
-          <g key={region.id} className={hintActive ? "hotspot-hint" : undefined}>
+          <g key={region.id}>
+            {hintActive && (
+              <path
+                d={polygonToPath(region.polygon)}
+                vectorEffect="non-scaling-stroke"
+                className="hotspot-hint-glow pointer-events-none"
+              />
+            )}
             <path
               d={polygonToPath(region.polygon)}
               role="button"
               tabIndex={0}
               aria-label={npc ? npc.nameEn : region.labelEn}
+              vectorEffect="non-scaling-stroke"
               className="hotspot-region fill-transparent stroke-transparent"
               onClick={() => onRegionClick(region.id)}
               onKeyDown={(event) => {

@@ -55,14 +55,14 @@ export default function PlayPage() {
 
   if (!manifest || !state) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-black text-zinc-400">
+      <main className="flex h-dvh items-center justify-center bg-black text-zinc-400">
         Loading…
       </main>
     );
   }
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center bg-black p-2 sm:p-4">
+    <main className="flex h-dvh flex-col overflow-hidden bg-black pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]">
       <Hud
         manifest={manifest}
         state={state}
@@ -73,20 +73,22 @@ export default function PlayPage() {
           setState({ ...initialState(manifest), muted: state.muted });
         }}
       />
-      <div className="relative w-full max-w-[1344px]">
-        <Stage
-          manifest={manifest}
-          state={state}
-          interactionEnabled={!npc}
-          onAdvance={(next) => setState(next)}
-          onNpcClick={setNpc}
-          onFoggy={() => setFoggy(true)}
-          onGesture={() => setGestured(true)}
-        />
-        {npc ? (
-          <NpcCard npc={npc} mediaBase={manifest.meta.mediaBase} onClose={() => setNpc(null)} />
-        ) : null}
-        {foggy ? <FoggyToast onDismiss={() => setFoggy(false)} /> : null}
+      <div className="flex min-h-0 w-full flex-1 items-center justify-center">
+        <div className="relative h-full max-h-[768px] w-full max-w-[1344px]">
+          <Stage
+            manifest={manifest}
+            state={state}
+            interactionEnabled={!npc}
+            onAdvance={(next) => setState(next)}
+            onNpcClick={setNpc}
+            onFoggy={() => setFoggy(true)}
+            onGesture={() => setGestured(true)}
+          />
+          {npc ? (
+            <NpcCard npc={npc} mediaBase={manifest.meta.mediaBase} onClose={() => setNpc(null)} />
+          ) : null}
+          {foggy ? <FoggyToast onDismiss={() => setFoggy(false)} /> : null}
+        </div>
       </div>
       {ambient ? <audio ref={audioRef} src={ambient} loop /> : null}
     </main>

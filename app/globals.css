@@ -20,7 +20,45 @@
 }
 
 body {
-  background: var(--background);
+  /* The player is a full-bleed dark canvas in both color schemes; a themed
+     background here would flash white on light-mode overscroll. */
+  background: #000;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Widen the touch target ~12px beyond the polygon on every side; the stroke
+   is transparent (still hit-testable) and non-scaling, so the padding is in
+   screen pixels regardless of how far the 1344-unit viewBox is scaled down. */
+.hotspot-region {
+  stroke-width: 24px;
+}
+
+/* The §10-S3 lantern-glow hint: a brief amber outline so touch players (no
+   hover) learn where to tap. Mounted for 1.5s by HotspotLayer. */
+.hotspot-hint-glow {
+  fill: rgb(251 191 36 / 0.08);
+  stroke: rgb(251 191 36 / 0.6);
+  stroke-width: 2.5px;
+  animation: hotspot-hint-pulse 1.5s ease-in-out both;
+}
+
+@keyframes hotspot-hint-pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  35%,
+  65% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hotspot-hint-glow {
+    animation: none;
+    opacity: 0.7;
+  }
 }

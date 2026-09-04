@@ -28,6 +28,11 @@ export default function Stage({
 }) {
   const [playback, setPlayback] = useState(idlePlayback);
   const [progress, setProgress] = useState(0);
+  // The still stays painted underneath at all times; the video sits on top
+  // and is only revealed once it is actually rendering frames ("playing"
+  // event), then held through the frame advance until the next still has
+  // loaded. This is what prevents the tap→black-screen gap on slow networks.
+  const [videoVisible, setVideoVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const activeClipIdRef = useRef<string | null>(null);
   const stateRef = useRef(state);
@@ -40,6 +45,7 @@ export default function Stage({
     const video = videoRef.current;
     const clipId = activeClipIdRef.current;
     if (!video || !clipId) return;
+    setVideoVisible(false);
     const { state: next, retry } = onFailure({ ...idlePlayback, retried: retriedRef.current });
     setPlayback((prev) => ({ ...next, phase: retry ? prev.phase : "still" }));
     if (retry) {
@@ -72,11 +78,14 @@ export default function Stage({
     retriedRef.current = false;
     setPlayback(onPlaybackClick());
     setProgress(0);
+    // Hide the video before resetting src (a src change blanks the element),
+    // leaving the current still visible while the clip buffers. The video is
+    // revealed by the "playing" event, not here.
+    setVideoVisible(false);
     video.src = clipUrl(manifest.meta.mediaBase, result.clip.id);
     // video.play() must run synchronously inside this click handler — not
     // after an await — or mobile browsers refuse the autoplay (errata #4).
     const playPromise = video.play();
-    setPlayback((prev) => onPlaying(prev));
     playPromise?.catch(handlePlaybackFailure);
   }
 
@@ -88,6 +97,11 @@ export default function Stage({
       if (!video) return;
       setProgress(bufferedProgress(video.buffered, video.duration));
     }
+    function onVideoPlaying() {
+      // First rendered frame is ready — safe to reveal without a black flash.
+      setPlayback((prev) => onPlaying(prev));
+      setVideoVisible(true);
+    }
     function onVideoEnded() {
       const clipId = activeClipIdRef.current;
       if (clipId) {
@@ -96,6 +110,7 @@ export default function Stage({
       }
       activeClipIdRef.current = null;
       retriedRef.current = false;
+      // Keep the video's last frame up; the new still's onLoad releases it.
       setPlayback(onEnded());
       setProgress(0);
     }
@@ -104,10 +119,12 @@ export default function Stage({
     }
 
     video.addEventListener("progress", onProgress);
+    video.addEventListener("playing", onVideoPlaying);
     video.addEventListener("ended", onVideoEnded);
     video.addEventListener("error", onVideoError);
     return () => {
       video.removeEventListener("progress", onProgress);
+      video.removeEventListener("playing", onVideoPlaying);
       video.removeEventListener("ended", onVideoEnded);
       video.removeEventListener("error", onVideoError);
     };
@@ -116,41 +133,40 @@ export default function Stage({
 
   if (!frame) {
     return (
-      <div className="flex aspect-[7/4] w-full max-w-[1344px] items-center justify-center bg-black text-zinc-400">
+      <div className="flex h-full w-full items-center justify-center bg-black text-zinc-400">
         Unknown frame: {state.currentFrame}
       </div>
     );
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-[1344px] touch-manipulation overflow-hidden bg-black">
-      <div className="relative aspect-[7/4] w-full">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={stillUrl(manifest.meta.mediaBase, frame.hash, "jpg")}
-          alt=""
-          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-150 ${
-            playback.phase === "playing" ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        <video
-          ref={videoRef}
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-150 ${
-            playback.phase === "playing" ? "opacity-100" : "opacity-0"
-          }`}
-        />
-        <HotspotLayer
-          manifest={manifest}
-          frame={frame}
-          interactive={interactionEnabled && playback.phase === "still"}
-          onRegionClick={handleRegionClick}
-        />
-      </div>
+    <div className="relative h-full w-full touch-manipulation overflow-hidden bg-black">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={stillUrl(manifest.meta.mediaBase, frame.hash, "jpg")}
+        alt=""
+        onLoad={() => setVideoVisible(false)}
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <video
+        ref={videoRef}
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ${
+          videoVisible ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <HotspotLayer
+        manifest={manifest}
+        frame={frame}
+        interactive={interactionEnabled && playback.phase === "still"}
+        onRegionClick={handleRegionClick}
+      />
       {(playback.phase === "loading" || playback.phase === "playing") && (
-        <ProgressBar progress={progress} />
+        <div className="absolute inset-x-0 bottom-0 z-10">
+          <ProgressBar progress={progress} />
+        </div>
       )}
     </div>
   );
