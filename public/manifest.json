@@ -10,6 +10,13 @@
   },
   "locations": [
     {
+      "id": "alley-ahead",
+      "nameEn": "Alley Ahead",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
       "id": "center-house-door",
       "nameEn": "Center House Door",
       "nameZh": "河灯镇一角",
@@ -900,6 +907,151 @@
             768
           ],
           "labelEn": "back out through the doors",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "62b4917e85c2856e": {
+      "hash": "62b4917e85c2856e",
+      "location": "alley-ahead",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "62b4917e85c2856e",
+        "jpg": "62b4917e85c2856e"
+      },
+      "regions": [
+        {
+          "id": "into-left-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              420,
+              80
+            ],
+            [
+              420,
+              560
+            ],
+            [
+              0,
+              560
+            ]
+          ],
+          "bbox": [
+            0,
+            80,
+            420,
+            480
+          ],
+          "labelEn": "through the left house door",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "deeper-into-alley",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              420,
+              80
+            ],
+            [
+              700,
+              80
+            ],
+            [
+              700,
+              480
+            ],
+            [
+              420,
+              480
+            ]
+          ],
+          "bbox": [
+            420,
+            80,
+            280,
+            400
+          ],
+          "labelEn": "deeper into the misty alley",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-lantern-eaves",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              720,
+              40
+            ],
+            [
+              1240,
+              40
+            ],
+            [
+              1240,
+              520
+            ],
+            [
+              720,
+              520
+            ]
+          ],
+          "bbox": [
+            720,
+            40,
+            520,
+            480
+          ],
+          "labelEn": "right house with hanging lanterns",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-red-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              520,
+              80
+            ],
+            [
+              680,
+              80
+            ],
+            [
+              680,
+              300
+            ],
+            [
+              520,
+              300
+            ]
+          ],
+          "bbox": [
+            520,
+            80,
+            160,
+            220
+          ],
+          "labelEn": "look at the hanging red lantern",
           "tags": [],
           "dialogue": []
         }
@@ -2924,6 +3076,7 @@
         }
       ],
       "edges": {
+        "alley-ahead": "75e907fb4d4f5537",
         "left-doorway": "88a9babae0c9724a"
       }
     },
@@ -3219,6 +3372,20 @@
     }
   },
   "clips": {
+    "75e907fb4d4f5537": {
+      "id": "75e907fb4d4f5537",
+      "from": "e6c105a55927a012",
+      "region": "alley-ahead",
+      "to": "62b4917e85c2856e",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks straight into the misty alley between the houses. Camera eases forward with her. Stay on the planks. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 614637395,
+        "firstFrameSimilarity": 0.9928930157089872
+      },
+      "approvedAt": "2026-09-04T11:32:12Z"
+    },
     "39869fbe8a64db3d": {
       "id": "39869fbe8a64db3d",
       "from": "ae3ca595f42fde95",
