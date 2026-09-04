@@ -213,6 +213,13 @@
       "ambientAudio": null
     },
     {
+      "id": "smell-rice",
+      "nameEn": "Smell Rice",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
+      "ambientAudio": null
+    },
+    {
       "id": "stilt-houses",
       "nameEn": "Stilt Houses",
       "nameZh": "\u540a\u811a\u697c",
@@ -1299,13 +1306,47 @@
           "labelEn": "flagstone street ahead",
           "tags": [],
           "dialogue": []
+        },
+        {
+          "id": "smell-rice",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              337,
+              339
+            ],
+            [
+              533,
+              339
+            ],
+            [
+              533,
+              498
+            ],
+            [
+              337,
+              498
+            ]
+          ],
+          "bbox": [
+            337,
+            339,
+            196,
+            159
+          ],
+          "labelEn": "the rice",
+          "tags": [],
+          "dialogue": []
         }
       ],
       "edges": {
         "moored-boat": "6cfa6d5c29830e5f",
         "stilt-row": "26c50a57f02873a2",
         "stone-stairs": "71740f7b8d105bfd",
-        "street-ahead": "a4c2b4a9bd02910f"
+        "street-ahead": "a4c2b4a9bd02910f",
+        "smell-rice": "e901bdec6d12e8cf"
       }
     },
     "847731aa9ecf990e": {
@@ -4934,6 +4975,118 @@
         }
       ],
       "edges": {}
+    },
+    "a35a8233c18f2586": {
+      "hash": "a35a8233c18f2586",
+      "location": "smell-rice",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "a35a8233c18f2586",
+        "jpg": "a35a8233c18f2586"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -5426,6 +5579,20 @@
         "firstFrameSimilarity": 0.9878255377322315
       },
       "approvedAt": "2026-09-04T13:14:09Z"
+    },
+    "e901bdec6d12e8cf": {
+      "id": "e901bdec6d12e8cf",
+      "from": "83ebdc9112aeb95a",
+      "region": "smell-rice",
+      "to": "a35a8233c18f2586",
+      "durationS": 6.583333333333333,
+      "prompt": "She leans into the steaming rice and smells it. Close-up of the rice filling the last frame. Same clothes, same Ghibli paint.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1796636618,
+        "firstFrameSimilarity": 0.9897929687570957
+      },
+      "approvedAt": "2026-09-04T14:26:18Z"
     }
   },
   "npcs": {}
