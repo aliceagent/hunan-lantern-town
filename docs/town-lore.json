@@ -1,0 +1,1036 @@
+{
+  "town": {
+    "id": "hedeng-zhen",
+    "nameZh": "河灯镇",
+    "nameEn": "Lanternriver Town"
+  },
+  "motifs": [
+    "wet dark flagstone with foot-worn hollows",
+    "unlit red paper lanterns on strings and eaves",
+    "steam column from the noodle cauldron and kettle wisps",
+    "cooking smoke seeping through roof tiles",
+    "laundry lines of indigo jackets and grey skirts",
+    "lengths of indigo-dyed cloth drying on frames",
+    "green slow opaque river, always beside or below, never underfoot",
+    "morning mist closing off street ends and the far bank",
+    "dark timber stilt legs black at the waterline",
+    "moss-shaggy tile roofs",
+    "strings of drying red chilies and hung corn under eaves",
+    "bamboo poles, ladders, baskets, and lantern ribs",
+    "no readable text on any sign, slate, sack, or packet"
+  ],
+  "promptLockNote": "SCENE LOCK: same misty autumn morning throughout — soft grey light, mist dissolving distances to white, every red paper lantern UNLIT, surfaces rain-wet but no rain falling. Studio Ghibli / Hayao Miyazaki painted animation matching the approved opening still. Third person, eye-level, her whole or three-quarter figure in frame. Her feet stay on wood, stone, or packed earth at all times — never on, in, or over open water, never aboard a boat. Keep at least two town motifs naturally in frame (steam, unlit lanterns, indigo laundry, green slow river, wet flagstone, mist). One continuous movement, no cuts; she ends settled and still so the last frame is stable. Any townsfolk appear mid-ground at their stations, absorbed in their work, silent, never reacting to camera. No text, no captions, no readable signage, no watermarks, no logos.",
+  "districts": [
+    {
+      "id": "shiban-laojie",
+      "nameZh": "石板老街",
+      "pinyin": "Shíbǎn Lǎojiē",
+      "nameEn": "Flagstone Old Street",
+      "parent": null,
+      "mood": "The town's held breath before full waking: wet stone, first customers, steam the only thing moving fast.",
+      "visuals": [
+        "dark rain-wet flagstones polished into shallow hollows",
+        "two-storey timber shopfronts with door-boards half taken down",
+        "strings of unlit red lanterns sagging between eaves",
+        "fat white steam column from the breakfast stall cauldron",
+        "hand-cart of river stone parked askew, paper umbrella drying against a wall",
+        "mist closing off both ends of the street in white"
+      ],
+      "rooms": [
+        {
+          "id": "street-hub",
+          "nameEn": "Street Hub",
+          "nameZh": "老街中段",
+          "whatYouSee": "The wide point of the lane where the noodle stall, tea house doors, and shop mouths all face each other; the spawn still.",
+          "enterFrom": ["gongyue-qiao", "jing-xiang", "diaojiaolou-shuixiang", "lao-matou"]
+        },
+        {
+          "id": "noodle-stall-awning",
+          "nameEn": "Noodle-Stall Awning",
+          "nameZh": "米粉摊",
+          "whatYouSee": "Three low tables under an oil-cloth awning, benches wiped, chili jars in a row, a cauldron of bone broth at a rolling simmer, one covered bowl set apart on the end board.",
+          "enterFrom": ["street-hub"]
+        },
+        {
+          "id": "general-store-front",
+          "nameEn": "General Store Front Room",
+          "nameZh": "杂货铺",
+          "whatYouSee": "A dim deep room smelling of kerosene and dried mushrooms: coils of rope, paper packets tied with grass string, a worn abacus on the counter.",
+          "enterFrom": ["street-hub"]
+        },
+        {
+          "id": "general-store-back",
+          "nameEn": "General Store Back Room",
+          "nameZh": "杂货铺后间",
+          "whatYouSee": "Stacked wide-mouth jars, a ladder to nowhere, sacks stenciled with characters faded past reading.",
+          "enterFrom": ["general-store-front"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "street-to-bridge-approach",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Follow the street toward the bridge",
+          "through": "links the spawn street to the Arched Moon Bridge approach",
+          "action": "She walks unhurried up the wet flagstone street, her basket on her arm, past a shopfront whose door-boards a shopkeeper is lifting down, under a sagging string of unlit red lanterns; ahead the mist thins and the dark tile roof of the covered bridge rises into view, and she slows to a stop at the foot of its low stone ramp, looking up at its mouth."
+        },
+        {
+          "id": "street-enter-noodle-stall",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Step in under the stall awning",
+          "through": "opens the noodle stall interior on the old street",
+          "action": "She crosses the flagstones toward the breakfast stall, ducks slightly under the dripping edge of the oil-cloth awning, and steps in between the low benches; the white steam from the cauldron rolls past her face and the light goes warm and close, and she stops beside a wiped table, one hand resting on its edge, the broad stall-keeper ladling broth behind the steam."
+        },
+        {
+          "id": "street-enter-general-store",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Step into the general store",
+          "through": "opens the general store interior on the old street",
+          "action": "She approaches the dark open mouth of the general store, lifts her skirt hem a hand's width, and steps carefully over the high wooden threshold; the grey street light gives way to brown dimness, coils of rope and hanging baskets closing overhead, and she stops just inside, blinking, before the long counter with its worn abacus."
+        },
+        {
+          "id": "street-look-umbrella-cart",
+          "kind": "look",
+          "priority": 3,
+          "labelEn": "Look at the resting cart and umbrella",
+          "through": "close-up beat on the street's props",
+          "action": "She walks a few steps to the wall where a hand-cart of river stone rests askew and a paper umbrella leans drying, and she bends toward the umbrella with her hands on her knees; the camera settles with her until the oil-paper umbrella fills the frame, mist beaded on its bamboo ribs, the wet wall stones soft behind it."
+        }
+      ]
+    },
+    {
+      "id": "lao-chaguan",
+      "nameZh": "老茶馆",
+      "pinyin": "Lǎo Cháguǎn",
+      "nameEn": "The Old Tea House",
+      "parent": "shiban-laojie",
+      "mood": "The town's parliament, still mostly empty; the day's first pot already breathing.",
+      "visuals": [
+        "open double-door front onto the street",
+        "tamped-earth floor gone glossy, square tables and benches",
+        "giant dented brass kettle on a clay stove",
+        "one window table set and empty, a covered birdcage beside it",
+        "upstairs balcony room cantilevered over the water on stilt legs"
+      ],
+      "rooms": [
+        {
+          "id": "chaguan-main-hall",
+          "nameEn": "Main Hall",
+          "nameZh": "茶馆堂屋",
+          "whatYouSee": "Square tables and benches, stove-glow on one wall, the stout keeper drying bowls in towers of five, the kept window table set and empty.",
+          "enterFrom": ["street-hub"]
+        },
+        {
+          "id": "chaguan-stove-corner",
+          "nameEn": "Stove Corner",
+          "nameZh": "灶角",
+          "whatYouSee": "A skinny boy feeding twigs to the fire under the great brass kettle; behind the woodpile, the corner of a chalk-marked slate.",
+          "enterFrom": ["chaguan-main-hall"]
+        },
+        {
+          "id": "chaguan-river-room",
+          "nameEn": "Upstairs River Room",
+          "nameZh": "临河雅间",
+          "whatYouSee": "A low table before an open window full of green river and mist; one string of the house's unlit lanterns hangs just past the eave, seen from inside.",
+          "enterFrom": ["chaguan-main-hall"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "street-enter-teahouse",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Step through the tea house doors",
+          "through": "opens the tea house off the old street",
+          "action": "She steps in through the tea house's open double doors from the grey street, the light warming to stove-glow as she passes between the square tables; the stout keeper glances up from drying a bowl and back down again, and she stops in the middle of the tamped-earth floor where the firelight touches it, her basket held in both hands."
+        },
+        {
+          "id": "teahouse-upstairs",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Go up to the river room",
+          "through": "opens the tea house's upstairs room over the water",
+          "action": "She climbs the steep boxed staircase at the back of the tea house, one hand sliding up the smooth-worn rail, ducks slightly at the top, and steps into the small upstairs room; the open window ahead is full of green river and white mist, and she crosses the creaking boards to stop beside the low table, facing out into the light."
+        },
+        {
+          "id": "teahouse-look-kettle",
+          "kind": "look",
+          "priority": 2,
+          "labelEn": "Look at the great kettle",
+          "through": "close-up beat at the tea house stove",
+          "action": "She walks toward the clay stove where the boy feeds twigs to the fire, and leans in with her hands clasped behind her back; the camera settles until the giant brass kettle fills the frame, its dented flank glowing with firelight, thin wisps of steam curling from the spout into the dim."
+        }
+      ]
+    },
+    {
+      "id": "gongyue-qiao",
+      "nameZh": "拱月桥",
+      "pinyin": "Gǒngyuè Qiáo",
+      "nameEn": "Arched Moon Bridge",
+      "parent": null,
+      "mood": "A wooden tunnel of quiet; footsteps get loud, the river goes silent underneath.",
+      "visuals": [
+        "covered wind-rain bridge of dark timber, tile roof shaggy with moss",
+        "gallery of thick posts and benches worn shiny",
+        "unlit lanterns down the whole ridgeline",
+        "green slow water and a moored sampan below the rail",
+        "the far bank arriving out of the mist plank by plank"
+      ],
+      "rooms": [
+        {
+          "id": "bridge-gallery",
+          "nameEn": "Bridge Gallery",
+          "nameZh": "桥廊",
+          "whatYouSee": "The covered walkway's near half: thick posts, benches between them, resin-smelling timber dimness, unlit lanterns overhead.",
+          "enterFrom": ["street-hub"]
+        },
+        {
+          "id": "bridge-mid-span",
+          "nameEn": "Mid-Span Bench Bay",
+          "nameZh": "桥心歇处",
+          "whatYouSee": "A widened bay with rail-side benches; the best view up and down the misty river, the moored sampan directly below.",
+          "enterFrom": ["bridge-gallery"]
+        },
+        {
+          "id": "far-bank-landing",
+          "nameEn": "Far-Bank Landing",
+          "nameZh": "对岸桥头",
+          "whatYouSee": "Stone steps off the bridge onto a packed-earth path that forks: upstream toward the mill wheel's groan, downstream along the stilt houses.",
+          "enterFrom": ["bridge-mid-span", "shui-mofang", "diaojiaolou-shuixiang"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "enter-bridge-from-street",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Go in under the bridge roof",
+          "through": "links the old street into the covered bridge",
+          "action": "She walks up the low stone ramp and in under the covered bridge's roof, the open grey light snapping to wooden dimness around her; thick posts slide past on either side, unlit lanterns hang down the ridgeline ahead, and she slows to a stop between the first benches, her footsteps suddenly loud on the planks."
+        },
+        {
+          "id": "bridge-walk-span",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Cross toward the far bank",
+          "through": "advances across the river to the far-bank side",
+          "action": "She walks down the center of the bridge gallery toward the far mouth, posts and shiny-worn benches passing steadily, the far bank brightening from white mist into green hillside through the opening ahead; she stops in the widened mid-span bay beside the rail, the slow green river showing below."
+        },
+        {
+          "id": "bridge-to-farbank-path",
+          "kind": "walk",
+          "priority": 2,
+          "labelEn": "Take the steps down to the far bank",
+          "through": "opens the far-bank path toward mill and stilt houses",
+          "action": "She walks out of the bridge's far mouth into the open mist and down the broad stone steps, one hand trailing the cold stone side-wall, and steps onto the packed-earth path at the bottom; she stops at the fork, looking upstream where a low tile roof and a slow dark wheel show through the white."
+        },
+        {
+          "id": "bridge-look-sampan",
+          "kind": "look",
+          "priority": 2,
+          "labelEn": "Look over the rail at the boat",
+          "through": "close-up beat from the bridge rail",
+          "action": "She steps to the mid-span rail and leans her forearms on the worn wood, her feet firm on the bridge planks, looking down; the camera settles over her shoulder until the moored sampan below fills the frame, its rope slack in the glassy green water, mist drifting across the hull."
+        }
+      ]
+    },
+    {
+      "id": "diaojiaolou-shuixiang",
+      "nameZh": "吊脚楼水巷",
+      "pinyin": "Diàojiǎolóu Shuǐxiàng",
+      "nameEn": "Stilt-House Waterside Walk",
+      "parent": null,
+      "mood": "Domestic morning conducted at balcony height; laundry, breakfast smoke, and gossip all hang over the same water.",
+      "visuals": [
+        "plank boardwalk below a leaning row of stilt houses",
+        "timber stilt legs black at the waterline",
+        "laundry lines of indigo jackets and grey skirts",
+        "strings of drying red chilies and corn under every eave",
+        "a sleeping cat on a warm windowsill",
+        "each household's lantern unlit in its remembered place"
+      ],
+      "rooms": [
+        {
+          "id": "boardwalk",
+          "nameEn": "Boardwalk",
+          "nameZh": "水巷板道",
+          "whatYouSee": "The springy plank water-street itself, gaps showing green water below, laundry poles overhead, stilt-house doorways opening off it.",
+          "enterFrom": ["street-hub", "far-bank-landing", "lao-matou", "ranfang"]
+        },
+        {
+          "id": "tian-house-ground",
+          "nameEn": "Tian House Ground Room",
+          "nameZh": "田家堂屋",
+          "whatYouSee": "The open ground floor of a stilt house: a loom with cloth in progress, grain jars, a fire pit with a blackened kettle on a chain.",
+          "enterFrom": ["boardwalk"]
+        },
+        {
+          "id": "tian-house-upstairs",
+          "nameEn": "Tian House Upstairs Room",
+          "nameZh": "田家楼上",
+          "whatYouSee": "A low room up a ladder-steep stair: sleeping mats, a red-painted dowry chest, one small window right over the river.",
+          "enterFrom": ["tian-house-ground"]
+        },
+        {
+          "id": "laundry-balcony",
+          "nameEn": "Laundry Balcony",
+          "nameZh": "晒台",
+          "whatYouSee": "A cantilevered drying balcony over the water: dripping indigo cloth racked overhead, a quick girl pinning washing, a ready school carrying-basket hung on the post.",
+          "enterFrom": ["tian-house-upstairs"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "boardwalk-walk-dockward",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Follow the boardwalk along the water",
+          "through": "advances the waterside walk toward the old dock",
+          "action": "She walks along the plank boardwalk under the leaning stilt houses, ducking her head beneath a low pole of dripping indigo laundry, the green river sliding past through gaps in the planks beside her feet; ahead the mist opens on stone steps and a mooring post, and she stops where the boards meet the dock's first stones."
+        },
+        {
+          "id": "boardwalk-enter-tian-house",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Step into the stilt house",
+          "through": "opens the Tian family stilt-house interior",
+          "action": "She turns from the boardwalk to an open stilt-house doorway hung with a string of dried chilies, steps over the worn sill, and enters the shadowed ground room; the boardwalk's water-light gives way to fire-pit glow, a loom standing mid-weave before her, and she stops beside it, one hand hovering near the stretched threads without touching."
+        },
+        {
+          "id": "tian-house-go-upstairs",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Climb to the upstairs room",
+          "through": "opens the stilt house's upper floor over the river",
+          "action": "She climbs the ladder-steep wooden stair inside the stilt house, both hands on the rails, and rises into the low upstairs room; morning light from one small river window falls across sleeping mats and a red-painted dowry chest, and she stops at the top step's landing, head slightly bowed under the beams, looking toward the bright little window."
+        },
+        {
+          "id": "stiltwalk-look-chilies",
+          "kind": "look",
+          "priority": 3,
+          "labelEn": "Look at the drying chilies",
+          "through": "close-up beat under the stilt-house eaves",
+          "action": "She stops on the boardwalk beneath a stilt-house eave and tilts her face up toward the strings of drying red chilies, rising slightly on her toes; the camera settles until the chilies fill the frame, red beads strung dense against grey weathered wood, a wisp of cooking smoke drifting through behind them."
+        }
+      ]
+    },
+    {
+      "id": "lao-matou",
+      "nameZh": "老码头",
+      "pinyin": "Lǎo Mǎtou",
+      "nameEn": "Old Ferry Dock",
+      "parent": null,
+      "mood": "The town's front door, half asleep; mist thickest here, sounds arrive before their objects.",
+      "visuals": [
+        "broad stone steps descending to the water in worn tiers",
+        "stone mooring post with a wet coiled rope",
+        "flat ferry boat nosed against the lowest dry step",
+        "an older sampan hauled out on the stones, mid-repair",
+        "a small waiting shed and a one-room hut with a fish-basket by the door"
+      ],
+      "rooms": [
+        {
+          "id": "dock-steps",
+          "nameEn": "Stone Water-Steps",
+          "nameZh": "码头石阶",
+          "whatYouSee": "Tiered stone steps down toward the water; the ferry below, the beached sampan under repair, the mooring post and rope. She goes no lower than the last dry tier.",
+          "enterFrom": ["street-hub", "boardwalk"]
+        },
+        {
+          "id": "waiting-shed",
+          "nameEn": "Ferry Waiting Shed",
+          "nameZh": "渡口棚屋",
+          "whatYouSee": "Three walls and a bench, a wall of old high-water scratches, and a brand-new sculling oar with an unweathered blade leaning in the corner.",
+          "enterFrom": ["dock-steps"]
+        },
+        {
+          "id": "chen-hut",
+          "nameEn": "Uncle Chen's Hut",
+          "nameZh": "陈伯的小屋",
+          "whatYouSee": "One room: a plank bed, a straw rain-cape on a peg, a cold stove, and two bowls washed and upside down though one man lives here.",
+          "enterFrom": ["dock-steps"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "street-walk-to-dock",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Go down to the old dock",
+          "through": "links the old street down to the ferry dock",
+          "action": "She walks down the sloping lane from the street toward the water, the mist thickening around her until the stone mooring post looms up out of the white with its wet coiled rope; she stops at the head of the broad dock steps, the flat ferry a grey shape on the green water below, an old man in a straw rain-cape standing motionless partway down."
+        },
+        {
+          "id": "dock-enter-waiting-shed",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Step into the waiting shed",
+          "through": "opens the ferry waiting shed",
+          "action": "She crosses the dock stones to the small three-walled shed and steps in under its low roof, the river mist cut off behind her; she stops before the long bench, turning toward the back wall where decades of old high-water scratches score the timber, a new pale-bladed sculling oar leaning in the corner beside her."
+        },
+        {
+          "id": "dock-enter-chen-hut",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Look in at the ferryman's hut",
+          "through": "opens Uncle Chen's one-room hut",
+          "action": "She stoops slightly and steps through the low doorway of the ferryman's hut, out of the mist into a dim dry room; her eyes adjust on a plank bed, a straw rain-cape hanging on its peg, and a cold stove, and she stops just inside with her basket held before her, still and respectful in someone else's small home."
+        },
+        {
+          "id": "dock-look-boat-repair",
+          "kind": "look",
+          "priority": 1,
+          "labelEn": "Watch the boat being mended",
+          "through": "close-up beat on the beached sampan repair",
+          "action": "She descends two tiers of the broad stone steps, her shoes careful on the wet stone, toward the beached sampan where a weathered man kneels with a mouth full of bamboo pegs; the camera settles until his hands fill the frame, fitting a fresh pale plank into the dark old hull and tapping a peg home with his mallet."
+        }
+      ]
+    },
+    {
+      "id": "denglong-pu",
+      "nameZh": "灯笼铺",
+      "pinyin": "Dēnglong Pù",
+      "nameEn": "The Lantern Workshop",
+      "parent": "shiban-laojie",
+      "mood": "The town's warmest room even with nothing lit; red paper everywhere holds its own glow in the grey.",
+      "visuals": [
+        "open storefront hung solid with finished red lanterns",
+        "workbench of bamboo ribs, paste pot, and brushes",
+        "drying loft where papered frames cure in rows",
+        "back yard of soaking bamboo and split canes",
+        "one small lantern frame set apart, freshly ribbed, not yet papered"
+      ],
+      "rooms": [
+        {
+          "id": "lantern-storefront",
+          "nameEn": "Storefront",
+          "nameZh": "铺面",
+          "whatYouSee": "The lantern-hung open front onto the street, red paper moons of every size crowding the eave.",
+          "enterFrom": ["street-hub"]
+        },
+        {
+          "id": "lantern-workbench",
+          "nameEn": "Workbench Room",
+          "nameZh": "作坊",
+          "whatYouSee": "Auntie Luo's bench: bamboo ribs, paste pot, tools in a worn roll, walls of red paper stock and one shelf of undyed white; at the bench's end, apart, the small unpapered frame with household-red paper laid ready.",
+          "enterFrom": ["lantern-storefront"]
+        },
+        {
+          "id": "lantern-drying-loft",
+          "nameEn": "Drying Loft",
+          "nameZh": "晾楼",
+          "whatYouSee": "Rows of curing lanterns hanging like pale fruit, window light coming through their paper from behind.",
+          "enterFrom": ["lantern-workbench"]
+        },
+        {
+          "id": "lantern-back-yard",
+          "nameEn": "Bamboo Back Yard",
+          "nameZh": "后院",
+          "whatYouSee": "A wet little court where bamboo soaks in a stone trough; split canes lean in sheaves, a small boy's chalk circles cover the low wall, and a grey cat patrols the top of it.",
+          "enterFrom": ["lantern-workbench"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "street-enter-lantern-shop",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Duck in under the lanterns",
+          "through": "opens the lantern workshop off the old street",
+          "action": "She steps from the street in under the workshop's eave, brushing carefully beneath the lowest hanging lantern so it sways behind her, and enters the red-glowing shade of the shop; she stops before the long workbench where a sturdy aproned woman ties bamboo ribs, paste-brush tucked behind her ear, hands never pausing."
+        },
+        {
+          "id": "workshop-climb-loft",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Climb to the drying loft",
+          "through": "opens the workshop's curing loft",
+          "action": "She climbs the ladder-stair at the back of the workbench room, steadying herself on the smooth rungs, and rises into the drying loft; rows of curing lanterns open around her like pale hanging fruit, window light glowing through their paper, and she stops at the top among them, turning slowly in place."
+        },
+        {
+          "id": "workshop-to-back-yard",
+          "kind": "walk",
+          "priority": 3,
+          "labelEn": "Go out to the bamboo yard",
+          "through": "opens the workshop's back court",
+          "action": "She walks through the workbench room and out its low back door into the small wet courtyard, stepping down onto rain-dark stone; bamboo soaks in a trough beside her and split canes lean in sheaves against the wall, and she stops in the middle of the little yard as a grey cat rounds the wall-top above chalked circles."
+        },
+        {
+          "id": "workshop-look-small-frame",
+          "kind": "look",
+          "priority": 1,
+          "labelEn": "Look at the small unpapered lantern",
+          "through": "story beat: the lantern being made for her household",
+          "action": "She leans toward the end of the workbench where one small lantern frame sits apart from the finished red rows, and bends close with her hands on the bench edge; the camera settles until the little frame fills the frame — fresh pale bamboo ribs tied with red thread, a folded sheet of household-red paper laid ready beside it."
+        }
+      ]
+    },
+    {
+      "id": "jing-xiang",
+      "nameZh": "井巷",
+      "pinyin": "Jǐng Xiàng",
+      "nameEn": "Well Lane",
+      "parent": null,
+      "mood": "The town's back-of-house; narrower and more private than the street — the lane where you're a neighbor, not a customer.",
+      "visuals": [
+        "narrow climbing lane of packed earth and stone steps",
+        "high whitewashed walls streaked with rain",
+        "the public well with a rope-grooved stone lip",
+        "herb bundles drying under the herb shop's eave",
+        "black-lacquered household gates set in the walls"
+      ],
+      "rooms": [
+        {
+          "id": "well-court",
+          "nameEn": "Well Court",
+          "nameZh": "井台",
+          "whatYouSee": "A widened bend with the well, a full wooden bucket beside it, a stone bench, and a washing paddle leaning by a basin.",
+          "enterFrom": ["street-hub", "gupo-yuanzi", "xuetang"]
+        },
+        {
+          "id": "herb-shop-front",
+          "nameEn": "Herb Shop Front",
+          "nameZh": "药铺",
+          "whatYouSee": "A counter backed by a wall of a hundred small drawers, hand scales, a tiny old woman weighing something pale into paper; one tied packet set aside, marked with a single brushed circle.",
+          "enterFrom": ["well-court"]
+        },
+        {
+          "id": "herb-drying-room",
+          "nameEn": "Herb Drying Room",
+          "nameZh": "晾药间",
+          "whatYouSee": "Behind a curtain: racks of cut roots and leaves, the air thick and bittersweet, a hand-cranked slicing bench.",
+          "enterFrom": ["herb-shop-front"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "street-walk-well-lane",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Turn up the narrow lane",
+          "through": "links the old street into the back lanes and toward home",
+          "action": "She turns off the flagstone street into a narrow climbing lane between high whitewashed walls, her shoes finding the worn stone steps set into the packed earth; the walls draw close and quiet around her, streaked dark with rain, and the lane bends open ahead into a small court where a stone well stands with a full bucket beside it, and she stops at the court's edge."
+        },
+        {
+          "id": "lane-enter-herb-shop",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Step into the herb shop",
+          "through": "opens the herb shop on Well Lane",
+          "action": "She steps in through the herb shop's half-open shutter front, ducking under the bundles of drying plants hung at the eave, into a dimness lined floor to ceiling with small wooden drawers; the air is bittersweet and still, and she stops before the counter where hand scales hang balanced, a tiny bright-eyed old woman folding a paper packet on the other side."
+        },
+        {
+          "id": "lane-look-well",
+          "kind": "look",
+          "priority": 3,
+          "labelEn": "Look at the old well",
+          "through": "close-up beat at the well court",
+          "action": "She crosses the small court to the well and rests both hands on its cold stone rim, leaning to look; the camera settles until the well lip fills the frame — stone grooved deep by generations of rope, a wet coil of it lying slack, the full wooden bucket beside it beaded with mist."
+        }
+      ]
+    },
+    {
+      "id": "gupo-yuanzi",
+      "nameZh": "姑婆的院子",
+      "pinyin": "Gūpó de Yuànzi",
+      "nameEn": "Great-Aunt's Courtyard",
+      "parent": "jing-xiang",
+      "mood": "The one place in town that is hers now; small, swept, exact — everything old except the things put out for her, which are conspicuously new.",
+      "visuals": [
+        "black-lacquered two-leaf gate in the lane wall",
+        "pocket courtyard with one persimmon tree still holding fruit",
+        "stone sink and herbs in cracked jars",
+        "kitchen glowing with stove-light, table set for two",
+        "the household altar kept plainly: portrait, fresh tea, two oranges, a small carved ferry boat"
+      ],
+      "rooms": [
+        {
+          "id": "gate-passage",
+          "nameEn": "Gate Passage",
+          "nameZh": "门道",
+          "whatYouSee": "The black gate and its short covered passage; on the outer handle, some mornings, a wrapped river fish tied with green cord.",
+          "enterFrom": ["well-court"]
+        },
+        {
+          "id": "courtyard",
+          "nameEn": "Courtyard",
+          "nameZh": "院子",
+          "whatYouSee": "Persimmon tree, big water jar, a bamboo chair with a folded blanket, swept stone underfoot.",
+          "enterFrom": ["gate-passage"]
+        },
+        {
+          "id": "kitchen",
+          "nameEn": "Kitchen",
+          "nameZh": "灶屋",
+          "whatYouSee": "A wok on a mud-brick stove, steam, two bowls set out, one pair of chopsticks still paper-wrapped; a fine-flour sack with the miller's mark, a herb packet with a brushed circle.",
+          "enterFrom": ["courtyard"]
+        },
+        {
+          "id": "wanqing-room",
+          "nameEn": "Wanqing's Room",
+          "nameZh": "晚晴的房间",
+          "whatYouSee": "A narrow bed with a sun-smelling quilt, her small bundle from home half unpacked, a newly papered window letting in soft white light.",
+          "enterFrom": ["courtyard"]
+        },
+        {
+          "id": "altar-room",
+          "nameEn": "Altar Room",
+          "nameZh": "堂屋神龛",
+          "whatYouSee": "The household altar, kept plainly and honestly: a framed portrait of a middle-aged man, tea poured fresh this morning, two oranges, incense burnt to grey, and a small ferry boat carved from one piece of wood.",
+          "enterFrom": ["courtyard"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "lane-enter-courtyard-gate",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Push open the black gate",
+          "through": "opens Wanqing's new home off Well Lane",
+          "action": "She stops before the black-lacquered gate in the lane wall, pushes one heavy leaf inward with both hands, and steps through the short covered passage into a small swept courtyard; a persimmon tree still holding fruit stands over a big water jar, and she stops beneath it, home, the gate sighing shut behind her."
+        },
+        {
+          "id": "courtyard-enter-kitchen",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Go into the kitchen",
+          "through": "opens the courtyard house's kitchen",
+          "action": "She crosses the swept courtyard stones and steps in through the kitchen's open door into stove-light and steam; a wok breathes on the mud-brick stove and the small table is set for two, one pair of chopsticks still wrapped in paper, and she stops beside the table looking down at the second place — hers."
+        },
+        {
+          "id": "courtyard-enter-her-room",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Go to her room",
+          "through": "opens Wanqing's own room",
+          "action": "She walks along the covered edge of the courtyard, one hand trailing the smooth wooden pillar, and pushes aside the cloth curtain of a narrow doorway; inside, soft white light from a newly papered window falls on a made bed and her own half-unpacked bundle from home, and she stops just inside the small room, letting the curtain fall still behind her."
+        },
+        {
+          "id": "courtyard-look-altar",
+          "kind": "look",
+          "priority": 2,
+          "labelEn": "Pause at the altar room",
+          "through": "story beat: the house's kept grief, and the carved ferry",
+          "action": "She steps quietly to the altar room's open threshold and stops there, not entering, her head slightly bowed; the camera settles past her until the altar fills the frame — a framed portrait of a middle-aged man, a cup of tea still steaming faintly, two oranges, grey incense ash, and beside them a small ferry boat carved from a single piece of wood."
+        }
+      ]
+    },
+    {
+      "id": "shui-mofang",
+      "nameZh": "水磨坊",
+      "pinyin": "Shuǐ Mòfáng",
+      "nameEn": "The Water Mill",
+      "parent": null,
+      "mood": "The loudest quiet place in town: one continuous wooden groan and water-rush that swallows every other sound.",
+      "visuals": [
+        "low tile-roofed mill straddling a stone millrace",
+        "dark dripping wheel turning slow",
+        "flour dust hanging in window light like indoor mist",
+        "sacks in rows, each with one clean handprint",
+        "flagged stone path along the race, solid underfoot"
+      ],
+      "rooms": [
+        {
+          "id": "millrace-walk",
+          "nameEn": "Millrace Walk",
+          "nameZh": "水槽小径",
+          "whatYouSee": "The flagged path along the stone race to the mill door, the wheel turning and dripping beside it; solid stone the whole way, water below and beside, never underfoot.",
+          "enterFrom": ["far-bank-landing"]
+        },
+        {
+          "id": "mill-floor",
+          "nameEn": "Mill Floor",
+          "nameZh": "磨坊",
+          "whatYouSee": "The grinding room: great round stones turning, the hopper trickling grain, the wooden drive shuddering in its frame, a floury young man hefting sacks; by the door, one small fine-flour sack set apart with a mark.",
+          "enterFrom": ["millrace-walk"]
+        },
+        {
+          "id": "grain-loft",
+          "nameEn": "Grain Loft",
+          "nameZh": "谷仓阁楼",
+          "whatYouSee": "Sacks in rows up broad ladder stairs, a hanging steelyard scale, an old swallow's nest in the rafters, dust motes in the window light.",
+          "enterFrom": ["mill-floor"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "farbank-walk-to-mill",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Follow the millrace to the mill",
+          "through": "links the far bank upstream to the water mill",
+          "action": "She walks the flagged stone path along the millrace, the dark dripping wheel turning slowly at her left with water combing off its blades, her feet sure on the wet flags; the mill's low doorway opens ahead in the tile-roofed wall, breathing flour dust into the mist, and she stops before it as the wooden groan of the works grows around her."
+        },
+        {
+          "id": "mill-enter-floor",
+          "kind": "enter",
+          "priority": 1,
+          "labelEn": "Step into the mill",
+          "through": "opens the grinding room",
+          "action": "She steps through the mill's doorway into a room hazed white with flour dust, the great round stones turning steadily at its center and the whole timber frame shuddering in rhythm; a big floury young man sets down a sack and goes on working, and she stops a respectful pace from the stones, watching the grain trickle from the hopper."
+        },
+        {
+          "id": "mill-climb-loft",
+          "kind": "enter",
+          "priority": 3,
+          "labelEn": "Climb to the grain loft",
+          "through": "opens the mill's upper loft",
+          "action": "She climbs the mill's broad ladder stairs with one hand on the flour-soft rail and rises into the grain loft, where sacks stand in patient rows and a steelyard scale hangs from a beam; dust motes drift through the small window's light, and she stops at the top among the sacks, the grinding below now a muffled heartbeat."
+        },
+        {
+          "id": "mill-look-wheel",
+          "kind": "look",
+          "priority": 2,
+          "labelEn": "Look at the turning wheel",
+          "through": "close-up beat on the mill wheel",
+          "action": "She stops on the flagged millrace path and turns to face the great wheel, keeping both feet planted on the stone edge above the channel; the camera settles until the wheel fills the frame — black dripping blades rising slow out of the race, water combing off them in silver threads, moss bright green on the axle beam."
+        }
+      ]
+    },
+    {
+      "id": "xuetang",
+      "nameZh": "学堂",
+      "pinyin": "Xuétáng",
+      "nameEn": "The School House",
+      "parent": "jing-xiang",
+      "mood": "Expectation: a room set for children who haven't arrived yet; the town's future with the chairs still up.",
+      "visuals": [
+        "modest gate off Well Lane into a swept front yard",
+        "bare paulownia tree and a row of small carrying-baskets by the door",
+        "low benches and a large slate with characters wiped to ghosts",
+        "teacher's study smelling of ink, a mended long gown on a hanger",
+        "children heard playing out back, not seen"
+      ],
+      "rooms": [
+        {
+          "id": "school-front-yard",
+          "nameEn": "Front Yard",
+          "nameZh": "学堂前院",
+          "whatYouSee": "Gate, bare tree, the row of little parked baskets, a hopscotch-like pattern scratched in the packed earth.",
+          "enterFrom": ["well-court"]
+        },
+        {
+          "id": "schoolroom",
+          "nameEn": "Schoolroom",
+          "nameZh": "课室",
+          "whatYouSee": "Low benches in rows, the big slate with yesterday's characters half-wiped into unreadable ghosts, a boy-sized abacus on the front bench.",
+          "enterFrom": ["school-front-yard"]
+        },
+        {
+          "id": "teacher-study",
+          "nameEn": "Teacher's Study",
+          "nameZh": "先生书房",
+          "whatYouSee": "One desk with inkstone and river-stone paperweight, many books, a mended long gown on a hanger, and a covered bowl of rice noodles going cold at the desk's edge.",
+          "enterFrom": ["schoolroom"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "lane-enter-school-yard",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Go through the school gate",
+          "through": "opens the school house off Well Lane",
+          "action": "She steps through the school's modest gate off the lane into a swept front yard, passing the bare paulownia tree and a neat row of small carrying-baskets parked by the door; children's voices drift from somewhere behind the building, and she stops midway across the yard, looking at the little baskets and the open schoolroom door beyond."
+        },
+        {
+          "id": "yard-enter-schoolroom",
+          "kind": "enter",
+          "priority": 2,
+          "labelEn": "Step into the schoolroom",
+          "through": "opens the schoolroom",
+          "action": "She steps over the schoolroom's low threshold and walks slowly down the aisle between rows of small benches, her footsteps soft on the swept boards; the great slate looms at the front, yesterday's characters wiped to grey ghosts, and she stops before it, small in the empty room set and waiting for its children."
+        },
+        {
+          "id": "schoolroom-look-study",
+          "kind": "look",
+          "priority": 2,
+          "labelEn": "Look in at the teacher's desk",
+          "through": "story beat: the stall's covered bowl reaches the teacher",
+          "action": "She pauses at the open door of the teacher's study and leans in without entering, one hand on the door frame; the camera settles past her until the desk fills the frame — a worn inkstone, papers weighted with a smooth river stone, and at the desk's edge a covered bowl of rice noodles, a thread of steam still rising from under its lid."
+        }
+      ]
+    },
+    {
+      "id": "ranfang",
+      "nameZh": "染坊",
+      "pinyin": "Rǎnfáng",
+      "nameEn": "The Indigo Dye Yard",
+      "parent": null,
+      "mood": "The town's color source: everything the valley wears begins as this yard's dripping blue.",
+      "visuals": [
+        "sunken indigo vats breathing a sharp green-blue smell",
+        "poles and frames hung with dyed cloth from near-black to sky-wash",
+        "slow drops falling from every hung length",
+        "stone paving with rinse channels running to the river",
+        "a dyer blue to the shoulders folding wet cloth"
+      ],
+      "rooms": [
+        {
+          "id": "dye-yard",
+          "nameEn": "Dye Yard",
+          "nameZh": "染坊院",
+          "whatYouSee": "The open stone-paved vat yard, cloth-hung frames on all sides, rinse channels carrying blue-grey water toward the river; on a clean rack apart, one child-sized length of perfect even blue.",
+          "enterFrom": ["boardwalk"]
+        },
+        {
+          "id": "vat-shed",
+          "nameEn": "Vat Shed",
+          "nameZh": "缸棚",
+          "whatYouSee": "A roofed row of sunken vats with wooden lids and long stirring poles, the indigo smell strongest here, blue splash-stains climbing every post.",
+          "enterFrom": ["dye-yard"]
+        },
+        {
+          "id": "drying-frame-lane",
+          "nameEn": "Drying-Frame Lane",
+          "nameZh": "晾布巷",
+          "whatYouSee": "An aisle between the hung cloth: walking it is walking through slow blue curtains, light filtering indigo on both sides.",
+          "enterFrom": ["dye-yard"]
+        }
+      ],
+      "journeys": [
+        {
+          "id": "boardwalk-walk-dye-yard",
+          "kind": "walk",
+          "priority": 1,
+          "labelEn": "Follow the boards to the dye yard",
+          "through": "links the stilt-house walk downstream to the dye yard",
+          "action": "She walks the last stretch of boardwalk past the final stilt house and steps down onto the dye yard's stone paving, frames of hanging indigo cloth rising around her from near-black to pale sky-wash; slow drops fall from the hung lengths, the sharp green-blue smell of the vats reaching her, and she stops at the yard's edge, blue on every side."
+        },
+        {
+          "id": "dyeyard-walk-cloth-lane",
+          "kind": "walk",
+          "priority": 2,
+          "labelEn": "Walk between the hanging cloth",
+          "through": "carries her through the drying frames",
+          "action": "She walks slowly down the narrow aisle between the drying frames, lengths of wet indigo cloth hanging close on both sides like slow blue curtains, stirring faintly as she passes; the filtered light turns cool and blue around her, and she stops where the aisle opens, one last drop striking the stone by her shoe."
+        },
+        {
+          "id": "dyeyard-enter-vat-shed",
+          "kind": "enter",
+          "priority": 3,
+          "labelEn": "Step in under the vat shed",
+          "through": "opens the vat shed",
+          "action": "She steps in under the vat shed's low roof, out of the drifting mist, and walks along the row of sunken vats with their heavy wooden lids, the indigo smell thick and sharp; long stirring poles lean against the splash-stained posts, and she stops beside the last vat, peering at the deep blue crusted on its rim without touching."
+        },
+        {
+          "id": "dyeyard-look-child-cloth",
+          "kind": "look",
+          "priority": 1,
+          "labelEn": "Look at the small blue cloth",
+          "through": "story beat: the schoolchild's jacket cloth, the town's circle of trades",
+          "action": "She crosses to the clean rack standing apart from the sale frames and leans toward the one short length hung there, her hands clasped behind her back; the camera settles until the cloth fills the frame — a child-sized length of flawless even indigo, the finest blue in the yard, one bright drop gathering at its corner and falling."
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "chen-bo",
+      "nameZh": "陈伯",
+      "pinyin": "Chén Bó",
+      "nameEn": "Uncle Chen",
+      "where": "lao-matou/dock-steps",
+      "look": "An old wiry man in a straw rain-cape over plain dark clothes, bamboo pole in hand, standing on the dock steps watching the mist.",
+      "tell": "The straw rain-cape, worn even when it is not raining.",
+      "secret": "His hut holds two washed bowls though he lives alone, and the fish left on the great-aunt's gate is tied with the same green cord as the basket by his door — he was her late husband's oldest friend and has left a fish there every market morning for years."
+    },
+    {
+      "id": "luo-shen",
+      "nameZh": "罗婶",
+      "pinyin": "Luó Shěn",
+      "nameEn": "Auntie Luo",
+      "where": "denglong-pu/lantern-workbench",
+      "look": "A sturdy middle-aged woman, apron over a dark jacket, sleeves tied back, hands always moving over bamboo ribs at her bench.",
+      "tell": "A paste-brush tucked behind her ear like a scholar's pen.",
+      "secret": "The small unpapered lantern frame set apart on her bench is eave-sized, not for sale, with household-red paper laid ready — the town's quiet custom when a household gains a member. It is for Wanqing."
+    },
+    {
+      "id": "shen-gupo",
+      "nameZh": "沈姑婆",
+      "pinyin": "Shěn Gūpó",
+      "nameEn": "Great-Aunt Shen",
+      "where": "gupo-yuanzi/kitchen",
+      "look": "A small upright old woman, silver hair in a tight bun, immaculate grey jacket, moving slowly but exactly between kitchen and courtyard.",
+      "tell": "She touches the persimmon tree's trunk once each time she crosses the courtyard.",
+      "secret": "The altar's tea is poured fresh every morning, and the little carved boat beside the portrait matches the real ferry at the dock plank for plank — her husband was the town's ferryman before Chen."
+    },
+    {
+      "id": "tian-shu",
+      "nameZh": "田叔",
+      "pinyin": "Tián Shū",
+      "nameEn": "Old Tian",
+      "where": "shiban-laojie/noodle-stall-awning",
+      "look": "A broad cheerful man in a white-grey apron, ladling from a huge cauldron behind a wall of steam.",
+      "tell": "A twist of dried chili tied to his ladle handle.",
+      "secret": "Every morning he covers one full bowl and sets it apart on the stall's end board; later that same bowl sits on the schoolteacher's desk — noodles for lessons, pride intact on both sides because nobody mentions it."
+    },
+    {
+      "id": "tian-xiaoman",
+      "nameZh": "田小满",
+      "pinyin": "Tián Xiǎomǎn",
+      "nameEn": "Tian Xiaoman",
+      "where": "diaojiaolou-shuixiang/laundry-balcony",
+      "look": "A quick slight girl of about twelve in a patched indigo jacket, pinning laundry on the stilt-house balcony, always half-leaning over the rail.",
+      "tell": "One sleeve dyed noticeably newer-blue than the rest of her jacket.",
+      "secret": "A school carrying-basket exactly like the ones parked at the school door hangs ready on her balcony post — she is starting school, and the child-sized indigo length at the dye yard is her jacket cloth."
+    },
+    {
+      "id": "shi-laoban",
+      "nameZh": "石老板",
+      "pinyin": "Shí Lǎobǎn",
+      "nameEn": "Boss Shi",
+      "where": "lao-chaguan/chaguan-main-hall",
+      "look": "A stout unhurried man in a buttoned grey vest, forever drying bowls with a grey cloth while watching the room.",
+      "tell": "He stacks dried bowls in perfect towers of exactly five.",
+      "secret": "The window table with the covered birdcage is wiped and set before any customer arrives and no one else ever sits there — a seat kept for one old regular, a standing courtesy the whole town honors without a sign."
+    },
+    {
+      "id": "a-jiu",
+      "nameZh": "阿九",
+      "pinyin": "Ā Jiǔ",
+      "nameEn": "A-Jiu",
+      "where": "lao-chaguan/chaguan-stove-corner",
+      "look": "A skinny attentive boy of about fourteen with sleeve-guards to his elbows, feeding twigs to the stove fire and hauling the big brass kettle two-handed.",
+      "tell": "A cloth knot-button missing at his collar, always the same one.",
+      "secret": "Tucked behind the stove woodpile is a slate covered in clumsy chalk strokes, wiped and rewritten — he is teaching himself characters, copying what he glimpses through the schoolroom door on kettle-water errands."
+    },
+    {
+      "id": "qin-shifu",
+      "nameZh": "覃师傅",
+      "pinyin": "Qín Shīfu",
+      "nameEn": "Master Qin",
+      "where": "ranfang/dye-yard",
+      "look": "A lean quiet man, forearms stained deep indigo to the shoulder, folding wet cloth with slow exact motions.",
+      "tell": "The permanent blue hands, visible across a whole street.",
+      "secret": "The child-sized length on the clean rack is his finest, evenest blue, better than anything on the sale frames — dye work traded against mill flour in the town's coinless circle of favors, destined for Xiaoman's school jacket."
+    },
+    {
+      "id": "ma-er",
+      "nameZh": "麻二",
+      "pinyin": "Má Èr",
+      "nameEn": "Ma Er",
+      "where": "shui-mofang/mill-floor",
+      "look": "A big slow-moving young man, hair and eyebrows white with flour, hefting grain sacks like pillows.",
+      "tell": "He leaves one clean handprint on each sack he has checked.",
+      "secret": "A small marked sack of extra-fine flour sits apart by the mill door — the grade for an old woman's cooking — and a sack with the same mark already stands in the great-aunt's kitchen. The town has been quietly carrying her household."
+    },
+    {
+      "id": "song-xiansheng",
+      "nameZh": "宋先生",
+      "pinyin": "Sòng Xiānsheng",
+      "nameEn": "Teacher Song",
+      "where": "xuetang/teacher-study",
+      "look": "A thin man in a carefully mended long gown, ink-stained fingers, moving between the low benches setting each one straight.",
+      "tell": "The neat visible mends on his gown — poverty carried with total dignity.",
+      "secret": "The covered noodle bowl from the stall appears on his desk each morning and he never eats it where the street can see; he takes no money for teaching the stall-keeper's daughter, and the bowl is the answer he never has to acknowledge."
+    },
+    {
+      "id": "wu-popo",
+      "nameZh": "吴婆婆",
+      "pinyin": "Wú Pópo",
+      "nameEn": "Granny Wu",
+      "where": "jing-xiang/herb-shop-front",
+      "look": "A tiny bright-eyed old woman behind a counter backed by a hundred small drawers, weighing herbs with hand scales.",
+      "tell": "She taps each drawer twice before opening it.",
+      "secret": "A tied paper packet marked only with a brushed circle waits on her counter, prepared before it is asked for — the same circle-mark shows on a packet already in the great-aunt's kitchen. Standing weekly medicine."
+    },
+    {
+      "id": "yang-mujiang",
+      "nameZh": "杨木匠",
+      "pinyin": "Yáng Mùjiàng",
+      "nameEn": "Yang the Carpenter",
+      "where": "lao-matou/dock-steps",
+      "look": "A compact weathered man kneeling on the dock stones over a beached sampan, bamboo pegs held in his mouth, mallet in hand.",
+      "tell": "A curl of pale wood shaving always caught somewhere on his clothes.",
+      "secret": "The sampan he mends is not Chen's working ferry but a second boat being made sound, and a new sculling oar with an unweathered blade already leans in the waiting shed — the town is readying a boat it will soon need, now that a household has young hands again."
+    },
+    {
+      "id": "doudou",
+      "nameZh": "豆豆",
+      "pinyin": "Dòudou",
+      "nameEn": "Doudou",
+      "where": "denglong-pu/lantern-back-yard",
+      "look": "A round small boy of about five in a red-trimmed jacket, pursuing a grey cat with total dedication, always three steps behind it.",
+      "tell": "One shoe perpetually half off.",
+      "secret": "His chalk scribbles on the workshop's back-yard wall are circles within circles — a five-year-old's copies of lantern frames. The third generation of the craft, already drawing the family trade."
+    }
+  ],
+  "beats": [
+    {
+      "id": "set-aside-bowl",
+      "when": "early",
+      "ifPlayerGoes": "shiban-laojie",
+      "whatUnfolds": "At the noodle stall one covered bowl sits apart on the end board. First thread of the morning: someone in this town is fed without asking."
+    },
+    {
+      "id": "kept-table",
+      "when": "early",
+      "ifPlayerGoes": "lao-chaguan",
+      "whatUnfolds": "The tea house's window table is wiped, set, and empty, a covered birdcage beside it, before any customer arrives. This town keeps places for people."
+    },
+    {
+      "id": "unpapered-lantern",
+      "when": "early",
+      "ifPlayerGoes": "denglong-pu",
+      "whatUnfolds": "On Auntie Luo's bench, apart from the red rows, sits a small fresh lantern frame with household-red paper laid ready and no buyer in sight — a lantern that does not yet have its household."
+    },
+    {
+      "id": "two-bowls-one-hut",
+      "when": "mid",
+      "ifPlayerGoes": "lao-matou",
+      "whatUnfolds": "Chen's hut holds two washed bowls and one bed; on the stones Yang mends a second boat and a new oar already waits in the shed. The dock is preparing for more crossings than one old man makes."
+    },
+    {
+      "id": "balcony-basket",
+      "when": "mid",
+      "ifPlayerGoes": "diaojiaolou-shuixiang",
+      "whatUnfolds": "Xiaoman's laundry balcony holds a ready school carrying-basket, and one sleeve of her jacket is newer-blue than the rest. A child is about to start school."
+    },
+    {
+      "id": "circle-of-trades",
+      "when": "mid",
+      "ifPlayerGoes": "ranfang",
+      "whatUnfolds": "Qin's flawless child-sized blue hangs on the clean rack; at the mill, Ma Er's set-apart fine-flour sack waits by the door. Flour for dye, dye for a school jacket, noodles for lessons — the town's coinless circle of favors becomes visible."
+    },
+    {
+      "id": "bowl-arrives",
+      "when": "mid",
+      "ifPlayerGoes": "xuetang",
+      "whatUnfolds": "The covered bowl from the stall now sits on Teacher Song's desk, still faintly steaming, and the row of children's baskets by the door has room for one more. The morning's first threads tie themselves."
+    },
+    {
+      "id": "gate-fish",
+      "when": "late",
+      "ifPlayerGoes": "jing-xiang",
+      "whatUnfolds": "A wrapped river fish hangs on the great-aunt's black gate, tied with the same green cord as the basket by Chen's hut; at the right beat the player sees Chen set it on the gate handle and walk away without knocking."
+    },
+    {
+      "id": "altar-and-little-boat",
+      "when": "late",
+      "ifPlayerGoes": "gupo-yuanzi",
+      "whatUnfolds": "In the altar room: fresh tea, two oranges, a portrait, and a carved model of the ferry at the dock. Chen's fish, his two bowls, and the great-aunt's altar resolve into one old friendship, never spoken."
+    },
+    {
+      "id": "two-bowls-one-kitchen",
+      "when": "late",
+      "ifPlayerGoes": "gupo-yuanzi",
+      "whatUnfolds": "The kitchen table is set for two, one pair of chopsticks still paper-wrapped. The mirror of the ferryman's hut, and the morning's answer: the town made room. She lives here now."
+    },
+    {
+      "id": "lantern-goes-home",
+      "when": "late",
+      "ifPlayerGoes": "denglong-pu",
+      "whatUnfolds": "The small lantern is papered household-red and gone from the bench; returning by Well Lane, it hangs new and unlit above the great-aunt's gate, the fish taken in to the kitchen. The town has counted its newest member in the only ledger it keeps."
+    },
+    {
+      "id": "mist-lifts",
+      "when": "late",
+      "ifPlayerGoes": "shiban-laojie",
+      "whatUnfolds": "Back at the spawn street the steam column has customers around it, door-boards are fully down, the far end of the street has emerged from the white, and the lanterns hang in plain light, unlit, waiting for an evening the game never shows. The morning is over; the town is awake; so is she."
+    }
+  ]
+}
