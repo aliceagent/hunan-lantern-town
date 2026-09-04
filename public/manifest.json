@@ -52,6 +52,13 @@
       "ambientAudio": null
     },
     {
+      "id": "closer-to-cook",
+      "nameEn": "Closer To Cook",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
+      "ambientAudio": null
+    },
+    {
       "id": "covered-bridge",
       "nameEn": "The Covered Bridge",
       "nameZh": "\u98ce\u96e8\u6865",
@@ -150,10 +157,24 @@
       "ambientAudio": null
     },
     {
+      "id": "path-right",
+      "nameEn": "Path Right",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
+      "ambientAudio": null
+    },
+    {
       "id": "right-lantern-shop",
       "nameEn": "Right Lantern Shop",
       "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
       "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
+      "ambientAudio": null
+    },
+    {
+      "id": "right-stilt-house",
+      "nameEn": "Right Stilt House",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
       "ambientAudio": null
     },
     {
@@ -168,6 +189,13 @@
       "nameEn": "Riverside Stall",
       "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
       "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
+      "ambientAudio": null
+    },
+    {
+      "id": "shop-interior",
+      "nameEn": "Shop Interior",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
       "ambientAudio": null
     },
     {
@@ -203,6 +231,13 @@
       "nameEn": "Temple Stairs",
       "nameZh": "\u5e99\u524d\u77f3\u9636",
       "pinyin": "Mi\u00e0o Qi\u00e1n Sh\u00edji\u0113",
+      "ambientAudio": null
+    },
+    {
+      "id": "through-pavilion",
+      "nameEn": "Through Pavilion",
+      "nameZh": "\u6cb3\u706f\u9547",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
       "ambientAudio": null
     }
   ],
@@ -351,7 +386,8 @@
         }
       ],
       "edges": {
-        "back-down-street": "8f9106318847dbc5"
+        "back-down-street": "8f9106318847dbc5",
+        "shop-interior": "f2bda83b0b490e74"
       }
     },
     "27bae1ff9c26fd1a": {
@@ -803,7 +839,10 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "through-pavilion": "df46125fbc8c682f",
+        "right-stilt-house": "9d0db020af901434"
+      }
     },
     "5e9e9aec2b964b3b": {
       "hash": "5e9e9aec2b964b3b",
@@ -1940,7 +1979,9 @@
       ],
       "edges": {
         "onto-bridge": "08c70ec1dc6b9e90",
-        "far-stilt-houses": "dc7a2ad14b81d4db"
+        "far-stilt-houses": "dc7a2ad14b81d4db",
+        "closer-to-cook": "817e0f2d84ececf4",
+        "path-right": "93ca52c77872ee0f"
       }
     },
     "b31589ee8f44515d": {
@@ -3971,6 +4012,566 @@
         }
       ],
       "edges": {}
+    },
+    "58ce68d7c83f7302": {
+      "hash": "58ce68d7c83f7302",
+      "location": "closer-to-cook",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "58ce68d7c83f7302",
+        "jpg": "58ce68d7c83f7302"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "81f8fc5d0fb88c97": {
+      "hash": "81f8fc5d0fb88c97",
+      "location": "path-right",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "81f8fc5d0fb88c97",
+        "jpg": "81f8fc5d0fb88c97"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "1d3daa37baab7d5c": {
+      "hash": "1d3daa37baab7d5c",
+      "location": "through-pavilion",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "1d3daa37baab7d5c",
+        "jpg": "1d3daa37baab7d5c"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "0838bb45270a75a1": {
+      "hash": "0838bb45270a75a1",
+      "location": "right-stilt-house",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "0838bb45270a75a1",
+        "jpg": "0838bb45270a75a1"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "706f09cb928fa3a4": {
+      "hash": "706f09cb928fa3a4",
+      "location": "shop-interior",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "706f09cb928fa3a4",
+        "jpg": "706f09cb928fa3a4"
+      },
+      "regions": [
+        {
+          "id": "forward",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              286,
+              46
+            ],
+            [
+              736,
+              46
+            ],
+            [
+              736,
+              403
+            ],
+            [
+              286,
+              403
+            ]
+          ],
+          "bbox": [
+            286,
+            46,
+            450,
+            357
+          ],
+          "labelEn": "keep going",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "back",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              81,
+              357
+            ],
+            [
+              490,
+              357
+            ],
+            [
+              490,
+              541
+            ],
+            [
+              81,
+              541
+            ]
+          ],
+          "bbox": [
+            81,
+            357,
+            409,
+            184
+          ],
+          "labelEn": "go back",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-ahead",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              563,
+              57
+            ],
+            [
+              952,
+              57
+            ],
+            [
+              952,
+              316
+            ],
+            [
+              563,
+              316
+            ]
+          ],
+          "bbox": [
+            563,
+            57,
+            389,
+            259
+          ],
+          "labelEn": "look closer",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -4351,6 +4952,76 @@
         "firstFrameSimilarity": 0.9884307552189826
       },
       "approvedAt": "2026-09-04T12:52:27Z"
+    },
+    "817e0f2d84ececf4": {
+      "id": "817e0f2d84ececf4",
+      "from": "b1ef30f10531b230",
+      "region": "closer-to-cook",
+      "to": "58ce68d7c83f7302",
+      "durationS": 6.583333333333333,
+      "prompt": "She leans toward the stall. Camera dollies in until the steaming pot fills the frame. Close-up of the food, not a wide town shot. Keep Ghibli painting.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 546159658,
+        "firstFrameSimilarity": 0.9814886918632997
+      },
+      "approvedAt": "2026-09-04T13:11:51Z"
+    },
+    "93ca52c77872ee0f": {
+      "id": "93ca52c77872ee0f",
+      "from": "b1ef30f10531b230",
+      "region": "path-right",
+      "to": "81f8fc5d0fb88c97",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks right along the dirt path past the stall. Camera pans right down the bank. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1019898263,
+        "firstFrameSimilarity": 0.984098474366796
+      },
+      "approvedAt": "2026-09-04T13:11:52Z"
+    },
+    "df46125fbc8c682f": {
+      "id": "df46125fbc8c682f",
+      "from": "39fa13e1e64ec12f",
+      "region": "through-pavilion",
+      "to": "1d3daa37baab7d5c",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks through the pavilion toward the house with golden lattice windows. Camera eases forward through the opening. Stay on the boards. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 2058232891,
+        "firstFrameSimilarity": 0.9895333665808853
+      },
+      "approvedAt": "2026-09-04T13:11:53Z"
+    },
+    "9d0db020af901434": {
+      "id": "9d0db020af901434",
+      "from": "39fa13e1e64ec12f",
+      "region": "right-stilt-house",
+      "to": "0838bb45270a75a1",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns right toward the stilt house with the large red lantern. Camera pans right across the water to that house. Stay on the walkway. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 57544216,
+        "firstFrameSimilarity": 0.9896205964689866
+      },
+      "approvedAt": "2026-09-04T13:11:54Z"
+    },
+    "f2bda83b0b490e74": {
+      "id": "f2bda83b0b490e74",
+      "from": "0af7e80235596dc2",
+      "region": "shop-interior",
+      "to": "706f09cb928fa3a4",
+      "durationS": 6.583333333333333,
+      "prompt": "She steps through the open doorway into the warm shop, walking toward the shelves of lanterns and jars. Camera eases in with her. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1278149956,
+        "firstFrameSimilarity": 0.988493172983373
+      },
+      "approvedAt": "2026-09-04T13:12:18Z"
     }
   },
   "npcs": {}
