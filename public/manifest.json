@@ -6107,12 +6107,80 @@
           "labelEn": "into the kitchen",
           "tags": [],
           "dialogue": []
+        },
+        {
+          "id": "into-kitchen-3",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              195
+            ],
+            [
+              265,
+              195
+            ],
+            [
+              265,
+              356
+            ],
+            [
+              40,
+              356
+            ]
+          ],
+          "bbox": [
+            40,
+            195,
+            225,
+            161
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-kitchen-4",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              737,
+              195
+            ],
+            [
+              962,
+              195
+            ],
+            [
+              962,
+              356
+            ],
+            [
+              737,
+              356
+            ]
+          ],
+          "bbox": [
+            737,
+            195,
+            225,
+            161
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
         }
       ],
       "edges": {
         "into-kitchen": "76eede37c3d2784e",
         "into-doorway": "ffe676edd2902557",
-        "into-kitchen-2": "ed60e2fdb780d8dc"
+        "into-kitchen-2": "ed60e2fdb780d8dc",
+        "into-kitchen-3": "b9ec0db6a4173c6d",
+        "into-kitchen-4": "f5905fdd50f60a7d"
       }
     },
     "3ce7e59d954bffd0": {
@@ -8272,7 +8340,9 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "into-kitchen": "c5b87f1635eab1f5"
+      }
     },
     "5c519d6b7b1adfc8": {
       "hash": "5c519d6b7b1adfc8",
@@ -9335,6 +9405,243 @@
       "still": {
         "png": "aba9f91a7ab62553",
         "jpg": "aba9f91a7ab62553"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "f458978178dcb0f0": {
+      "hash": "f458978178dcb0f0",
+      "location": "into-kitchen-3",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "f458978178dcb0f0",
+        "jpg": "f458978178dcb0f0"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "ebdd29fd9b55f093": {
+      "hash": "ebdd29fd9b55f093",
+      "location": "into-kitchen-4",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "ebdd29fd9b55f093",
+        "jpg": "ebdd29fd9b55f093"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "37ac3da7bf34601c": {
+      "hash": "37ac3da7bf34601c",
+      "location": "into-kitchen",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "37ac3da7bf34601c",
+        "jpg": "37ac3da7bf34601c"
       },
       "regions": [
         {
@@ -10555,6 +10862,48 @@
         "firstFrameSimilarity": 0.9968462075255151
       },
       "approvedAt": "2026-09-04T16:48:56Z"
+    },
+    "b9ec0db6a4173c6d": {
+      "id": "b9ec0db6a4173c6d",
+      "from": "1a05c2a3efc928e2",
+      "region": "into-kitchen-3",
+      "to": "f458978178dcb0f0",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks through the nearest doorway into a kitchen. Inside there can be a stove, food cooking, and a cook at work \u2014 new objects and people may appear because she entered. Feet on wood or stone, never in the water. Camera eases with her through the threshold. Last frame is inside the kitchen. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1150852431,
+        "firstFrameSimilarity": 0.9966880123744807
+      },
+      "approvedAt": "2026-09-04T16:53:57Z"
+    },
+    "f5905fdd50f60a7d": {
+      "id": "f5905fdd50f60a7d",
+      "from": "1a05c2a3efc928e2",
+      "region": "into-kitchen-4",
+      "to": "ebdd29fd9b55f093",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks through the nearest doorway into a kitchen. Inside there can be a stove, food cooking, and a cook at work \u2014 new objects and people may appear because she entered. Feet on wood or stone, never in the water. Camera eases with her through the threshold. Last frame is inside the kitchen. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 2134185635,
+        "firstFrameSimilarity": 0.9967122383490077
+      },
+      "approvedAt": "2026-09-04T16:58:57Z"
+    },
+    "c5b87f1635eab1f5": {
+      "id": "c5b87f1635eab1f5",
+      "from": "1b9ce5335eaa4bf2",
+      "region": "into-kitchen",
+      "to": "37ac3da7bf34601c",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks through the nearest doorway into a kitchen. Inside there can be a stove, food cooking, and a cook at work \u2014 new objects and people may appear because she entered. Feet on wood or stone, never in the water. Camera eases with her through the threshold. Last frame is inside the kitchen. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 458810877,
+        "firstFrameSimilarity": 0.9949257087881512
+      },
+      "approvedAt": "2026-09-04T17:03:58Z"
     }
   },
   "npcs": {}
