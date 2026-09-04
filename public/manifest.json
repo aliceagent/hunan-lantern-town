@@ -24,6 +24,13 @@
       "ambientAudio": null
     },
     {
+      "id": "bridge-house-left",
+      "nameEn": "Near End of the Bridge",
+      "nameZh": "\u6865\u5934",
+      "pinyin": "Qi\u00e1ot\u00f3u",
+      "ambientAudio": null
+    },
+    {
       "id": "center-house-door",
       "nameEn": "Center House Door",
       "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
@@ -2072,7 +2079,8 @@
       ],
       "edges": {
         "far-bank-walk": "8b9ffdf2a8f39091",
-        "riverside-stall": "9da16d71a63b5f64"
+        "riverside-stall": "9da16d71a63b5f64",
+        "bridge-house-left": "2ca5f507302e6c91"
       }
     },
     "bb49ea2e711cb615": {
@@ -3730,6 +3738,118 @@
         }
       ],
       "edges": {}
+    },
+    "b3b165a7a3ff309c": {
+      "hash": "b3b165a7a3ff309c",
+      "location": "bridge-house-left",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "b3b165a7a3ff309c",
+        "jpg": "b3b165a7a3ff309c"
+      },
+      "regions": [
+        {
+          "id": "left-house-door",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              20,
+              80
+            ],
+            [
+              300,
+              80
+            ],
+            [
+              300,
+              360
+            ],
+            [
+              20,
+              360
+            ]
+          ],
+          "bbox": [
+            20,
+            80,
+            280,
+            280
+          ],
+          "labelEn": "wooden doors of the left house",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              480,
+              40
+            ],
+            [
+              900,
+              40
+            ],
+            [
+              900,
+              320
+            ],
+            [
+              480,
+              320
+            ]
+          ],
+          "bbox": [
+            480,
+            40,
+            420,
+            280
+          ],
+          "labelEn": "into the covered pavilion",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-pavilion-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              720,
+              80
+            ],
+            [
+              880,
+              80
+            ],
+            [
+              880,
+              260
+            ],
+            [
+              720,
+              260
+            ]
+          ],
+          "bbox": [
+            720,
+            80,
+            160,
+            180
+          ],
+          "labelEn": "look at the pavilion lantern",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -4082,6 +4202,20 @@
         "firstFrameSimilarity": 0.9839997831248471
       },
       "approvedAt": "2026-09-04T12:22:31Z"
+    },
+    "2ca5f507302e6c91": {
+      "id": "2ca5f507302e6c91",
+      "from": "b31589ee8f44515d",
+      "region": "bridge-house-left",
+      "to": "b3b165a7a3ff309c",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left along the bridge toward the timber house with the red lantern. Camera pans left. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1048628343,
+        "firstFrameSimilarity": 0.9876802467521597
+      },
+      "approvedAt": "2026-09-04T12:47:50Z"
     }
   },
   "npcs": {}
