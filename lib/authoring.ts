@@ -63,6 +63,59 @@ export function cssRectToStillBbox(
   return [left, top, w, h];
 }
 
+/** `[x, y, w, h]` in still pixels — the same shape as manifest `region.bbox`. */
+export type StillBbox = [number, number, number, number];
+
+/**
+ * The tappable footprint of an existing region, as the overlap check needs it.
+ * Structurally compatible with manifest `Region` (which always has both), but
+ * tolerant of partial shapes so the math stays usable on hand-fed data.
+ */
+export interface RegionFootprint {
+  id: string;
+  bbox?: readonly [number, number, number, number] | null;
+  polygon?: ReadonlyArray<readonly [number, number]> | null;
+}
+
+/** A region's AABB in still pixels: its bbox, else its polygon's bounds. */
+export function regionAabb(region: RegionFootprint): StillBbox | null {
+  if (region.bbox) return [...region.bbox];
+  const polygon = region.polygon;
+  if (!polygon || polygon.length === 0) return null;
+  const xs = polygon.map(([x]) => x);
+  const ys = polygon.map(([, y]) => y);
+  const left = Math.min(...xs);
+  const top = Math.min(...ys);
+  return [left, top, Math.max(...xs) - left, Math.max(...ys) - top];
+}
+
+/**
+ * Whether two still-space bboxes conflict. Deliberately inclusive: boxes that
+ * merely share an edge or corner count — authoring wants to avoid conflict
+ * with existing taps, not maximize packing, so a 1px graze is a conflict too.
+ */
+export function bboxesConflict(a: StillBbox, b: StillBbox): boolean {
+  const [ax, ay, aw, ah] = a;
+  const [bx, by, bw, bh] = b;
+  return ax <= bx + bw && bx <= ax + aw && ay <= by + bh && by <= ay + ah;
+}
+
+/**
+ * The ids of every existing region whose AABB conflicts with a drawn bbox.
+ * Empty array means the space is clear and the draw may be copied.
+ */
+export function overlappingRegionIds(
+  bbox: StillBbox,
+  regions: readonly RegionFootprint[],
+): string[] {
+  return regions
+    .filter((region) => {
+      const aabb = regionAabb(region);
+      return aabb !== null && bboxesConflict(bbox, aabb);
+    })
+    .map((region) => region.id);
+}
+
 /** The block copied for Telegram. Keep it tight — it is pasted into chat as-is. */
 export function addPathBlock(input: {
   frameHash: string;

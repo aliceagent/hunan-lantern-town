@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { addPathBlock, containLayout, cssRectToStillBbox } from "../authoring";
+import {
+  addPathBlock,
+  bboxesConflict,
+  containLayout,
+  cssRectToStillBbox,
+  overlappingRegionIds,
+  regionAabb,
+  type StillBbox,
+} from "../authoring";
 
 describe("containLayout", () => {
   it("is identity when the container matches the frame", () => {
@@ -80,6 +88,101 @@ describe("cssRectToStillBbox", () => {
   it("returns null on degenerate container or frame", () => {
     expect(cssRectToStillBbox({ x1: 0, y1: 0, x2: 10, y2: 10 }, 0, 584, 1344, 768)).toBeNull();
     expect(cssRectToStillBbox({ x1: 0, y1: 0, x2: 10, y2: 10 }, 672, 584, 0, 768)).toBeNull();
+  });
+});
+
+describe("regionAabb", () => {
+  it("prefers the bbox when present", () => {
+    expect(
+      regionAabb({
+        id: "door",
+        bbox: [10, 20, 30, 40],
+        polygon: [
+          [0, 0],
+          [500, 0],
+          [500, 500],
+        ],
+      }),
+    ).toEqual([10, 20, 30, 40]);
+  });
+
+  it("falls back to the polygon's bounds", () => {
+    expect(
+      regionAabb({
+        id: "lantern",
+        polygon: [
+          [100, 50],
+          [300, 80],
+          [200, 250],
+        ],
+      }),
+    ).toEqual([100, 50, 200, 200]);
+  });
+
+  it("is null with neither shape", () => {
+    expect(regionAabb({ id: "ghost" })).toBeNull();
+    expect(regionAabb({ id: "ghost", bbox: null, polygon: [] })).toBeNull();
+  });
+});
+
+describe("bboxesConflict", () => {
+  const base: StillBbox = [100, 100, 200, 100];
+
+  it("is false when boxes are clearly apart", () => {
+    expect(bboxesConflict(base, [400, 100, 50, 50])).toBe(false);
+    expect(bboxesConflict(base, [100, 300, 200, 100])).toBe(false);
+  });
+
+  it("is true on real overlap", () => {
+    expect(bboxesConflict(base, [250, 150, 200, 100])).toBe(true);
+    // Containment either way.
+    expect(bboxesConflict(base, [150, 120, 20, 20])).toBe(true);
+    expect(bboxesConflict(base, [0, 0, 1344, 768])).toBe(true);
+  });
+
+  it("counts a shared edge or corner — avoid conflict, not maximize packing", () => {
+    // Right edge of base is x=300; a box starting exactly there grazes.
+    expect(bboxesConflict(base, [300, 100, 50, 100])).toBe(true);
+    // Corner touch at (300, 200).
+    expect(bboxesConflict(base, [300, 200, 50, 50])).toBe(true);
+  });
+
+  it("is false with a 1px gap", () => {
+    expect(bboxesConflict(base, [301, 100, 50, 100])).toBe(false);
+    expect(bboxesConflict(base, [100, 201, 200, 50])).toBe(false);
+  });
+
+  it("is symmetric", () => {
+    const other: StillBbox = [250, 150, 200, 100];
+    expect(bboxesConflict(base, other)).toBe(bboxesConflict(other, base));
+  });
+});
+
+describe("overlappingRegionIds", () => {
+  const regions = [
+    { id: "door", bbox: [0, 0, 100, 100] as const },
+    { id: "boat", bbox: [500, 300, 200, 150] as const },
+    {
+      id: "lantern",
+      polygon: [
+        [1000, 100],
+        [1100, 100],
+        [1050, 250],
+      ] as const,
+    },
+    { id: "ghost" }, // no shape: never conflicts
+  ];
+
+  it("returns every conflicting region id, in region order", () => {
+    expect(overlappingRegionIds([50, 50, 1100, 100], regions)).toEqual(["door", "lantern"]);
+  });
+
+  it("is empty over clear space", () => {
+    expect(overlappingRegionIds([200, 500, 100, 100], regions)).toEqual([]);
+  });
+
+  it("uses the polygon AABB for polygon-only regions", () => {
+    expect(overlappingRegionIds([950, 200, 60, 60], regions)).toEqual(["lantern"]);
   });
 });
 

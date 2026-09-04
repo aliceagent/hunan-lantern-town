@@ -84,6 +84,39 @@ body {
   }
 }
 
+/* "Add path" draw mode: every existing tappable region on the still, cool
+   teal so it reads as "occupied" against the amber in-progress drag rect. */
+.authoring-region {
+  fill: rgb(45 212 191 / 0.3);
+  stroke: rgb(153 246 228 / 0.8);
+  stroke-width: 1.5px;
+}
+
+/* A released drag hit this region: blink it red for the ~2s the error line
+   is up. Remounted per conflict (keyed) so a repeat offense replays. */
+.authoring-region-conflict {
+  fill: rgb(248 113 113 / 0.45);
+  stroke: rgb(248 113 113 / 0.9);
+  stroke-width: 2px;
+  animation: authoring-conflict-blink 0.5s ease-in-out 3;
+}
+
+@keyframes authoring-conflict-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .authoring-region-conflict {
+    animation: none;
+  }
+}
+
 /* The end of the visual world: a fog bank over the bottom of a leaf still
    (no warm hotspots — nothing generated beyond it yet). It fades in after a
    beat so it reads as the scene settling, not an error popping up. */

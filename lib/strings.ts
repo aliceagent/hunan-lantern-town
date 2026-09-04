@@ -39,6 +39,7 @@ export const STRINGS = {
     hint: "Drag a box over the painting",
     done: "Done",
     copied: "Copied",
+    overlap: "Overlaps an existing tap — pick empty space.",
     copyFallback: "Clipboard blocked — copy this by hand:",
     close: "Close",
     exit: "Exit draw mode",

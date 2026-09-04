@@ -1,15 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { addPathBlock, cssRectToStillBbox } from "@/lib/authoring";
+import { addPathBlock, cssRectToStillBbox, overlappingRegionIds } from "@/lib/authoring";
 import type { Frame } from "@/lib/manifest";
 import { STRINGS } from "@/lib/strings";
+import { polygonCentroid, polygonToPath } from "@/lib/svg";
 
 interface DragRect {
   x1: number;
   y1: number;
   x2: number;
   y2: number;
+}
+
+/** A released drag that hit existing regions; nonce remounts the flash so a repeat replays. */
+interface Conflict {
+  ids: string[];
+  nonce: number;
+}
+
+/** Show a region's label only when its box has room for it in still pixels. */
+function labelFits(region: Frame["regions"][number]): boolean {
+  const [, , w, h] = region.bbox;
+  return region.labelEn.length > 0 && w >= region.labelEn.length * 9 && h >= 26;
 }
 
 /**
@@ -36,6 +49,9 @@ export default function AddPathOverlay({
   const boxRef = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState<DragRect | null>(null);
   const [copied, setCopied] = useState(false);
+  // The last release that overlapped existing taps: flashes those regions red
+  // and shows the overlap line; nothing is copied. Cleared by timer or a new drag.
+  const [conflict, setConflict] = useState<Conflict | null>(null);
   // Set when the clipboard write is rejected/unavailable (Safari can decline
   // even in a gesture): a manual-copy textarea replaces silent failure.
   const [fallbackText, setFallbackText] = useState<string | null>(null);
@@ -54,6 +70,12 @@ export default function AddPathOverlay({
     return () => clearTimeout(timer);
   }, [copied]);
 
+  useEffect(() => {
+    if (!conflict) return;
+    const timer = setTimeout(() => setConflict(null), 2000);
+    return () => clearTimeout(timer);
+  }, [conflict]);
+
   function localPoint(event: React.PointerEvent): { x: number; y: number } | null {
     const el = boxRef.current;
     if (!el) return null;
@@ -67,6 +89,7 @@ export default function AddPathOverlay({
     const point = localPoint(event);
     if (!point) return;
     event.currentTarget.setPointerCapture(event.pointerId);
+    setConflict(null);
     setDrag({ x1: point.x, y1: point.y, x2: point.x, y2: point.y });
   }
 
@@ -92,6 +115,14 @@ export default function AddPathOverlay({
     );
     // A tap or a rect entirely in the letterbox void: not a path, stay armed.
     if (!bbox) return;
+    // A draw over an existing tap is a conflict, never a copy: flash the
+    // offending regions red, say why, and stay armed for another try.
+    const overlapIds = overlappingRegionIds(bbox, frame.regions);
+    if (overlapIds.length > 0) {
+      setCopied(false);
+      setConflict((prev) => ({ ids: overlapIds, nonce: (prev?.nonce ?? 0) + 1 }));
+      return;
+    }
     const text = addPathBlock({
       frameHash: frame.hash,
       locationId,
@@ -131,6 +162,42 @@ export default function AddPathOverlay({
       onPointerCancel={() => setDrag(null)}
       className="absolute inset-0 z-10 cursor-crosshair touch-none select-none"
     >
+      {/* Every existing tappable region on this still (warm or cold), teal so
+          Jonathan draws around them; the viewBox maps still pixels onto the
+          letterboxed painting exactly like HotspotLayer. Player hotspots are
+          separately locked while authoring — these are paint, not targets. */}
+      <svg
+        viewBox={`0 0 ${frame.width} ${frame.height}`}
+        className="pointer-events-none absolute inset-0 h-full w-full"
+      >
+        {frame.regions.map((region) => {
+          const flashing = conflict?.ids.includes(region.id) ?? false;
+          const [cx, cy] = polygonCentroid(region.polygon);
+          return (
+            <g key={region.id}>
+              <path
+                // Keyed on the nonce so a repeat conflict remounts the path
+                // and the red flash replays instead of staying finished.
+                key={flashing ? `flash-${conflict!.nonce}` : "calm"}
+                d={polygonToPath(region.polygon)}
+                vectorEffect="non-scaling-stroke"
+                className={flashing ? "authoring-region-conflict" : "authoring-region"}
+              />
+              {labelFits(region) && (
+                <text
+                  x={cx}
+                  y={cy}
+                  textAnchor="middle"
+                  className={`text-[14px] ${flashing ? "fill-red-200" : "fill-teal-100"}`}
+                  style={{ paintOrder: "stroke", stroke: "rgb(0 0 0 / 0.7)", strokeWidth: 3 }}
+                >
+                  {region.labelEn}
+                </text>
+              )}
+            </g>
+          );
+        })}
+      </svg>
       {rectStyle && (
         <div
           style={rectStyle}
@@ -157,6 +224,17 @@ export default function AddPathOverlay({
         >
           <span className="rounded-full border border-amber-300/40 bg-zinc-950/90 px-4 py-1.5 text-sm text-amber-200 shadow-lg">
             {STRINGS.authoring.copied}
+          </span>
+        </div>
+      )}
+      {conflict && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-4"
+        >
+          <span className="rounded-full border border-red-400/50 bg-zinc-950/90 px-4 py-1.5 text-center text-sm text-red-200 shadow-lg">
+            {STRINGS.authoring.overlap}
           </span>
         </div>
       )}
