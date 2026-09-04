@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { applyClipEnd, resolveClick, type PlayerState } from "@/lib/engine";
+import { applyClipEnd, isWorldEdge, resolveClick, type PlayerState } from "@/lib/engine";
 import type { Manifest, Npc } from "@/lib/manifest";
 import { bufferedProgress, clipUrl, stillUrl } from "@/lib/media";
 import { idlePlayback, onClick as onPlaybackClick, onEnded, onFailure, onPlaying } from "@/lib/playback";
 import HotspotLayer from "./HotspotLayer";
 import ProgressBar from "./ProgressBar";
+import WorldEdgeBanner from "./WorldEdgeBanner";
 
 export default function Stage({
   manifest,
@@ -167,6 +168,9 @@ export default function Stage({
         hintSignal={hintSignal}
         onRegionClick={handleRegionClick}
       />
+      {playback.phase === "still" && isWorldEdge(manifest, frame) && (
+        <WorldEdgeBanner hintSignal={hintSignal} />
+      )}
       {(playback.phase === "loading" || playback.phase === "playing") && (
         <div className="absolute inset-x-0 bottom-0 z-10">
           <ProgressBar progress={progress} />

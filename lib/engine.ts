@@ -62,6 +62,16 @@ export function isInteractive(manifest: Manifest, frame: Frame, region: Region):
 }
 
 /**
+ * The end of the visual world: nothing on this still is interactive — no
+ * warm hotspot, no known NPC. It is a leaf frame nothing has been generated
+ * beyond yet, so the UI owes the player an explanation (the world-edge
+ * banner) instead of a dead painting.
+ */
+export function isWorldEdge(manifest: Manifest, frame: Frame): boolean {
+  return frame.regions.every((region) => !isInteractive(manifest, frame, region));
+}
+
+/**
  * What a click on `regionId` of the current frame means. NPC regions open
  * their card (§6.2, "no video edge required"); a hotspot resolves through
  * `frames[hash].edges` — the locked (frameHash, regionId) cache key. Anything

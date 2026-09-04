@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { applyClipEnd, initialState, isInteractive, jumpToTrailStep, resolveClick } from "../engine";
+import {
+  applyClipEnd,
+  initialState,
+  isInteractive,
+  isWorldEdge,
+  jumpToTrailStep,
+  resolveClick,
+} from "../engine";
 import { parseManifest } from "../manifest";
 import { richFixture, s1Fixture } from "./fixtures";
 
@@ -75,6 +82,43 @@ describe("isInteractive", () => {
     expect(isInteractive(manifest, frame, byId("red-lanterns"))).toBe(true);
     expect(isInteractive(manifest, frame, byId("ferryman"))).toBe(true);
     expect(isInteractive(manifest, frame, byId("moored-boat"))).toBe(false);
+  });
+});
+
+describe("isWorldEdge", () => {
+  it("is false while anything on the frame is warm", () => {
+    expect(isWorldEdge(manifest, manifest.frames[START])).toBe(false);
+  });
+
+  it("is true on a leaf still whose regions are all cold", () => {
+    expect(isWorldEdge(manifest, manifest.frames[DEST])).toBe(true);
+  });
+
+  it("is true on a frame with no regions at all", () => {
+    const bare = structuredClone(manifest);
+    bare.frames[DEST].regions = [];
+    bare.frames[DEST].edges = {};
+    expect(isWorldEdge(bare, bare.frames[DEST])).toBe(true);
+  });
+
+  it("is false when an npc is present even with no clip edges", () => {
+    const withNpc = structuredClone(manifest);
+    withNpc.frames[DEST].regions.push({
+      id: "night-watcher",
+      objectId: null,
+      kind: "npc",
+      npc: "uncle-chen",
+      polygon: [
+        [10, 10],
+        [50, 10],
+        [50, 50],
+      ],
+      bbox: [10, 10, 40, 40],
+      labelEn: "the night watcher",
+      tags: [],
+      dialogue: [],
+    });
+    expect(isWorldEdge(withNpc, withNpc.frames[DEST])).toBe(false);
   });
 });
 

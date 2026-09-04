@@ -29,6 +29,16 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* The Path carousel scrolls horizontally without a visible bar — the card
+   cut off at the panel edge already says "more this way", and a scrollbar
+   inside a small popover is noise. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Widen the touch target ~12px beyond the polygon on every side; the stroke
    is transparent (still hit-testable) and non-scaling, so the padding is in
    screen pixels regardless of how far the 1344-unit viewBox is scaled down. */
@@ -65,5 +75,51 @@ body {
   .hotspot-hint-glow {
     animation: none;
     opacity: 0.7;
+  }
+}
+
+/* The end of the visual world: a fog bank over the bottom of a leaf still
+   (no warm hotspots — nothing generated beyond it yet). It fades in after a
+   beat so it reads as the scene settling, not an error popping up. */
+.world-edge-veil {
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 0.82) 0%,
+    rgb(9 9 11 / 0.5) 55%,
+    transparent 100%
+  );
+  animation: world-edge-rise 900ms ease-out 700ms both;
+}
+
+/* Hints on a leaf frame has nothing to glow, so it nudges the banner instead. */
+.world-edge-nudge {
+  animation: world-edge-nudge 1.2s ease-in-out;
+}
+
+@keyframes world-edge-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes world-edge-nudge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-edge-veil,
+  .world-edge-nudge {
+    animation: none;
   }
 }

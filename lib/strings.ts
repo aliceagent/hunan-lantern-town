@@ -21,6 +21,7 @@ export const STRINGS = {
     fullscreenUnavailable:
       "Safari can't hide the address bar. Add to Home Screen (Share menu) to play full screen.",
     path: "Path",
+    pathBack: "Back",
     pathStart: "The beginning",
     pathHere: "here",
     pathJumpTo: (name: string) => `Go back to ${name}`,
@@ -34,6 +35,10 @@ export const STRINGS = {
   },
   foggyToast: {
     message: "The path is foggy…",
+  },
+  worldEdge: {
+    title: "This is as far as the town goes, for now",
+    body: "Beyond here is still being painted. Open the menu and follow your Path back the way you came.",
   },
   hotspot: {
     npcHint: (nameEn: string) => nameEn,
