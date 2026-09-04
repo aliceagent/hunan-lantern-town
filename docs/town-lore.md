@@ -37,7 +37,7 @@ Tea House Lantern  │      │
 Adjacency for clip authoring (superset of the plan's L1–L5 adjacency, which stays valid):
 street ↔ bridge, street ↔ stilt-walk, street ↔ lantern-workshop, street ↔ dock, street ↔ tea-house, street ↔ well-lane; well-lane ↔ school, well-lane ↔ courtyard; bridge ↔ mill (via far-bank path), bridge ↔ stilt-walk; stilt-walk ↔ dock, stilt-walk ↔ dye-yard.
 
-Each district below gives: names, mood, what you see, its rooms/spaces (these are the future frame clusters), and **journeys** — movement clips that carry the player *through* the town, not camera pans. Journey `kind` follows the manifest vocabulary: `walk` (travel between spaces), `enter` (cross a threshold into an interior or up stairs into a room), `look` (approach + close-up; per errata #20 the last frame must be a close-up).
+Each district below gives: names, mood, what you see, its rooms/spaces (these are the future frame clusters), and **journeys** — movement clips that carry the player *through* the town, not camera pans. Journey `kind` follows the manifest vocabulary: `walk` (travel between spaces), `enter` (cross a threshold into an interior or up stairs into a room), `look` (approach + close-up; per errata #20 the last frame must be a close-up), and `interact` (she uses her hands or face on a tapped object; law and per-district catalog in §8).
 
 ---
 
@@ -344,3 +344,90 @@ These extend, and never override, the plan's errata (`--quality extra-fast`, ret
 8. **No readable text, ever** (locked). Signs, slates, sacks, packets: shapes and ghosts only. QA rejects legible characters in any language.
 9. **Respect the culture like a documentary would.** Props and actions stay period-plausible western-Hunan: shoulder-poles, hand scales, mud-brick stoves, bamboo everything. The altar room is filmed the way the kitchen is — a fact of the house, quiet and dignified. Nothing exoticized, nothing played for whimsy.
 10. **Journeys go through, not at.** A seeded `walk`/`enter` path should advance the player's position in the town graph (§2 adjacency), preferably revealing the *next* district's edge in its final frame (the bridge mouth at the street's end; the dye-yard's blue through the last stilt legs). Dead-end camera pushes with no arrival are look-shots' job, and even look shots arrive — at a close-up.
+
+---
+
+## 8. Hands on the world — `interact` journeys *(new law, locked)*
+
+*(Canon source: `docs/object-interactions.md`; this section folds it into the bible. `interact` joins `walk` / `enter` / `look` in the manifest `kind` vocabulary of §2, and the machine copies live in `town-lore.json` — both inside each district's `journeys` array and in the flat top-level `interactions` array Alice reads when seeding.)*
+
+Wanqing does not only walk. When the player taps an object, she **uses her hands — or leans in with her face — on that object**. The clip *is* the interaction, and it carries the same weight as journeys and enter-building paths.
+
+**The law (QA-enforced):**
+
+1. **The tap target is the object**, not a nearby path. She must **touch / smell / pull / ring / lift / knock** that object with her hands or face. Walking past it — or stopping beside it with her hands at her sides — is a **fail**.
+2. **The last frame shows the result.** The object has changed, or fills the shot: curtain drawn aside and the doorway revealed, bell still swinging, steam of rice in her face. The last frame becomes the next clickable still, so the result must *read* in one frame.
+3. **Clips may invent what the walk earns.** If she enters a kitchen, there can be a stove, food cooking, and a cook. New objects, rooms, and characters are how the town grows. Do not drop a random extra building into the *same* wide still with no travel (that's still a fail). Feet on wood, stone, or packed earth — never water (§7.1). Six-second grammar (§7.5). Morning, mist, lanterns unlit (§7.6). Altar room: threshold look only (§7.9).
+4. **Every still should offer at least one interact** if a catalog-plausible object is actually in the painting. Objects must be plausible in the room they're tapped in — a ladle at a cauldron, an abacus on a counter, never the reverse.
+
+**Gold standard — already in the game: smell the rice** *(street, noodle stall)*. She leans down into the steam of a fresh bowl and breathes it in; the last frame is a close-up of the rice, steam curling past her face at the frame's edge. Every interact clip is measured against this: object engaged with the body, result legible in the final frame.
+
+**H3 ACTION pattern (verbatim from the catalog):**
+
+```
+She steps to the [object] and [verb] it with her hands.
+Camera eases in. Last frame is a close-up of the [object] after the action
+([result]). Same clothes, same Ghibli paint. Do not walk away from it.
+If the object is not in the first frame, entering or walking may bring it into existence.
+```
+
+### Interact journeys by district
+
+These extend each district's Journeys list in §2 (they do not replace anything). Format: object → what she does → **last frame**.
+
+**8.1 石板老街 Flagstone Old Street** *(§2.1)*
+- *Interact — smell the rice (gold standard):* a fresh steaming bowl on the stall's end board → she plants her hands either side of it and leans her face down into the rising steam, eyes closing as she breathes in → **close-up of glistening rice noodles and broth, steam curling past her nose and chin at the frame's edge.**
+- *Interact — dip the ladle:* the long-handled ladle in the stall cauldron → she lifts it slowly, broth streaming back, the twist of dried chili swinging on its handle → **close-up of the full ladle over the cauldron, broth steaming, chili twist mid-sway.**
+- *Interact — click the abacus:* the worn abacus on the general store counter → she reaches out one finger and clicks a single bead across → **close-up of the abacus, one bead apart from its row, her fingertip just leaving the frame.**
+- *Interact — tilt the umbrella:* the paper umbrella drying against the wall → she takes its shaft and tilts it toward her, studying the beads of mist on its ribs → **close-up of the oil-paper canopy at a new angle, mist beads sliding along a bamboo rib.**
+
+**8.2 老茶馆 The Old Tea House** *(§2.2)*
+- *Interact — lift the bowl lid:* a lidded tea bowl on a set table → she lifts the lid a hand's width and tilts it, steam escaping → **close-up of the open bowl, tea leaves unfurling, steam rising past the tilted lid in her fingers.**
+- *Interact — pour from the kettle:* the great brass kettle on the clay stove → she wraps the handle with the folded grey cloth and tips it, pouring hot water into a waiting bowl → **close-up of the arc of steaming water meeting the bowl, the dented brass flank glowing.**
+- *Interact — open the shutter:* the half-closed shutter of the upstairs river room window → she pushes it fully open with one hand flat on the wood → **the window filled with green river and white mist, the shutter swung wide, her hand still on its edge.**
+
+**8.3 拱月桥 Arched Moon Bridge** *(§2.3)*
+- *Interact — hands on the rail:* the worn mid-span rail → she leans her weight onto both hands on the wet wood, feet planted on the planks → **close-up of her two hands on the rain-dark rail, the green river sliding below.**
+- *Interact — steady the lantern:* a low-hung unlit lantern at the bridge mouth, swaying in the draft → she cups it gently in both hands until it stills → **the lantern filling the frame between her palms, red paper faintly glowing with the grey daylight behind it.**
+
+**8.4 吊脚楼水巷 Stilt-House Waterside Walk** *(§2.4)*
+- *Interact — stroke the cat:* the sleeping cat on the warm windowsill → she crouches and lays one slow hand on its flank; it stretches without waking → **close-up of the cat and her hand, one paw uncurled, whiskers stirring.**
+- *Interact — finger the chili string:* a hanging string of drying chilies under the eave → she reaches up and runs the string through her fingers, setting it gently swaying → **the red chilies filling the frame, still swinging against the grey wood.**
+- *Interact — brush the wind chime:* a bamboo wind chime hung under a stilt-house eave → she reaches up and brushes it with her fingertips; it clacks softly → **close-up of the bamboo tubes still knocking and turning, mist behind them.**
+- *Interact — pin the laundry:* a slipped indigo jacket on the balcony line → she re-pins it with the wooden peg from the rail → **close-up of the jacket hanging square again, her hand leaving the peg, drips falling.**
+
+**8.5 老码头 Old Ferry Dock** *(§2.5)*
+- *Interact — ring the ferry bell:* the small bronze bell on its post at the head of the dock steps, hung to call the ferry through the mist → she reaches out and taps it once with two fingers; it rings → **the bell still swinging on its bracket, the mist-white river behind it.**
+- *Interact — test the mooring rope:* the wet coiled rope on the stone mooring post → she takes the knot in both hands and gives it one firm testing pull → **close-up of the taut knot on the rope-grooved post, water squeezed dark from its fibers.**
+- *Interact — trace the flood marks:* the old high-water scratches on the waiting-shed wall → she lays her fingertips in the deepest groove and draws them slowly along it → **close-up of her fingers in the scored timber, decades of marks fanning around them.**
+
+**8.6 灯笼铺 The Lantern Workshop** *(§2.6)*
+- *Interact — cup the lantern:* the lowest hanging lantern at the storefront → she lifts it lightly from beneath with both hands, feeling its papery weight → **the lantern filling the frame in her palms, ribs shadowed through the red paper.**
+- *Interact — touch the curing paper:* a dry curing lantern in the drying loft → she lays one palm flat and featherlight against its side, window light glowing through → **close-up of her hand silhouetted through the pale paper, ribs like leaf-veins around it.**
+- *Interact — lift the soaking cane:* a bamboo cane in the stone trough of the back yard → she lifts one end a hand's width and lets it slip back with a soft plash → **close-up of the trough, rings spreading from the settling cane, split canes leaning behind.**
+
+**8.7 井巷 Well Lane** *(§2.7)*
+- *Interact — pull the curtain:* the cloth curtain of the herb drying room → she takes its edge and draws it aside → **the doorway revealed, racks of cut roots and hanging leaves in the dimness beyond, the curtain bunched in her hand.**
+- *Interact — lift the bucket:* the full wooden bucket beside the well → she takes the handle in both hands and lifts it a hand's width, water trembling → **close-up of the bucket's brimming rim, ring-ripples in the dark water, the rope-grooved well lip behind.**
+- *Interact — smell the herb bundle:* a bundle of drying plants under the herb shop's eave → she cradles it in one hand and leans her face in, breathing the bittersweet smell → **close-up of the dried leaves and stems near her face, dust motes drifting off the bundle.**
+
+**8.8 姑婆的院子 Great-Aunt's Courtyard** *(§2.8)*
+- *Interact — knock at the black gate:* the black-lacquered gate leaf → still a guest in her own gate, she knocks twice with her knuckles and waits → **the gate from her side, filling the frame, one leaf just cracking inward.**
+- *Interact — touch the persimmon trunk:* the persimmon tree in the courtyard → she lays her palm on the trunk once, exactly as her great-aunt does crossing the court → **close-up of her hand on the grey lichened bark, an orange fruit soft-focus above.**
+- *Interact — lift the pot lid:* the pot breathing on the mud-brick stove → she lifts the wooden lid and leans into the escaping steam of cooking rice → **close-up of the white rice and rolling steam, her face at the frame's edge, eyes closed.**
+- *Interact — dip the gourd ladle:* the big water jar under the persimmon tree → she slides its wooden lid aside and dips the gourd ladle, lifting it brimming → **close-up of the full gourd ladle over the jar's dark water, one drip falling back.**
+- *(Never the altar. The altar room stays a threshold `look` only — §7.9.)*
+
+**8.9 水磨坊 The Water Mill** *(§2.9)*
+- *Interact — set the scale swinging:* the hanging steelyard scale in the grain loft → she touches its brass weight with one finger and sets it gently swaying → **close-up of the steelyard still swinging on its beam hook, dust motes wheeling in the window light.**
+- *Interact — run the grain:* an open sack of unmilled grain → she dips one hand and lets the grain pour back through her fingers → **close-up of the grain streaming from her hand into the sack, husks catching the light.**
+- *Interact — feel the beam:* the shuddering timber frame of the grinding works → she lays her palm flat on the great beam and holds it there, feeling the mill's heartbeat → **close-up of her steady hand on the trembling flour-dusted wood.**
+
+**8.10 学堂 The School House** *(§2.10)*
+- *Interact — click the school abacus:* the boy-sized abacus on the front bench → she bends and clicks one small bead across with a fingertip → **close-up of the little abacus, one bead moved, the ghost-wiped slate soft behind it.**
+- *Interact — right the basket:* a tipped carrying-basket in the row by the schoolroom door → she crouches and sets it upright, square with its neighbors → **close-up of the little basket standing straight in the row, her hands just letting go.**
+
+**8.11 染坊 The Indigo Dye Yard** *(§2.11)*
+- *Interact — shift the vat lid:* a heavy wooden vat lid in the vat shed → she slides it a hand's width aside and leans over the opening, the sharp indigo smell rising → **close-up of the vat's deep blue-black surface, her face reflected faint at the frame's edge.**
+- *Interact — heft the stirring pole:* a long stirring pole leaning at a splash-stained post → she takes it in both hands and lifts it upright, feeling its dye-dark weight, then leans it back → **close-up of the pole's blue-crusted end against the post, her hands steadying it.**
+- *Interact — still the cloth:* a near-dry pale length swaying on its drying frame → she stills it with the backs of her fingers, careful of the dye → **close-up of the calmed cloth, sky-wash blue, the backs of her fingers just lifting away.**

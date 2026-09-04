@@ -19,7 +19,7 @@
     "bamboo poles, ladders, baskets, and lantern ribs",
     "no readable text on any sign, slate, sack, or packet"
   ],
-  "promptLockNote": "SCENE LOCK: same misty autumn morning throughout — soft grey light, mist dissolving distances to white, every red paper lantern UNLIT, surfaces rain-wet but no rain falling. Studio Ghibli / Hayao Miyazaki painted animation matching the approved opening still. Third person, eye-level, her whole or three-quarter figure in frame. Her feet stay on wood, stone, or packed earth at all times — never on, in, or over open water, never aboard a boat. Keep at least two town motifs naturally in frame (steam, unlit lanterns, indigo laundry, green slow river, wet flagstone, mist). One continuous movement, no cuts; she ends settled and still so the last frame is stable. Any townsfolk appear mid-ground at their stations, absorbed in their work, silent, never reacting to camera. No text, no captions, no readable signage, no watermarks, no logos.",
+  "promptLockNote": "SCENE LOCK: same misty autumn morning throughout — soft grey light, mist dissolving distances to white, every red paper lantern UNLIT, surfaces rain-wet but no rain falling. Studio Ghibli / Hayao Miyazaki painted animation matching the approved opening still. Third person, eye-level, her whole or three-quarter figure in frame. Her feet stay on wood, stone, or packed earth at all times — never on, in, or over open water, never aboard a boat. Keep at least two town motifs naturally in frame (steam, unlit lanterns, indigo laundry, green slow river, wet flagstone, mist). One continuous movement, no cuts; she ends settled and still so the last frame is stable. Any townsfolk appear mid-ground at their stations, absorbed in their work, silent, never reacting to camera. No text, no captions, no readable signage, no watermarks, no logos. INTERACT LOCK: in an interact clip she must physically touch, smell, pull, ring, lift, or knock on the tapped object with her hands or face — walking past it or stopping beside it with her hands at her sides is a failure — and the last frame must show the result of the action (bell still swinging, curtain drawn aside and doorway revealed, steam of rice in her face, the changed object filling the shot). Clips MAY introduce new objects, rooms, and characters as a logical result of the action (walk into a kitchen → stove, cooking food, a cook). Do not invent extra buildings in the same wide still with no travel.",
   "districts": [
     {
       "id": "shiban-laojie",
@@ -98,6 +98,38 @@
           "labelEn": "Look at the resting cart and umbrella",
           "through": "close-up beat on the street's props",
           "action": "She walks a few steps to the wall where a hand-cart of river stone rests askew and a paper umbrella leans drying, and she bends toward the umbrella with her hands on her knees; the camera settles with her until the oil-paper umbrella fills the frame, mist beaded on its bamboo ribs, the wet wall stones soft behind it."
+        },
+        {
+          "id": "street-interact-smell-rice",
+          "kind": "interact",
+          "priority": 1,
+          "labelEn": "Smell the rice",
+          "through": "gold-standard interact: the tapped bowl, her face in the steam",
+          "action": "She steps to the stall's end board where a fresh bowl of rice noodles steams, plants her hands either side of it, and leans her face down into the rising steam, eyes closing as she breathes it in; the camera eases in with her, and the last frame is a close-up of the glistening rice noodles and broth, steam curling past her nose and chin at the frame's edge. She does not walk away from it."
+        },
+        {
+          "id": "street-interact-dip-ladle",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Dip the ladle",
+          "through": "interact beat: hands on the stall's cauldron ladle",
+          "action": "She steps to the stall cauldron, takes the long-handled ladle in both hands, and lifts it slowly through the steam, broth streaming back into the pot and the twist of dried chili swinging on the handle; the camera eases in, and the last frame is a close-up of the full ladle held over the cauldron, broth steaming, the chili twist still mid-sway."
+        },
+        {
+          "id": "street-interact-click-abacus",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Click the abacus",
+          "through": "interact beat: one bead of the general store's abacus",
+          "action": "She steps to the general store counter, reaches out one finger, and clicks a single bead of the worn abacus across its rod; the camera eases in, and the last frame is a close-up of the abacus with one bead standing apart from its row, her fingertip just leaving the frame, the dim shop soft behind."
+        },
+        {
+          "id": "street-interact-tilt-umbrella",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Tilt the umbrella",
+          "through": "interact beat: hands on the drying paper umbrella",
+          "action": "She steps to the paper umbrella drying against the wall, takes its bamboo shaft in both hands, and tilts it toward her to study the beads of mist on its ribs; the camera eases in, and the last frame is a close-up of the oil-paper canopy at its new angle, mist beads sliding slowly along one bamboo rib."
         }
       ]
     },
@@ -162,6 +194,30 @@
           "labelEn": "Look at the great kettle",
           "through": "close-up beat at the tea house stove",
           "action": "She walks toward the clay stove where the boy feeds twigs to the fire, and leans in with her hands clasped behind her back; the camera settles until the giant brass kettle fills the frame, its dented flank glowing with firelight, thin wisps of steam curling from the spout into the dim."
+        },
+        {
+          "id": "teahouse-interact-lift-bowl-lid",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Lift the tea bowl's lid",
+          "through": "interact beat: a lidded bowl on a set table",
+          "action": "She steps to a set table, takes the lid of a lidded tea bowl between finger and thumb, and lifts it a hand's width, tilting it as the steam escapes; the camera eases in, and the last frame is a close-up of the open bowl, tea leaves unfurling in the pale water, steam rising past the tilted lid still held in her fingers."
+        },
+        {
+          "id": "teahouse-interact-pour-kettle",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Pour from the great kettle",
+          "through": "interact beat: hot water from the brass kettle into a bowl",
+          "action": "She steps to the clay stove, wraps the great brass kettle's handle with the folded grey cloth, and tips it carefully, pouring hot water into a waiting bowl; the camera eases in, and the last frame is a close-up of the steaming arc of water meeting the bowl, the kettle's dented brass flank glowing with firelight behind it."
+        },
+        {
+          "id": "teahouse-interact-open-shutter",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Open the river-room shutter",
+          "through": "interact beat: the upstairs window shutter pushed wide",
+          "action": "In the upstairs river room she steps to the window, lays one hand flat on the half-closed wooden shutter, and pushes it fully open; the camera eases in, and the last frame is the window filled with green river and white mist, the shutter swung wide against the wall, her hand still resting on its edge."
         }
       ]
     },
@@ -234,6 +290,22 @@
           "labelEn": "Look over the rail at the boat",
           "through": "close-up beat from the bridge rail",
           "action": "She steps to the mid-span rail and leans her forearms on the worn wood, her feet firm on the bridge planks, looking down; the camera settles over her shoulder until the moored sampan below fills the frame, its rope slack in the glassy green water, mist drifting across the hull."
+        },
+        {
+          "id": "bridge-interact-touch-rail",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Lean on the rail",
+          "through": "interact beat: both hands on the mid-span rail",
+          "action": "She steps to the worn mid-span rail and leans her weight onto both hands on the wet wood, her feet planted firm on the bridge planks; the camera eases in, and the last frame is a close-up of her two hands pressed on the rain-dark rail, the slow green river sliding below, mist drifting through the frame."
+        },
+        {
+          "id": "bridge-interact-steady-lantern",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Steady the swaying lantern",
+          "through": "interact beat: a low-hung lantern at the bridge mouth",
+          "action": "She steps to a low-hung unlit lantern swaying in the draft at the bridge mouth and cups it gently in both hands until it stills; the camera eases in, and the last frame is the lantern filling the frame between her palms, its red paper faintly glowing against the grey daylight behind, motionless now."
         }
       ]
     },
@@ -314,6 +386,38 @@
           "labelEn": "Look at the drying chilies",
           "through": "close-up beat under the stilt-house eaves",
           "action": "She stops on the boardwalk beneath a stilt-house eave and tilts her face up toward the strings of drying red chilies, rising slightly on her toes; the camera settles until the chilies fill the frame, red beads strung dense against grey weathered wood, a wisp of cooking smoke drifting through behind them."
+        },
+        {
+          "id": "stiltwalk-interact-stroke-cat",
+          "kind": "interact",
+          "priority": 1,
+          "labelEn": "Stroke the sleeping cat",
+          "through": "interact beat: the cat on the warm windowsill",
+          "action": "She crouches beside the warm windowsill where the cat sleeps and lays one slow hand on its flank; the cat stretches without waking. The camera eases in, and the last frame is a close-up of the cat and her resting hand, one paw uncurled, whiskers stirring in the mist-soft light."
+        },
+        {
+          "id": "stiltwalk-interact-chili-string",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Finger the chili string",
+          "through": "interact beat: the hanging chilies set swaying",
+          "action": "She reaches up to a hanging string of drying chilies under the eave and runs the string through her fingers, setting it gently swaying; the camera eases in, and the last frame is the red chilies filling the frame, still swinging against the grey weathered wood."
+        },
+        {
+          "id": "stiltwalk-interact-wind-chime",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Brush the wind chime",
+          "through": "interact beat: the bamboo chime under a stilt-house eave",
+          "action": "She stops beneath a bamboo wind chime hung under a stilt-house eave, reaches up, and brushes it with her fingertips so it clacks softly; the camera eases in, and the last frame is a close-up of the bamboo tubes still knocking and turning against the white mist behind them."
+        },
+        {
+          "id": "stiltwalk-interact-pin-laundry",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Pin the slipped jacket",
+          "through": "interact beat: laundry set right on the balcony line",
+          "action": "On the laundry balcony she takes a slipped indigo jacket from the line and re-pins it square with the wooden peg from the rail; the camera eases in, and the last frame is a close-up of the jacket hanging straight again, her hand just leaving the peg, slow drips falling toward the river below."
         }
       ]
     },
@@ -386,6 +490,30 @@
           "labelEn": "Watch the boat being mended",
           "through": "close-up beat on the beached sampan repair",
           "action": "She descends two tiers of the broad stone steps, her shoes careful on the wet stone, toward the beached sampan where a weathered man kneels with a mouth full of bamboo pegs; the camera settles until his hands fill the frame, fitting a fresh pale plank into the dark old hull and tapping a peg home with his mallet."
+        },
+        {
+          "id": "dock-interact-ring-bell",
+          "kind": "interact",
+          "priority": 1,
+          "labelEn": "Ring the ferry bell",
+          "through": "interact beat: the bronze bell that calls the ferry through the mist",
+          "action": "She steps to the small bronze bell hung on its post at the head of the dock steps — the bell that calls the ferry through the mist — reaches out, and taps it once with two fingers so it rings; the camera eases in, and the last frame is the bell still swinging on its bracket, the mist-white river soft behind it."
+        },
+        {
+          "id": "dock-interact-mooring-rope",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Test the mooring rope",
+          "through": "interact beat: the knot on the stone mooring post",
+          "action": "She steps to the stone mooring post, takes the wet knot of the coiled rope in both hands, and gives it one firm testing pull; the camera eases in, and the last frame is a close-up of the taut knot on the rope-grooved post, water squeezed dark from its fibers."
+        },
+        {
+          "id": "dock-interact-flood-marks",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Trace the flood marks",
+          "through": "interact beat: fingers in the waiting shed's high-water scratches",
+          "action": "In the waiting shed she lays her fingertips in the deepest of the old high-water scratches on the back wall and draws them slowly along the groove; the camera eases in, and the last frame is a close-up of her fingers resting in the scored timber, decades of overlapping marks fanning around them."
         }
       ]
     },
@@ -465,6 +593,30 @@
           "labelEn": "Look at the small unpapered lantern",
           "through": "story beat: the lantern being made for her household",
           "action": "She leans toward the end of the workbench where one small lantern frame sits apart from the finished red rows, and bends close with her hands on the bench edge; the camera settles until the little frame fills the frame — fresh pale bamboo ribs tied with red thread, a folded sheet of household-red paper laid ready beside it."
+        },
+        {
+          "id": "workshop-interact-cup-lantern",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Cup the hanging lantern",
+          "through": "interact beat: the lowest storefront lantern in both hands",
+          "action": "She steps to the lowest lantern hanging at the storefront and lifts it lightly from beneath with both hands, feeling its papery weight; the camera eases in, and the last frame is the lantern filling the frame in her palms, its bamboo ribs shadowed through the red paper."
+        },
+        {
+          "id": "workshop-interact-curing-paper",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Touch the curing paper",
+          "through": "interact beat: one palm against a curing lantern in the loft",
+          "action": "In the drying loft she steps to a dry curing lantern and lays one palm flat and featherlight against its side, the small window's light glowing through the paper; the camera eases in, and the last frame is a close-up of her hand silhouetted through the pale paper, the ribs spreading around it like leaf-veins."
+        },
+        {
+          "id": "workshop-interact-soaking-cane",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Lift the soaking cane",
+          "through": "interact beat: bamboo in the back yard trough",
+          "action": "In the back yard she crouches at the stone trough, lifts one end of a soaking bamboo cane a hand's width, and lets it slip back with a soft plash; the camera eases in, and the last frame is a close-up of the trough water, rings spreading from the settling cane, sheaves of split canes leaning behind."
         }
       ]
     },
@@ -529,6 +681,30 @@
           "labelEn": "Look at the old well",
           "through": "close-up beat at the well court",
           "action": "She crosses the small court to the well and rests both hands on its cold stone rim, leaning to look; the camera settles until the well lip fills the frame — stone grooved deep by generations of rope, a wet coil of it lying slack, the full wooden bucket beside it beaded with mist."
+        },
+        {
+          "id": "lane-interact-pull-curtain",
+          "kind": "interact",
+          "priority": 1,
+          "labelEn": "Pull the curtain aside",
+          "through": "interact beat: the herb drying room revealed",
+          "action": "In the herb shop she steps to the cloth curtain across the back doorway, takes its edge in one hand, and draws it aside; the camera eases in, and the last frame is the doorway revealed — racks of cut roots and hanging leaves in the bittersweet dimness beyond — with the curtain bunched in her hand at the frame's edge."
+        },
+        {
+          "id": "lane-interact-lift-bucket",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Lift the well bucket",
+          "through": "interact beat: the full bucket at the well",
+          "action": "She steps to the full wooden bucket beside the well, takes its handle in both hands, and lifts it a hand's width off the stone, the water trembling; the camera eases in, and the last frame is a close-up of the bucket's brimming rim, ring-ripples crossing the dark water, the rope-grooved well lip behind."
+        },
+        {
+          "id": "lane-interact-smell-herbs",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Smell the herb bundle",
+          "through": "interact beat: her face in the drying herbs under the eave",
+          "action": "She steps to a bundle of drying plants hung under the herb shop's eave, cradles it in one hand, and leans her face in to breathe the bittersweet smell; the camera eases in, and the last frame is a close-up of the dried leaves and stems near her face, dust motes drifting off the bundle into the grey light."
         }
       ]
     },
@@ -615,6 +791,38 @@
           "labelEn": "Pause at the altar room",
           "through": "story beat: the house's kept grief, and the carved ferry",
           "action": "She steps quietly to the altar room's open threshold and stops there, not entering, her head slightly bowed; the camera settles past her until the altar fills the frame — a framed portrait of a middle-aged man, a cup of tea still steaming faintly, two oranges, grey incense ash, and beside them a small ferry boat carved from a single piece of wood."
+        },
+        {
+          "id": "courtyard-interact-knock-gate",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Knock at the black gate",
+          "through": "interact beat: still a guest in her own gate",
+          "action": "She steps to the black-lacquered gate and, still a guest in her own gate, knocks twice with her knuckles on the cool lacquer and waits; the camera eases in, and the last frame is the gate from her side filling the frame, one heavy leaf just cracking inward."
+        },
+        {
+          "id": "courtyard-interact-persimmon-trunk",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Touch the persimmon trunk",
+          "through": "interact beat: her great-aunt's habit, learned without a word",
+          "action": "Crossing the courtyard she steps to the persimmon tree and lays her palm on the trunk once, exactly as her great-aunt does; the camera eases in, and the last frame is a close-up of her hand resting on the grey lichened bark, one orange fruit hanging soft-focus above."
+        },
+        {
+          "id": "courtyard-interact-lift-pot-lid",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Lift the pot lid",
+          "through": "interact beat: the kitchen's rice steam in her face",
+          "action": "In the kitchen she steps to the pot breathing on the mud-brick stove, lifts its wooden lid, and leans into the escaping steam of cooking rice; the camera eases in, and the last frame is a close-up of the white rice and rolling steam, her face at the frame's edge with eyes closed."
+        },
+        {
+          "id": "courtyard-interact-gourd-ladle",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Dip the gourd ladle",
+          "through": "interact beat: the water jar under the persimmon tree",
+          "action": "She steps to the big water jar under the persimmon tree, slides its wooden lid aside, and dips the gourd ladle, lifting it brimming; the camera eases in, and the last frame is a close-up of the full gourd ladle held over the jar's dark water, one drip falling back."
         }
       ]
     },
@@ -687,6 +895,30 @@
           "labelEn": "Look at the turning wheel",
           "through": "close-up beat on the mill wheel",
           "action": "She stops on the flagged millrace path and turns to face the great wheel, keeping both feet planted on the stone edge above the channel; the camera settles until the wheel fills the frame — black dripping blades rising slow out of the race, water combing off them in silver threads, moss bright green on the axle beam."
+        },
+        {
+          "id": "mill-interact-steelyard-scale",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Set the scale swinging",
+          "through": "interact beat: the hanging steelyard in the grain loft",
+          "action": "In the grain loft she reaches up to the hanging steelyard scale and touches its brass weight with one finger, setting it gently swaying; the camera eases in, and the last frame is a close-up of the steelyard still swinging on its beam hook, dust motes wheeling through the window light around it."
+        },
+        {
+          "id": "mill-interact-run-grain",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Run the grain through her fingers",
+          "through": "interact beat: a hand in the open grain sack",
+          "action": "She steps to an open sack of unmilled grain, dips one hand in, and lets the grain pour back through her fingers; the camera eases in, and the last frame is a close-up of the grain streaming from her open hand into the sack, husks catching the pale light."
+        },
+        {
+          "id": "mill-interact-feel-beam",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Feel the mill's heartbeat",
+          "through": "interact beat: a palm on the shuddering timber frame",
+          "action": "On the mill floor she steps to the great timber frame of the grinding works and lays her palm flat on the shuddering beam, holding it there; the camera eases in, and the last frame is a close-up of her steady hand on the trembling flour-dusted wood."
         }
       ]
     },
@@ -751,6 +983,22 @@
           "labelEn": "Look in at the teacher's desk",
           "through": "story beat: the stall's covered bowl reaches the teacher",
           "action": "She pauses at the open door of the teacher's study and leans in without entering, one hand on the door frame; the camera settles past her until the desk fills the frame — a worn inkstone, papers weighted with a smooth river stone, and at the desk's edge a covered bowl of rice noodles, a thread of steam still rising from under its lid."
+        },
+        {
+          "id": "school-interact-click-abacus",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Click the little abacus",
+          "through": "interact beat: one bead of the boy-sized abacus",
+          "action": "In the schoolroom she bends over the boy-sized abacus on the front bench and clicks one small bead across with a fingertip; the camera eases in, and the last frame is a close-up of the little abacus with one bead moved from its row, the ghost-wiped slate soft and grey behind it."
+        },
+        {
+          "id": "school-interact-right-basket",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Right the tipped basket",
+          "through": "interact beat: the row of children's baskets made whole",
+          "action": "In the front yard she crouches at the row of small carrying-baskets by the schoolroom door, sets a tipped one upright, and squares it with its neighbors; the camera eases in, and the last frame is a close-up of the little basket standing straight in the row, her hands just letting go."
         }
       ]
     },
@@ -823,6 +1071,30 @@
           "labelEn": "Look at the small blue cloth",
           "through": "story beat: the schoolchild's jacket cloth, the town's circle of trades",
           "action": "She crosses to the clean rack standing apart from the sale frames and leans toward the one short length hung there, her hands clasped behind her back; the camera settles until the cloth fills the frame — a child-sized length of flawless even indigo, the finest blue in the yard, one bright drop gathering at its corner and falling."
+        },
+        {
+          "id": "dyeyard-interact-shift-vat-lid",
+          "kind": "interact",
+          "priority": 2,
+          "labelEn": "Shift the vat lid",
+          "through": "interact beat: the indigo vat uncovered a hand's width",
+          "action": "In the vat shed she takes the edge of a heavy wooden vat lid in both hands, slides it a hand's width aside, and leans over the opening as the sharp indigo smell rises; the camera eases in, and the last frame is a close-up of the vat's deep blue-black surface, her face reflected faintly at the frame's edge."
+        },
+        {
+          "id": "dyeyard-interact-stirring-pole",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Heft the stirring pole",
+          "through": "interact beat: the dye-dark pole in both hands",
+          "action": "She steps to a long stirring pole leaning at a splash-stained post, takes it in both hands, lifts it upright to feel its dye-dark weight, and leans it carefully back; the camera eases in, and the last frame is a close-up of the pole's blue-crusted end against the post, her hands still steadying it."
+        },
+        {
+          "id": "dyeyard-interact-still-cloth",
+          "kind": "interact",
+          "priority": 3,
+          "labelEn": "Still the swaying cloth",
+          "through": "interact beat: a near-dry length calmed with the backs of her fingers",
+          "action": "In the drying-frame lane she steps to a near-dry pale length swaying on its frame and stills it with the backs of her fingers, careful of the dye; the camera eases in, and the last frame is a close-up of the calmed sky-wash blue cloth, the backs of her fingers just lifting away."
         }
       ]
     }
@@ -1031,6 +1303,280 @@
       "when": "late",
       "ifPlayerGoes": "shiban-laojie",
       "whatUnfolds": "Back at the spawn street the steam column has customers around it, door-boards are fully down, the far end of the street has emerged from the white, and the lanterns hang in plain light, unlit, waiting for an evening the game never shows. The morning is over; the town is awake; so is she."
+    }
+  ],
+  "interactions": [
+    {
+      "id": "street-interact-smell-rice",
+      "object": "steaming bowl of rice noodles on the stall's end board",
+      "verb": "leans in and breathes the steam",
+      "lastFrame": "close-up of glistening rice noodles and broth, steam curling past her nose and chin at the frame's edge",
+      "district": "shiban-laojie",
+      "action": "She steps to the steaming bowl and leans her face down into the steam, breathing it in. Camera eases in. Last frame is a close-up of the rice and steam, her face near. She does not walk away from it."
+    },
+    {
+      "id": "street-interact-dip-ladle",
+      "object": "long-handled ladle in the stall cauldron",
+      "verb": "lifts it through the steam",
+      "lastFrame": "close-up of the full ladle over the cauldron, broth steaming, the chili twist on its handle mid-sway",
+      "district": "shiban-laojie",
+      "action": "She steps to the cauldron and lifts the ladle with both hands, broth streaming back. Camera eases in. Last frame is a close-up of the full ladle over the steaming cauldron."
+    },
+    {
+      "id": "street-interact-click-abacus",
+      "object": "worn abacus on the general store counter",
+      "verb": "clicks one bead across",
+      "lastFrame": "close-up of the abacus, one bead apart from its row, her fingertip just leaving frame",
+      "district": "shiban-laojie",
+      "action": "She steps to the counter and clicks one abacus bead across with a fingertip. Camera eases in. Last frame is a close-up of the abacus with one bead moved."
+    },
+    {
+      "id": "street-interact-tilt-umbrella",
+      "object": "paper umbrella drying against the wall",
+      "verb": "tilts it toward her",
+      "lastFrame": "close-up of the oil-paper canopy, mist beads sliding along a bamboo rib",
+      "district": "shiban-laojie",
+      "action": "She steps to the drying umbrella and tilts it toward her with both hands on the shaft. Camera eases in. Last frame is a close-up of the canopy at its new angle, mist beads on the ribs."
+    },
+    {
+      "id": "teahouse-interact-lift-bowl-lid",
+      "object": "lidded tea bowl on a set table",
+      "verb": "lifts and tilts the lid",
+      "lastFrame": "close-up of the open bowl, tea leaves unfurling, steam rising past the lid in her fingers",
+      "district": "lao-chaguan",
+      "action": "She steps to the table and lifts the tea bowl's lid a hand's width, tilting it as steam escapes. Camera eases in. Last frame is a close-up of the open bowl and steam."
+    },
+    {
+      "id": "teahouse-interact-pour-kettle",
+      "object": "great brass kettle on the clay stove",
+      "verb": "tips it with the cloth-wrapped handle and pours",
+      "lastFrame": "close-up of the steaming arc of water meeting the bowl, dented brass glowing behind",
+      "district": "lao-chaguan",
+      "action": "She wraps the kettle handle with the grey cloth and tips it, pouring hot water into a bowl. Camera eases in. Last frame is a close-up of the pouring arc and the kettle's glowing flank."
+    },
+    {
+      "id": "teahouse-interact-open-shutter",
+      "object": "half-closed shutter of the upstairs river room window",
+      "verb": "pushes it fully open",
+      "lastFrame": "the window full of green river and mist, shutter swung wide, her hand on its edge",
+      "district": "lao-chaguan",
+      "action": "She lays one hand flat on the shutter and pushes it fully open. Camera eases in. Last frame is the revealed river view, the shutter wide, her hand still on it."
+    },
+    {
+      "id": "bridge-interact-touch-rail",
+      "object": "worn mid-span bridge rail",
+      "verb": "leans both hands on the wet wood",
+      "lastFrame": "close-up of her two hands on the rain-dark rail, green river sliding below",
+      "district": "gongyue-qiao",
+      "action": "She steps to the rail and leans her weight onto both hands, feet planted on the planks. Camera eases in. Last frame is a close-up of her hands on the wet rail, river below."
+    },
+    {
+      "id": "bridge-interact-steady-lantern",
+      "object": "low-hung unlit lantern swaying at the bridge mouth",
+      "verb": "cups it in both hands until it stills",
+      "lastFrame": "the lantern filling the frame between her palms, red paper faintly glowing, motionless",
+      "district": "gongyue-qiao",
+      "action": "She cups the swaying lantern gently in both hands until it stills. Camera eases in. Last frame is the stilled lantern filling the frame between her palms."
+    },
+    {
+      "id": "stiltwalk-interact-stroke-cat",
+      "object": "sleeping cat on the warm windowsill",
+      "verb": "crouches and strokes its flank",
+      "lastFrame": "close-up of the cat and her resting hand, one paw uncurled, whiskers stirring",
+      "district": "diaojiaolou-shuixiang",
+      "action": "She crouches at the windowsill and lays one slow hand on the sleeping cat's flank. Camera eases in. Last frame is a close-up of the cat and her hand."
+    },
+    {
+      "id": "stiltwalk-interact-chili-string",
+      "object": "hanging string of drying chilies under the eave",
+      "verb": "runs the string through her fingers",
+      "lastFrame": "the red chilies filling the frame, still swinging against grey wood",
+      "district": "diaojiaolou-shuixiang",
+      "action": "She reaches up and runs the chili string through her fingers, setting it swaying. Camera eases in. Last frame is the chilies filling the frame, still swinging."
+    },
+    {
+      "id": "stiltwalk-interact-wind-chime",
+      "object": "bamboo wind chime under a stilt-house eave",
+      "verb": "brushes it with her fingertips",
+      "lastFrame": "close-up of the bamboo tubes still knocking and turning, mist behind",
+      "district": "diaojiaolou-shuixiang",
+      "action": "She reaches up and brushes the bamboo chime so it clacks softly. Camera eases in. Last frame is a close-up of the tubes still moving."
+    },
+    {
+      "id": "stiltwalk-interact-pin-laundry",
+      "object": "slipped indigo jacket on the balcony laundry line",
+      "verb": "re-pins it with the wooden peg",
+      "lastFrame": "close-up of the jacket hanging square again, her hand leaving the peg, drips falling",
+      "district": "diaojiaolou-shuixiang",
+      "action": "She takes the slipped jacket and re-pins it square on the line. Camera eases in. Last frame is a close-up of the righted jacket, her hand just leaving the peg."
+    },
+    {
+      "id": "dock-interact-ring-bell",
+      "object": "small bronze ferry bell on its post at the dock steps",
+      "verb": "taps it once so it rings",
+      "lastFrame": "the bell still swinging on its bracket, mist-white river behind",
+      "district": "lao-matou",
+      "action": "She steps to the ferry bell and taps it once with two fingers; it rings. Camera eases in. Last frame is the bell still swinging, the mist behind it."
+    },
+    {
+      "id": "dock-interact-mooring-rope",
+      "object": "wet coiled rope on the stone mooring post",
+      "verb": "tests the knot with one firm pull",
+      "lastFrame": "close-up of the taut knot on the rope-grooved post, water squeezed from its fibers",
+      "district": "lao-matou",
+      "action": "She takes the knot in both hands and gives it one firm testing pull. Camera eases in. Last frame is a close-up of the taut knot on the post."
+    },
+    {
+      "id": "dock-interact-flood-marks",
+      "object": "old high-water scratches on the waiting-shed wall",
+      "verb": "traces the deepest groove with her fingertips",
+      "lastFrame": "close-up of her fingers in the scored timber, decades of marks fanning around them",
+      "district": "lao-matou",
+      "action": "She lays her fingertips in the deepest scratch and draws them slowly along it. Camera eases in. Last frame is a close-up of her fingers in the scored wood."
+    },
+    {
+      "id": "workshop-interact-cup-lantern",
+      "object": "lowest hanging lantern at the workshop storefront",
+      "verb": "lifts it lightly from beneath",
+      "lastFrame": "the lantern filling the frame in her palms, ribs shadowed through red paper",
+      "district": "denglong-pu",
+      "action": "She lifts the lowest lantern lightly from beneath with both hands. Camera eases in. Last frame is the lantern in her palms, ribs shadowed through the paper."
+    },
+    {
+      "id": "workshop-interact-curing-paper",
+      "object": "dry curing lantern in the drying loft",
+      "verb": "lays one palm featherlight against its side",
+      "lastFrame": "close-up of her hand silhouetted through the pale glowing paper, ribs like leaf-veins",
+      "district": "denglong-pu",
+      "action": "She lays one palm flat and featherlight on the curing lantern, light glowing through. Camera eases in. Last frame is her hand silhouetted through the paper."
+    },
+    {
+      "id": "workshop-interact-soaking-cane",
+      "object": "bamboo cane soaking in the back yard's stone trough",
+      "verb": "lifts one end and lets it slip back",
+      "lastFrame": "close-up of the trough water, rings spreading from the settling cane",
+      "district": "denglong-pu",
+      "action": "She lifts one end of the soaking cane a hand's width and lets it slip back with a plash. Camera eases in. Last frame is the trough water, rings spreading."
+    },
+    {
+      "id": "lane-interact-pull-curtain",
+      "object": "cloth curtain of the herb drying room",
+      "verb": "takes the edge and draws it aside",
+      "lastFrame": "the doorway revealed — racks of roots and leaves beyond — curtain bunched in her hand",
+      "district": "jing-xiang",
+      "action": "She takes the curtain's edge and draws it aside. Camera eases in. Last frame is the revealed doorway and drying racks, the curtain bunched in her hand."
+    },
+    {
+      "id": "lane-interact-lift-bucket",
+      "object": "full wooden bucket beside the well",
+      "verb": "lifts it a hand's width by the handle",
+      "lastFrame": "close-up of the brimming rim, ring-ripples in the dark water, well lip behind",
+      "district": "jing-xiang",
+      "action": "She lifts the full bucket a hand's width in both hands, water trembling. Camera eases in. Last frame is a close-up of the brimming rim and ripples."
+    },
+    {
+      "id": "lane-interact-smell-herbs",
+      "object": "bundle of drying plants under the herb shop's eave",
+      "verb": "cradles it and breathes it in",
+      "lastFrame": "close-up of the dried leaves near her face, dust motes drifting off the bundle",
+      "district": "jing-xiang",
+      "action": "She cradles the herb bundle in one hand and leans her face in, breathing the bittersweet smell. Camera eases in. Last frame is the bundle close-up near her face."
+    },
+    {
+      "id": "courtyard-interact-knock-gate",
+      "object": "black-lacquered courtyard gate",
+      "verb": "knocks twice and waits",
+      "lastFrame": "the gate from her side filling the frame, one leaf just cracking inward",
+      "district": "gupo-yuanzi",
+      "action": "She knocks twice on the black gate with her knuckles and waits. Camera eases in. Last frame is the gate filling the frame, one leaf cracking inward."
+    },
+    {
+      "id": "courtyard-interact-persimmon-trunk",
+      "object": "persimmon tree in the courtyard",
+      "verb": "lays her palm on the trunk once",
+      "lastFrame": "close-up of her hand on the lichened bark, an orange fruit soft-focus above",
+      "district": "gupo-yuanzi",
+      "action": "She lays her palm on the persimmon trunk once, as her great-aunt does. Camera eases in. Last frame is her hand on the bark, fruit above."
+    },
+    {
+      "id": "courtyard-interact-lift-pot-lid",
+      "object": "pot breathing on the mud-brick kitchen stove",
+      "verb": "lifts the lid and leans into the steam",
+      "lastFrame": "close-up of white rice and rolling steam, her face at the frame's edge, eyes closed",
+      "district": "gupo-yuanzi",
+      "action": "She lifts the pot's wooden lid and leans into the escaping rice steam. Camera eases in. Last frame is the rice and steam close-up, her face near."
+    },
+    {
+      "id": "courtyard-interact-gourd-ladle",
+      "object": "gourd ladle at the big courtyard water jar",
+      "verb": "dips it and lifts it brimming",
+      "lastFrame": "close-up of the full gourd ladle over the jar's dark water, one drip falling back",
+      "district": "gupo-yuanzi",
+      "action": "She slides the jar's lid aside, dips the gourd ladle, and lifts it brimming. Camera eases in. Last frame is the full ladle over the dark water."
+    },
+    {
+      "id": "mill-interact-steelyard-scale",
+      "object": "hanging steelyard scale in the grain loft",
+      "verb": "touches its weight and sets it swaying",
+      "lastFrame": "close-up of the steelyard still swinging on its hook, dust motes wheeling in the light",
+      "district": "shui-mofang",
+      "action": "She touches the steelyard's brass weight with one finger, setting it swaying. Camera eases in. Last frame is the scale still swinging in the window light."
+    },
+    {
+      "id": "mill-interact-run-grain",
+      "object": "open sack of unmilled grain",
+      "verb": "lets the grain pour back through her fingers",
+      "lastFrame": "close-up of grain streaming from her hand into the sack, husks catching the light",
+      "district": "shui-mofang",
+      "action": "She dips one hand into the open sack and lets the grain pour back through her fingers. Camera eases in. Last frame is the grain streaming from her hand."
+    },
+    {
+      "id": "mill-interact-feel-beam",
+      "object": "shuddering timber frame of the grinding works",
+      "verb": "holds her palm flat on the beam",
+      "lastFrame": "close-up of her steady hand on the trembling flour-dusted wood",
+      "district": "shui-mofang",
+      "action": "She lays her palm flat on the great shuddering beam and holds it there. Camera eases in. Last frame is her steady hand on the trembling wood."
+    },
+    {
+      "id": "school-interact-click-abacus",
+      "object": "boy-sized abacus on the front schoolroom bench",
+      "verb": "clicks one small bead across",
+      "lastFrame": "close-up of the little abacus, one bead moved, the ghost-wiped slate soft behind",
+      "district": "xuetang",
+      "action": "She bends over the boy-sized abacus and clicks one small bead across. Camera eases in. Last frame is the abacus close-up, one bead moved."
+    },
+    {
+      "id": "school-interact-right-basket",
+      "object": "tipped carrying-basket in the row by the schoolroom door",
+      "verb": "sets it upright and square",
+      "lastFrame": "close-up of the little basket standing straight in the row, her hands just letting go",
+      "district": "xuetang",
+      "action": "She crouches and sets the tipped basket upright, square with its neighbors. Camera eases in. Last frame is the righted basket, her hands letting go."
+    },
+    {
+      "id": "dyeyard-interact-shift-vat-lid",
+      "object": "heavy wooden lid of an indigo vat",
+      "verb": "slides it aside and leans over the opening",
+      "lastFrame": "close-up of the vat's deep blue-black surface, her face reflected faint at the edge",
+      "district": "ranfang",
+      "action": "She slides the vat lid a hand's width aside and leans over the sharp-smelling opening. Camera eases in. Last frame is the blue-black surface, her faint reflection."
+    },
+    {
+      "id": "dyeyard-interact-stirring-pole",
+      "object": "long stirring pole leaning at a splash-stained post",
+      "verb": "lifts it upright and leans it back",
+      "lastFrame": "close-up of the pole's blue-crusted end against the post, her hands steadying it",
+      "district": "ranfang",
+      "action": "She takes the stirring pole in both hands, lifts it upright, and leans it back. Camera eases in. Last frame is the blue-crusted pole end, her hands on it."
+    },
+    {
+      "id": "dyeyard-interact-still-cloth",
+      "object": "near-dry pale length swaying on its drying frame",
+      "verb": "stills it with the backs of her fingers",
+      "lastFrame": "close-up of the calmed sky-wash cloth, the backs of her fingers just lifting away",
+      "district": "ranfang",
+      "action": "She stills the swaying near-dry cloth with the backs of her fingers, careful of the dye. Camera eases in. Last frame is the calmed cloth, her fingers lifting away."
     }
   ]
 }

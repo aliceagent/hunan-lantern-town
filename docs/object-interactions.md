@@ -11,7 +11,7 @@ These beats belong in the town bible (`docs/town-lore.md` + `town-lore.json`) as
 - Last frame: the object **changed or filling the shot** (curtain open, bell still swaying, steam of rice in her face).
 - Feet stay on wood, stone, or dirt. Never water.
 - 6s extra-fast H3, 1024×576. Ghibli. Same clothes. Whole figure until a look/interact close-up.
-- Do not invent a new object that is not in the still.
+- Clips **may introduce** new objects, rooms, and people when that is the logical next beat. Example: she walks through a doorway into a kitchen — stove, cooking food, and a cook can appear. New items and characters are how the world grows. Do not drop random extra buildings into the *same* wide still with no travel (no house in the river).
 
 ## Catalog (seed these; add more per still)
 
@@ -33,7 +33,7 @@ These beats belong in the town bible (`docs/town-lore.md` + `town-lore.json`) as
 | rope-mooring | dock rope | tests the knot | rope + post close-up |
 | abacus | shop counter | one click of a bead | abacus close-up |
 
-Smell-the-rice is the gold standard. Every still should try to offer **at least one** interact if an object is actually in the painting.
+Smell-the-rice is the gold standard. Every still should try to offer **at least one** interact. If the object is not painted yet, the clip can walk her into the room where it belongs.
 
 ## H3 ACTION pattern
 
@@ -41,5 +41,5 @@ Smell-the-rice is the gold standard. Every still should try to offer **at least 
 She steps to the [object] and [verb] it with her hands.
 Camera eases in. Last frame is a close-up of the [object] after the action
 ([result]). Same clothes, same Ghibli paint. Do not walk away from it.
-Do not invent a different object.
+If the object is not in the first frame, the walk or enter may bring it into existence.
 ```
