@@ -10589,7 +10589,8 @@
         }
       ],
       "edges": {
-        "into-kitchen": "500b4640921090f3"
+        "into-kitchen": "500b4640921090f3",
+        "into-doorway": "2232a66a9bb8b3cb"
       }
     },
     "d728fc47013df7ee": {
@@ -10916,6 +10917,85 @@
       "still": {
         "png": "4a10077b1e9464d7",
         "jpg": "4a10077b1e9464d7"
+      },
+      "regions": [
+        {
+          "id": "into-kitchen",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              307,
+              34
+            ],
+            [
+              655,
+              34
+            ],
+            [
+              655,
+              310
+            ],
+            [
+              307,
+              310
+            ]
+          ],
+          "bbox": [
+            307,
+            34,
+            348,
+            276
+          ],
+          "labelEn": "into the kitchen",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-doorway",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              40,
+              23
+            ],
+            [
+              265,
+              23
+            ],
+            [
+              265,
+              184
+            ],
+            [
+              40,
+              184
+            ]
+          ],
+          "bbox": [
+            40,
+            23,
+            225,
+            161
+          ],
+          "labelEn": "into the doorway",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
+    "6860bad9128f4d48": {
+      "hash": "6860bad9128f4d48",
+      "location": "into-doorway",
+      "width": 1024,
+      "height": 576,
+      "still": {
+        "png": "6860bad9128f4d48",
+        "jpg": "6860bad9128f4d48"
       },
       "regions": [
         {
@@ -12360,6 +12440,20 @@
         "firstFrameSimilarity": 0.990273037444572
       },
       "approvedAt": "2026-09-04T19:43:13Z"
+    },
+    "2232a66a9bb8b3cb": {
+      "id": "2232a66a9bb8b3cb",
+      "from": "152450847ce238c3",
+      "region": "into-doorway",
+      "to": "6860bad9128f4d48",
+      "durationS": 6.583333333333333,
+      "prompt": "She walks into the nearest open doorway of the building in front of her. Feet on wood or stone, never in the water. Camera eases with her through the threshold. Keep Ghibli painting, same clothes, whole figure visible. Last frame is inside or in the doorway.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 359306054,
+        "firstFrameSimilarity": 0.9907420918276509
+      },
+      "approvedAt": "2026-09-04T19:49:14Z"
     }
   },
   "npcs": {}
