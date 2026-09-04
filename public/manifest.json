@@ -178,13 +178,6 @@
       "ambientAudio": null
     },
     {
-      "id": "right-bank-path",
-      "nameEn": "Right Bank Path",
-      "nameZh": "\u6cb3\u706f\u9547",
-      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n",
-      "ambientAudio": null
-    },
-    {
       "id": "right-lantern-shop",
       "nameEn": "Right Lantern Shop",
       "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
@@ -718,46 +711,12 @@
           "labelEn": "far dock and boat",
           "tags": [],
           "dialogue": []
-        },
-        {
-          "id": "right-bank-path",
-          "objectId": null,
-          "kind": "hotspot",
-          "npc": null,
-          "polygon": [
-            [
-              1040,
-              480
-            ],
-            [
-              1340,
-              480
-            ],
-            [
-              1340,
-              760
-            ],
-            [
-              1040,
-              760
-            ]
-          ],
-          "bbox": [
-            1040,
-            480,
-            300,
-            280
-          ],
-          "labelEn": "stone path past the stall",
-          "tags": [],
-          "dialogue": []
         }
       ],
       "edges": {
         "center-stilt-house": "8c0309cde8459cc7",
         "food-stall": "23e2a9af06cae282",
-        "left-pavilion": "5b4bf7d911436c69",
-        "right-bank-path": "d2e1fa052a6eb77d"
+        "left-pavilion": "5b4bf7d911436c69"
       }
     },
     "39fa13e1e64ec12f": {
@@ -4975,118 +4934,6 @@
         }
       ],
       "edges": {}
-    },
-    "5dd3c3d233e422e6": {
-      "hash": "5dd3c3d233e422e6",
-      "location": "right-bank-path",
-      "width": 1024,
-      "height": 576,
-      "still": {
-        "png": "5dd3c3d233e422e6",
-        "jpg": "5dd3c3d233e422e6"
-      },
-      "regions": [
-        {
-          "id": "forward",
-          "objectId": null,
-          "kind": "hotspot",
-          "npc": null,
-          "polygon": [
-            [
-              286,
-              46
-            ],
-            [
-              736,
-              46
-            ],
-            [
-              736,
-              403
-            ],
-            [
-              286,
-              403
-            ]
-          ],
-          "bbox": [
-            286,
-            46,
-            450,
-            357
-          ],
-          "labelEn": "keep going",
-          "tags": [],
-          "dialogue": []
-        },
-        {
-          "id": "back",
-          "objectId": null,
-          "kind": "hotspot",
-          "npc": null,
-          "polygon": [
-            [
-              81,
-              357
-            ],
-            [
-              490,
-              357
-            ],
-            [
-              490,
-              541
-            ],
-            [
-              81,
-              541
-            ]
-          ],
-          "bbox": [
-            81,
-            357,
-            409,
-            184
-          ],
-          "labelEn": "go back",
-          "tags": [],
-          "dialogue": []
-        },
-        {
-          "id": "look-ahead",
-          "objectId": null,
-          "kind": "hotspot",
-          "npc": null,
-          "polygon": [
-            [
-              563,
-              57
-            ],
-            [
-              952,
-              57
-            ],
-            [
-              952,
-              316
-            ],
-            [
-              563,
-              316
-            ]
-          ],
-          "bbox": [
-            563,
-            57,
-            389,
-            259
-          ],
-          "labelEn": "look closer",
-          "tags": [],
-          "dialogue": []
-        }
-      ],
-      "edges": {}
     }
   },
   "clips": {
@@ -5579,20 +5426,6 @@
         "firstFrameSimilarity": 0.9878255377322315
       },
       "approvedAt": "2026-09-04T13:14:09Z"
-    },
-    "d2e1fa052a6eb77d": {
-      "id": "d2e1fa052a6eb77d",
-      "from": "36fecaeb673f2900",
-      "region": "right-bank-path",
-      "to": "5dd3c3d233e422e6",
-      "durationS": 6.583333333333333,
-      "prompt": "She walks past the stall along the stone path on the right bank toward the distant dock. Stay on stone, never in the water. Camera pans right along the path. Keep Ghibli painting, same clothes, whole figure visible.",
-      "h3": {
-        "quality": "extra-fast",
-        "seed": 968531482,
-        "firstFrameSimilarity": 0.9904290045770341
-      },
-      "approvedAt": "2026-09-04T13:21:58Z"
     }
   },
   "npcs": {}
