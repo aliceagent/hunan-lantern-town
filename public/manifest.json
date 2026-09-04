@@ -73,6 +73,13 @@
       "ambientAudio": null
     },
     {
+      "id": "left-doorway",
+      "nameEn": "Left Doorway",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
       "id": "left-pavilion",
       "nameEn": "Left Pavilion",
       "nameZh": "河灯镇一角",
@@ -103,6 +110,13 @@
     {
       "id": "right-lantern-shop",
       "nameEn": "Right Lantern Shop",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
+      "id": "riverside",
+      "nameEn": "Riverside",
       "nameZh": "河灯镇一角",
       "pinyin": "Hédēng Zhèn Yījiǎo",
       "ambientAudio": null
@@ -294,6 +308,18 @@
           "dialogue": []
         }
       ],
+      "edges": {}
+    },
+    "27bae1ff9c26fd1a": {
+      "hash": "27bae1ff9c26fd1a",
+      "location": "riverside",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "27bae1ff9c26fd1a",
+        "jpg": "27bae1ff9c26fd1a"
+      },
+      "regions": [],
       "edges": {}
     },
     "3043201145eae0df": {
@@ -1319,7 +1345,8 @@
         }
       ],
       "edges": {
-        "center-house-door": "39869fbe8a64db3d"
+        "center-house-door": "39869fbe8a64db3d",
+        "left-stilt-house": "f69e6d5a7bcf03e6"
       }
     },
     "afd451e6797f68b1": {
@@ -2055,6 +2082,118 @@
       ],
       "edges": {}
     },
+    "c1c70e7d41b087ef": {
+      "hash": "c1c70e7d41b087ef",
+      "location": "left-doorway",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "c1c70e7d41b087ef",
+        "jpg": "c1c70e7d41b087ef"
+      },
+      "regions": [
+        {
+          "id": "into-house",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              280,
+              80
+            ],
+            [
+              560,
+              80
+            ],
+            [
+              560,
+              600
+            ],
+            [
+              280,
+              600
+            ]
+          ],
+          "bbox": [
+            280,
+            80,
+            280,
+            520
+          ],
+          "labelEn": "open the door and go inside",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "along-boardwalk-right",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              80
+            ],
+            [
+              1200,
+              80
+            ],
+            [
+              1200,
+              580
+            ],
+            [
+              700,
+              580
+            ]
+          ],
+          "bbox": [
+            700,
+            80,
+            500,
+            500
+          ],
+          "labelEn": "along the boardwalk toward the lantern",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-red-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              1050,
+              80
+            ],
+            [
+              1250,
+              80
+            ],
+            [
+              1250,
+              360
+            ],
+            [
+              1050,
+              360
+            ]
+          ],
+          "bbox": [
+            1050,
+            80,
+            200,
+            280
+          ],
+          "labelEn": "look at the hanging red lantern",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
+    },
     "c4037c1d66772b8f": {
       "hash": "c4037c1d66772b8f",
       "location": "center-house-door",
@@ -2784,7 +2923,9 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "left-doorway": "88a9babae0c9724a"
+      }
     },
     "f8be08a2e7b4db35": {
       "hash": "f8be08a2e7b4db35",
@@ -3190,6 +3331,20 @@
       },
       "approvedAt": "2026-09-04T08:28:54Z"
     },
+    "88a9babae0c9724a": {
+      "id": "88a9babae0c9724a",
+      "from": "e6c105a55927a012",
+      "region": "left-doorway",
+      "to": "c1c70e7d41b087ef",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left and walks to the timber house doorway on the left. Camera pans left to the door. Keep her on the wooden walkway, not in the water. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 82122310,
+        "firstFrameSimilarity": 0.9923345846533825
+      },
+      "approvedAt": "2026-09-04T11:26:32Z"
+    },
     "5b4bf7d911436c69": {
       "id": "5b4bf7d911436c69",
       "from": "36fecaeb673f2900",
@@ -3217,6 +3372,20 @@
         "firstFrameSimilarity": 0.9926299836046236
       },
       "approvedAt": "2026-09-04T10:25:42Z"
+    },
+    "f69e6d5a7bcf03e6": {
+      "id": "f69e6d5a7bcf03e6",
+      "from": "ae3ca595f42fde95",
+      "region": "left-stilt-house",
+      "to": "27bae1ff9c26fd1a",
+      "durationS": 6.583333333333333,
+      "prompt": "She wades left then climbs onto the pier toward the left stilt house. End on the walkway. Camera pans left. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 2030042601,
+        "firstFrameSimilarity": 0.9921279055298406
+      },
+      "approvedAt": "2026-09-04T10:54:44Z"
     },
     "6cfa6d5c29830e5f": {
       "id": "6cfa6d5c29830e5f",
