@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "meta": {
     "title": "Lantern River Town",
-    "titleZh": "河灯小镇",
+    "titleZh": "\u6cb3\u706f\u5c0f\u9547",
     "mediaBase": "/media",
     "start": {
       "frame": "daf1a2609185d63d"
@@ -12,169 +12,176 @@
     {
       "id": "alley-ahead",
       "nameEn": "Alley Ahead",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "back-along-pier",
       "nameEn": "Back Along Pier",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "center-house-door",
       "nameEn": "Center House Door",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "center-stilt-house-fall",
       "nameEn": "Center Stilt House Fall",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "covered-bridge",
       "nameEn": "The Covered Bridge",
-      "nameZh": "风雨桥",
-      "pinyin": "Fēngyǔ Qiáo",
+      "nameZh": "\u98ce\u96e8\u6865",
+      "pinyin": "F\u0113ngy\u01d4 Qi\u00e1o",
       "ambientAudio": null
     },
     {
       "id": "down-stairs",
       "nameEn": "Down Stairs",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "far-bank-walk",
       "nameEn": "Far Bank Walk",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "flagstone-old-street",
       "nameEn": "Flagstone Old Street",
-      "nameZh": "石板老街",
-      "pinyin": "Shíbǎn Lǎojiē",
+      "nameZh": "\u77f3\u677f\u8001\u8857",
+      "pinyin": "Sh\u00edb\u01cen L\u01ceoji\u0113",
       "ambientAudio": null
     },
     {
       "id": "food-stall",
       "nameEn": "Food Stall",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "hall-doorway",
       "nameEn": "Hall Doorway",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "lantern-shops",
       "nameEn": "Lantern Shops",
-      "nameZh": "灯笼铺",
-      "pinyin": "Dēnglong Pù",
+      "nameZh": "\u706f\u7b3c\u94fa",
+      "pinyin": "D\u0113nglong P\u00f9",
       "ambientAudio": null
     },
     {
       "id": "left-doorway",
       "nameEn": "Left Doorway",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "left-pavilion",
       "nameEn": "Left Pavilion",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "left-pier",
       "nameEn": "Left Pier",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "moored-boat",
       "nameEn": "Moored Boat",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "noodle-stall",
       "nameEn": "The Noodle Stall",
-      "nameZh": "米粉摊",
-      "pinyin": "Mǐfěn Tān",
+      "nameZh": "\u7c73\u7c89\u644a",
+      "pinyin": "M\u01d0f\u011bn T\u0101n",
+      "ambientAudio": null
+    },
+    {
+      "id": "onto-bridge",
+      "nameEn": "The Wooden Bridge",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "right-lantern-shop",
       "nameEn": "Right Lantern Shop",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "riverside",
       "nameEn": "Riverside",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "riverside-stall",
       "nameEn": "Riverside Stall",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "stilt-houses",
       "nameEn": "Stilt Houses",
-      "nameZh": "吊脚楼",
-      "pinyin": "Diàojiǎolóu",
+      "nameZh": "\u540a\u811a\u697c",
+      "pinyin": "Di\u00e0oji\u01ceol\u00f3u",
       "ambientAudio": null
     },
     {
       "id": "stilt-row",
       "nameEn": "Stilt Row",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "stone-stairs",
       "nameEn": "Stone Stairs",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "street-ahead",
       "nameEn": "Street Ahead",
-      "nameZh": "河灯镇一角",
-      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "nameZh": "\u6cb3\u706f\u9547\u4e00\u89d2",
+      "pinyin": "H\u00e9d\u0113ng Zh\u00e8n Y\u012bji\u01ceo",
       "ambientAudio": null
     },
     {
       "id": "temple-stairs",
       "nameEn": "Temple Stairs",
-      "nameZh": "庙前石阶",
-      "pinyin": "Miào Qián Shíjiē",
+      "nameZh": "\u5e99\u524d\u77f3\u9636",
+      "pinyin": "Mi\u00e0o Qi\u00e1n Sh\u00edji\u0113",
       "ambientAudio": null
     }
   ],
@@ -1908,7 +1915,9 @@
           "dialogue": []
         }
       ],
-      "edges": {}
+      "edges": {
+        "onto-bridge": "08c70ec1dc6b9e90"
+      }
     },
     "b31589ee8f44515d": {
       "hash": "b31589ee8f44515d",
@@ -3489,6 +3498,118 @@
         }
       ],
       "edges": {}
+    },
+    "9be29f5cd128158f": {
+      "hash": "9be29f5cd128158f",
+      "location": "onto-bridge",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "9be29f5cd128158f",
+        "jpg": "9be29f5cd128158f"
+      },
+      "regions": [
+        {
+          "id": "through-pavilion",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              280,
+              40
+            ],
+            [
+              640,
+              40
+            ],
+            [
+              640,
+              540
+            ],
+            [
+              280,
+              540
+            ]
+          ],
+          "bbox": [
+            280,
+            40,
+            360,
+            500
+          ],
+          "labelEn": "through the covered pavilion",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-along-rail",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              200
+            ],
+            [
+              1100,
+              200
+            ],
+            [
+              1100,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bbox": [
+            700,
+            200,
+            400,
+            400
+          ],
+          "labelEn": "right along the bridge rail",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "look-right-lantern",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              620,
+              80
+            ],
+            [
+              800,
+              80
+            ],
+            [
+              800,
+              300
+            ],
+            [
+              620,
+              300
+            ]
+          ],
+          "bbox": [
+            620,
+            80,
+            180,
+            220
+          ],
+          "labelEn": "look at the right red lantern",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     }
   },
   "clips": {
@@ -3813,6 +3934,20 @@
         "firstFrameSimilarity": 0.9817000526450141
       },
       "approvedAt": "2026-09-04T08:21:41Z"
+    },
+    "08c70ec1dc6b9e90": {
+      "id": "08c70ec1dc6b9e90",
+      "from": "b1ef30f10531b230",
+      "region": "onto-bridge",
+      "to": "9be29f5cd128158f",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns left and walks onto the wooden bridge under the red lantern. Camera pans left onto the bridge. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 1040513197,
+        "firstFrameSimilarity": 0.9849161050463265
+      },
+      "approvedAt": "2026-09-04T11:57:33Z"
     }
   },
   "npcs": {}
