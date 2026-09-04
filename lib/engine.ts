@@ -6,12 +6,31 @@
  */
 import type { Clip, Frame, Manifest, Npc, Region } from "./manifest";
 
+/**
+ * One entry in the path trail: enough to put the player back on that still.
+ * `clip` is the edge that led here (null for the start step) — kept so a
+ * future UI can label the step by what was clicked, not just where it landed.
+ */
+export interface TrailStep {
+  frame: string;
+  clip: string | null;
+  location: string;
+}
+
 /** The whole of v1 story state (§6). */
 export interface PlayerState {
   currentFrame: string;
   moves: number;
   visitedLocations: string[];
+  /** Ordered stills since the start; the last step is `currentFrame`. */
+  trail: TrailStep[];
   muted: boolean;
+}
+
+/** The trail a fresh (or repaired) state gets: the current still, alone. */
+export function trailFor(manifest: Manifest, frameHash: string): TrailStep[] {
+  const frame = manifest.frames[frameHash];
+  return [{ frame: frameHash, clip: null, location: frame?.location ?? "" }];
 }
 
 export type ClickResult =
@@ -26,6 +45,7 @@ export function initialState(manifest: Manifest): PlayerState {
     currentFrame: start,
     moves: 0,
     visitedLocations: location ? [location] : [],
+    trail: trailFor(manifest, start),
     muted: false,
   };
 }
@@ -96,5 +116,29 @@ export function applyClipEnd(
     currentFrame: clip.to,
     moves: state.moves + 1,
     visitedLocations,
+    trail: [...state.trail, { frame: clip.to, clip: clipId, location: destination.location }],
+  };
+}
+
+/**
+ * Jump back to an earlier still on the trail and truncate everything after
+ * it, so the player can pick a different branch from there. Restoration only:
+ * no clip plays, `moves` keeps counting every clip ever watched, and visited
+ * locations stay visited. The last step (where the player already stands),
+ * an unknown index, or a frame this manifest no longer carries are all no-ops.
+ */
+export function jumpToTrailStep(
+  manifest: Manifest,
+  state: PlayerState,
+  index: number,
+): PlayerState {
+  if (index < 0 || index >= state.trail.length - 1) return state;
+  const step = state.trail[index];
+  if (!manifest.frames[step.frame]) return state;
+
+  return {
+    ...state,
+    currentFrame: step.frame,
+    trail: state.trail.slice(0, index + 1),
   };
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyClipEnd, initialState, isInteractive, resolveClick } from "../engine";
+import { applyClipEnd, initialState, isInteractive, jumpToTrailStep, resolveClick } from "../engine";
 import { parseManifest } from "../manifest";
 import { richFixture, s1Fixture } from "./fixtures";
 
@@ -14,6 +14,7 @@ describe("initialState", () => {
       currentFrame: START,
       moves: 0,
       visitedLocations: ["arched-moon-bridge"],
+      trail: [{ frame: START, clip: null, location: "arched-moon-bridge" }],
       muted: false,
     });
   });
@@ -84,6 +85,10 @@ describe("applyClipEnd", () => {
     expect(next.currentFrame).toBe(DEST);
     expect(next.moves).toBe(1);
     expect(next.visitedLocations).toEqual(["arched-moon-bridge", "riverside-steps"]);
+    expect(next.trail).toEqual([
+      { frame: START, clip: null, location: "arched-moon-bridge" },
+      { frame: DEST, clip: CLIP, location: "riverside-steps" },
+    ]);
     expect(next.muted).toBe(false);
     // pure: the input is untouched
     expect(state.currentFrame).toBe(START);
@@ -118,5 +123,44 @@ describe("applyClipEnd", () => {
   it("preserves the mute preference across a move", () => {
     const state = { ...initialState(manifest), muted: true };
     expect(applyClipEnd(manifest, state, CLIP).muted).toBe(true);
+  });
+});
+
+describe("jumpToTrailStep", () => {
+  const advanced = applyClipEnd(manifest, initialState(manifest), CLIP);
+
+  it("restores the chosen still and truncates the steps after it", () => {
+    const back = jumpToTrailStep(manifest, advanced, 0);
+    expect(back.currentFrame).toBe(START);
+    expect(back.trail).toEqual([{ frame: START, clip: null, location: "arched-moon-bridge" }]);
+    // Restoration, not replay: the odometer and the map stay as they were.
+    expect(back.moves).toBe(1);
+    expect(back.visitedLocations).toEqual(["arched-moon-bridge", "riverside-steps"]);
+    // pure: the input is untouched
+    expect(advanced.currentFrame).toBe(DEST);
+    expect(advanced.trail).toHaveLength(2);
+  });
+
+  it("is a no-op on the step the player already stands on", () => {
+    expect(jumpToTrailStep(manifest, advanced, advanced.trail.length - 1)).toBe(advanced);
+  });
+
+  it("is a no-op on an index off the trail", () => {
+    expect(jumpToTrailStep(manifest, advanced, -1)).toBe(advanced);
+    expect(jumpToTrailStep(manifest, advanced, 99)).toBe(advanced);
+  });
+
+  it("is a no-op when the step's frame is gone from this manifest", () => {
+    const orphaned = structuredClone(manifest);
+    delete orphaned.frames[START];
+    expect(jumpToTrailStep(orphaned, advanced, 0)).toBe(advanced);
+  });
+
+  it("supports re-branching: jump back, then take the same edge again", () => {
+    const back = jumpToTrailStep(manifest, advanced, 0);
+    const again = applyClipEnd(manifest, back, CLIP);
+    expect(again.currentFrame).toBe(DEST);
+    expect(again.trail).toEqual(advanced.trail);
+    expect(again.moves).toBe(2);
   });
 });

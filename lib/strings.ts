@@ -8,12 +8,22 @@ export const STRINGS = {
     zh: "河灯小镇",
     begin: "Begin",
   },
-  hud: {
+  menu: {
+    open: "Menu",
+    close: "Close menu",
     unknownLocation: "Somewhere in the mist",
     moves: (n: number) => `${n} ${n === 1 ? "step" : "steps"}`,
     hints: "Hints",
     mute: "Mute",
     unmute: "Unmute",
+    fullscreen: "Full screen",
+    exitFullscreen: "Exit full screen",
+    fullscreenUnavailable:
+      "Safari can't hide the address bar. Add to Home Screen (Share menu) to play full screen.",
+    path: "Path",
+    pathStart: "The beginning",
+    pathHere: "here",
+    pathJumpTo: (name: string) => `Go back to ${name}`,
     reset: "Reset",
     resetConfirm: "Forget your progress?",
     resetConfirmYes: "Yes, reset",

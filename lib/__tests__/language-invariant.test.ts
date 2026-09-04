@@ -25,6 +25,7 @@ function clipLookupTable(manifest: Manifest): Record<string, string | null> {
       currentFrame: frameHash,
       moves: 0,
       visitedLocations: [],
+      trail: [],
       muted: false,
     };
     for (const region of frame.regions) {
@@ -139,6 +140,7 @@ describe.each([
         currentFrame: frameHash,
         moves: 0,
         visitedLocations: [],
+        trail: [],
         muted: false,
       };
       for (const clipId of Object.values(frame.edges)) {

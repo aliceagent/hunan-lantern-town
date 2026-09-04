@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import FoggyToast from "@/components/FoggyToast";
-import Hud from "@/components/Hud";
+import MenuFab from "@/components/MenuFab";
 import NpcCard from "@/components/NpcCard";
 import Stage from "@/components/Stage";
-import { initialState, type PlayerState } from "@/lib/engine";
+import { initialState, jumpToTrailStep, type PlayerState } from "@/lib/engine";
 import type { Manifest, Npc } from "@/lib/manifest";
 import { audioUrl, prefetchFrame } from "@/lib/media";
 import { clearSave, loadSave, saveState } from "@/lib/save";
@@ -65,17 +65,6 @@ export default function PlayPage() {
 
   return (
     <main className="flex h-dvh flex-col overflow-hidden bg-black pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]">
-      <Hud
-        manifest={manifest}
-        state={state}
-        onToggleMute={() => setState((s) => (s ? { ...s, muted: !s.muted } : s))}
-        onHints={() => setHintSignal((n) => n + 1)}
-        onReset={() => {
-          clearSave();
-          setNpc(null);
-          setState({ ...initialState(manifest), muted: state.muted });
-        }}
-      />
       {/* Portrait: the stage box hugs the 7:4 art (width-driven) and pins to
           the top so the letterbox void falls below the painting, not around
           it. Landscape keeps the height-filling centered box. Never crops:
@@ -98,6 +87,18 @@ export default function PlayPage() {
           {foggy ? <FoggyToast onDismiss={() => setFoggy(false)} /> : null}
         </div>
       </div>
+      <MenuFab
+        manifest={manifest}
+        state={state}
+        onToggleMute={() => setState((s) => (s ? { ...s, muted: !s.muted } : s))}
+        onHints={() => setHintSignal((n) => n + 1)}
+        onJumpTo={(index) => setState((s) => (s ? jumpToTrailStep(manifest, s, index) : s))}
+        onReset={() => {
+          clearSave();
+          setNpc(null);
+          setState({ ...initialState(manifest), muted: state.muted });
+        }}
+      />
       {ambient ? <audio ref={audioRef} src={ambient} loop /> : null}
     </main>
   );

@@ -4,21 +4,26 @@
  * this manifest no longer contains falls back to a fresh start rather than
  * stranding the player.
  */
-import { initialState, type PlayerState } from "./engine";
+import { initialState, trailFor, type PlayerState, type TrailStep } from "./engine";
 import type { Manifest } from "./manifest";
 
+/** The storage slot; the payload's `v` field carries the shape version. */
 export const SAVE_KEY = "lantern-town.save.v1";
 /** Mute is a device preference, not story state (§6.1 persists the first three fields). */
 export const MUTE_KEY = "lantern-town.muted.v1";
 
-const SAVE_VERSION = 1;
+const SAVE_VERSION = 2;
 
+/** v2 added `trail`; v1 payloads (no trail) still load, trail rebuilt. */
 interface SavePayload {
   v: number;
   currentFrame: string;
   moves: number;
   visitedLocations: string[];
+  trail: TrailStep[];
 }
+
+type LegacyV1Payload = Omit<SavePayload, "trail">;
 
 /** The slice of the Web Storage API this module uses; injectable for tests. */
 export interface StorageLike {
@@ -36,11 +41,10 @@ export function defaultStorage(): StorageLike | null {
   }
 }
 
-function isSavePayload(value: unknown): value is SavePayload {
+function hasStoryFields(value: unknown): value is LegacyV1Payload {
   if (typeof value !== "object" || value === null) return false;
   const v = value as Record<string, unknown>;
   return (
-    v.v === SAVE_VERSION &&
     typeof v.currentFrame === "string" &&
     typeof v.moves === "number" &&
     Number.isFinite(v.moves) &&
@@ -48,6 +52,40 @@ function isSavePayload(value: unknown): value is SavePayload {
     Array.isArray(v.visitedLocations) &&
     v.visitedLocations.every((l) => typeof l === "string")
   );
+}
+
+function isTrailStep(value: unknown): value is TrailStep {
+  if (typeof value !== "object" || value === null) return false;
+  const s = value as Record<string, unknown>;
+  return (
+    typeof s.frame === "string" &&
+    (s.clip === null || typeof s.clip === "string") &&
+    typeof s.location === "string"
+  );
+}
+
+function isSavePayload(value: unknown): value is SavePayload {
+  if (!hasStoryFields(value)) return false;
+  const v = value as unknown as Record<string, unknown>;
+  return v.v === SAVE_VERSION && Array.isArray(v.trail) && v.trail.every(isTrailStep);
+}
+
+function isLegacyV1Payload(value: unknown): value is LegacyV1Payload {
+  return hasStoryFields(value) && (value as unknown as Record<string, unknown>).v === 1;
+}
+
+/**
+ * A trail is only trusted whole: every frame still in this manifest and the
+ * last step standing on `currentFrame`. Anything else (a v1 save, a frame
+ * pruned by a newer manifest) is repaired to just the current still rather
+ * than discarding the save.
+ */
+function sanitizeTrail(manifest: Manifest, trail: TrailStep[], currentFrame: string): TrailStep[] {
+  const intact =
+    trail.length > 0 &&
+    trail[trail.length - 1].frame === currentFrame &&
+    trail.every((step) => manifest.frames[step.frame] !== undefined);
+  return intact ? trail : trailFor(manifest, currentFrame);
 }
 
 /**
@@ -79,14 +117,16 @@ export function loadSave(
     return { ...fresh, muted };
   }
 
-  if (!isSavePayload(parsed) || !manifest.frames[parsed.currentFrame]) {
+  if ((!isSavePayload(parsed) && !isLegacyV1Payload(parsed)) || !manifest.frames[parsed.currentFrame]) {
     return { ...fresh, muted };
   }
 
+  const trail = isSavePayload(parsed) ? parsed.trail : [];
   return {
     currentFrame: parsed.currentFrame,
     moves: parsed.moves,
     visitedLocations: parsed.visitedLocations,
+    trail: sanitizeTrail(manifest, trail, parsed.currentFrame),
     muted,
   };
 }
@@ -101,6 +141,7 @@ export function saveState(
     currentFrame: state.currentFrame,
     moves: state.moves,
     visitedLocations: state.visitedLocations,
+    trail: state.trail,
   };
   try {
     storage.setItem(SAVE_KEY, JSON.stringify(payload));
