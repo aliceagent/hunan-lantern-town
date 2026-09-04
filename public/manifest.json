@@ -17,6 +17,13 @@
       "ambientAudio": null
     },
     {
+      "id": "back-along-pier",
+      "nameEn": "Back Along Pier",
+      "nameZh": "河灯镇一角",
+      "pinyin": "Hédēng Zhèn Yījiǎo",
+      "ambientAudio": null
+    },
+    {
       "id": "center-house-door",
       "nameEn": "Center House Door",
       "nameZh": "河灯镇一角",
@@ -1207,6 +1214,118 @@
         "stone-stairs": "71740f7b8d105bfd",
         "street-ahead": "a4c2b4a9bd02910f"
       }
+    },
+    "847731aa9ecf990e": {
+      "hash": "847731aa9ecf990e",
+      "location": "back-along-pier",
+      "width": 1344,
+      "height": 768,
+      "still": {
+        "png": "847731aa9ecf990e",
+        "jpg": "847731aa9ecf990e"
+      },
+      "regions": [
+        {
+          "id": "into-left-door",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              80,
+              80
+            ],
+            [
+              440,
+              80
+            ],
+            [
+              440,
+              580
+            ],
+            [
+              80,
+              580
+            ]
+          ],
+          "bbox": [
+            80,
+            80,
+            360,
+            500
+          ],
+          "labelEn": "through the left house door",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "into-alley",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              480,
+              80
+            ],
+            [
+              760,
+              80
+            ],
+            [
+              760,
+              480
+            ],
+            [
+              480,
+              480
+            ]
+          ],
+          "bbox": [
+            480,
+            80,
+            280,
+            400
+          ],
+          "labelEn": "into the misty alley",
+          "tags": [],
+          "dialogue": []
+        },
+        {
+          "id": "right-along-pier",
+          "objectId": null,
+          "kind": "hotspot",
+          "npc": null,
+          "polygon": [
+            [
+              700,
+              400
+            ],
+            [
+              1200,
+              400
+            ],
+            [
+              1200,
+              700
+            ],
+            [
+              700,
+              700
+            ]
+          ],
+          "bbox": [
+            700,
+            400,
+            500,
+            300
+          ],
+          "labelEn": "right along the pier",
+          "tags": [],
+          "dialogue": []
+        }
+      ],
+      "edges": {}
     },
     "9c8fca79f9372fd2": {
       "hash": "9c8fca79f9372fd2",
@@ -3077,6 +3196,7 @@
       ],
       "edges": {
         "alley-ahead": "75e907fb4d4f5537",
+        "back-along-pier": "e19493225655a151",
         "left-doorway": "88a9babae0c9724a"
       }
     },
@@ -3385,6 +3505,20 @@
         "firstFrameSimilarity": 0.9928930157089872
       },
       "approvedAt": "2026-09-04T11:32:12Z"
+    },
+    "e19493225655a151": {
+      "id": "e19493225655a151",
+      "from": "e6c105a55927a012",
+      "region": "back-along-pier",
+      "to": "847731aa9ecf990e",
+      "durationS": 6.583333333333333,
+      "prompt": "She turns around and walks back along the wooden pier the way she came. Camera follows her down the planks. Keep Ghibli painting, same clothes, whole figure visible.",
+      "h3": {
+        "quality": "extra-fast",
+        "seed": 726112802,
+        "firstFrameSimilarity": 0.9923571558733568
+      },
+      "approvedAt": "2026-09-04T11:34:55Z"
     },
     "39869fbe8a64db3d": {
       "id": "39869fbe8a64db3d",
