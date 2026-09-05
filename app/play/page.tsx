@@ -1,15 +1,35 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import AddPathOverlay from "@/components/AddPathOverlay";
 import FoggyToast from "@/components/FoggyToast";
 import MenuFab from "@/components/MenuFab";
 import NpcCard from "@/components/NpcCard";
 import Stage from "@/components/Stage";
+import useKeyboardControls from "@/components/useKeyboardControls";
 import { initialState, jumpToTrailStep, type PlayerState } from "@/lib/engine";
+import type { KeyAction } from "@/lib/keyboard";
 import type { Manifest, Npc } from "@/lib/manifest";
 import { audioUrl, prefetchFrame } from "@/lib/media";
+import type { PlaybackPhase } from "@/lib/playback";
 import { clearSave, loadSave, saveState } from "@/lib/save";
+
+function toggleFullscreen() {
+  const doc = document as Document & {
+    webkitFullscreenElement?: Element | null;
+    webkitExitFullscreen?: () => void;
+  };
+  const el = document.documentElement as HTMLElement & {
+    webkitRequestFullscreen?: () => void;
+  };
+  if (doc.fullscreenElement ?? doc.webkitFullscreenElement) {
+    (doc.exitFullscreen ?? doc.webkitExitFullscreen)?.call(doc);
+  } else if (el.requestFullscreen) {
+    el.requestFullscreen().catch(() => undefined);
+  } else {
+    el.webkitRequestFullscreen?.();
+  }
+}
 
 export default function PlayPage() {
   const [manifest, setManifest] = useState<Manifest | null>(null);
@@ -17,10 +37,13 @@ export default function PlayPage() {
   const [npc, setNpc] = useState<Npc | null>(null);
   const [foggy, setFoggy] = useState(false);
   const [gestured, setGestured] = useState(false);
-  // "Add path" draw mode (authoring utility) — locks hotspots, arms the overlay.
   const [authoring, setAuthoring] = useState(false);
-  // Monotonic counter; each bump asks HotspotLayer to flash the hint glow.
   const [hintSignal, setHintSignal] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuView, setMenuView] = useState<"menu" | "path">("menu");
+  const [numbersVisible, setNumbersVisible] = useState(false);
+  const [phase, setPhase] = useState<PlaybackPhase>("still");
+  const [selectSignal, setSelectSignal] = useState<{ ordinal: number; nonce: number } | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -58,6 +81,67 @@ export default function PlayPage() {
     void el.play().catch(() => undefined);
   }, [ambient, state?.muted, gestured]);
 
+  const onKeyAction = useCallback(
+    (action: KeyAction) => {
+      setGestured(true);
+      if (action.type === "toggleMute") {
+        setState((s) => (s ? { ...s, muted: !s.muted } : s));
+        return;
+      }
+      if (action.type === "toggleNumbers") {
+        setNumbersVisible((v) => !v);
+        return;
+      }
+      if (action.type === "hint") {
+        setHintSignal((n) => n + 1);
+        return;
+      }
+      if (action.type === "fullscreen") {
+        toggleFullscreen();
+        return;
+      }
+      if (action.type === "openMenu") {
+        setMenuOpen(true);
+        setMenuView("menu");
+        setNumbersVisible(false);
+        return;
+      }
+      if (action.type === "openPath") {
+        setMenuOpen(true);
+        setMenuView("path");
+        setNumbersVisible(false);
+        return;
+      }
+      if (action.type === "closeTop") {
+        setMenuOpen(false);
+        setMenuView("menu");
+        setNpc(null);
+        setNumbersVisible(false);
+        return;
+      }
+      if (action.type === "back") {
+        setState((s) => {
+          if (!s || !manifest) return s;
+          return jumpToTrailStep(manifest, s, s.trail.length - 2);
+        });
+        return;
+      }
+      if (action.type === "select") {
+        setNumbersVisible(true);
+        setSelectSignal({ ordinal: action.ordinal, nonce: Date.now() });
+      }
+    },
+    [manifest],
+  );
+
+  useKeyboardControls({
+    authoring,
+    npcOpen: Boolean(npc),
+    menuOpen,
+    phase,
+    onAction: onKeyAction,
+  });
+
   if (!manifest || !state) {
     return (
       <main className="flex h-dvh items-center justify-center bg-black text-zinc-400">
@@ -68,10 +152,6 @@ export default function PlayPage() {
 
   return (
     <main className="flex h-dvh flex-col overflow-hidden bg-black pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]">
-      {/* Portrait: the stage box hugs the 7:4 art (width-driven) and pins to
-          the top so the letterbox void falls below the painting, not around
-          it. Landscape keeps the height-filling centered box. Never crops:
-          the box matches the art's aspect, media stays object-contain. */}
       <div className="flex min-h-0 w-full flex-1 items-center justify-center portrait:items-start">
         <div className="relative h-full max-h-[768px] w-full max-w-[1344px] portrait:aspect-[7/4] portrait:h-auto portrait:max-h-full">
           <Stage
@@ -79,7 +159,13 @@ export default function PlayPage() {
             state={state}
             interactionEnabled={!npc && !authoring}
             hintSignal={hintSignal}
-            onAdvance={(next) => setState(next)}
+            numbersVisible={numbersVisible}
+            selectSignal={selectSignal}
+            onPhaseChange={setPhase}
+            onAdvance={(next) => {
+              setNumbersVisible(false);
+              setState(next);
+            }}
             onNpcClick={setNpc}
             onFoggy={() => setFoggy(true)}
             onGesture={() => setGestured(true)}
@@ -103,8 +189,16 @@ export default function PlayPage() {
         manifest={manifest}
         state={state}
         authoring={authoring}
+        open={menuOpen}
+        onOpenChange={(open) => {
+          setMenuOpen(open);
+          if (!open) setMenuView("menu");
+        }}
+        view={menuView}
+        onViewChange={setMenuView}
         onAddPath={() => {
           setNpc(null);
+          setMenuOpen(false);
           setAuthoring(true);
         }}
         onExitAuthoring={() => setAuthoring(false)}

@@ -2,9 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { applyClipEnd, isWorldEdge, resolveClick, type PlayerState } from "@/lib/engine";
+import { hotspotForOrdinal } from "@/lib/keyboard";
 import type { Manifest, Npc } from "@/lib/manifest";
 import { bufferedProgress, clipUrl, stillUrl } from "@/lib/media";
-import { idlePlayback, onClick as onPlaybackClick, onEnded, onFailure, onPlaying } from "@/lib/playback";
+import {
+  idlePlayback,
+  onClick as onPlaybackClick,
+  onEnded,
+  onFailure,
+  onPlaying,
+  type PlaybackPhase,
+} from "@/lib/playback";
 import HotspotLayer from "./HotspotLayer";
 import ProgressBar from "./ProgressBar";
 import WorldEdgeBanner from "./WorldEdgeBanner";
@@ -18,6 +26,9 @@ export default function Stage({
   onNpcClick,
   onFoggy,
   onGesture,
+  numbersVisible = false,
+  selectSignal = null,
+  onPhaseChange,
 }: {
   manifest: Manifest;
   state: PlayerState;
@@ -29,6 +40,9 @@ export default function Stage({
   onNpcClick: (npc: Npc) => void;
   onFoggy: () => void;
   onGesture: () => void;
+  numbersVisible?: boolean;
+  selectSignal?: { ordinal: number; nonce: number } | null;
+  onPhaseChange?: (phase: PlaybackPhase) => void;
 }) {
   const [playback, setPlayback] = useState(idlePlayback);
   const [progress, setProgress] = useState(0);
@@ -44,6 +58,18 @@ export default function Stage({
   stateRef.current = state;
 
   const frame = manifest.frames[state.currentFrame];
+
+  useEffect(() => {
+    onPhaseChange?.(playback.phase);
+  }, [playback.phase, onPhaseChange]);
+
+  useEffect(() => {
+    if (!selectSignal || !frame) return;
+    const region = hotspotForOrdinal(manifest, frame, selectSignal.ordinal);
+    if (region) handleRegionClick(region.id);
+    // handleRegionClick is recreated each render; nonce is the trigger.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectSignal]);
 
   function handlePlaybackFailure() {
     const video = videoRef.current;
@@ -167,6 +193,7 @@ export default function Stage({
           frame={frame}
           interactive={interactionEnabled}
           hintSignal={hintSignal}
+          numbersVisible={numbersVisible}
           onRegionClick={handleRegionClick}
         />
       )}

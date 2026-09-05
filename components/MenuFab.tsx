@@ -47,6 +47,10 @@ export default function MenuFab({
   onAddPath,
   authoring,
   onExitAuthoring,
+  open: openProp,
+  onOpenChange,
+  view: viewProp,
+  onViewChange,
 }: {
   manifest: Manifest;
   state: PlayerState;
@@ -60,10 +64,23 @@ export default function MenuFab({
   /** True while draw mode is active — the FAB becomes its exit button. */
   authoring: boolean;
   onExitAuthoring: () => void;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  view?: "menu" | "path";
+  onViewChange?: (view: "menu" | "path") => void;
 }) {
-  const [open, setOpen] = useState(false);
-  // The popover is two views: the short main menu, and the Path carousel.
-  const [view, setView] = useState<"menu" | "path">("menu");
+  const [openState, setOpenState] = useState(false);
+  const [viewState, setViewState] = useState<"menu" | "path">("menu");
+  const open = openProp ?? openState;
+  const view = viewProp ?? viewState;
+  function setOpen(next: boolean) {
+    onOpenChange?.(next);
+    if (openProp === undefined) setOpenState(next);
+  }
+  function setView(next: "menu" | "path") {
+    onViewChange?.(next);
+    if (viewProp === undefined) setViewState(next);
+  }
   const [confirmingReset, setConfirmingReset] = useState(false);
   const [fullscreenSupported, setFullscreenSupported] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);

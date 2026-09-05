@@ -52,9 +52,10 @@ body {
   stroke-width: 24px;
   outline: none;
 }
-.hotspot-region:focus,
 .hotspot-region:focus-visible {
   outline: none;
+  stroke: rgb(252 211 77 / 0.95);
+  stroke-width: 3px;
 }
 
 /* The §10-S3 lantern-glow hint: a brief amber outline so touch players (no

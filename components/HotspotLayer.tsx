@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { isInteractive } from "@/lib/engine";
+import { badgeLabel, orderedHotspots } from "@/lib/keyboard";
 import type { Frame, Manifest } from "@/lib/manifest";
 import { polygonCentroid, polygonToPath } from "@/lib/svg";
 
@@ -55,6 +55,7 @@ export default function HotspotLayer({
   interactive,
   hintSignal,
   onRegionClick,
+  numbersVisible = false,
 }: {
   manifest: Manifest;
   frame: Frame;
@@ -63,6 +64,7 @@ export default function HotspotLayer({
   /** Counter bumped by the HUD Hints button; each bump flashes the glow. */
   hintSignal: number;
   onRegionClick: (regionId: string) => void;
+  numbersVisible?: boolean;
 }) {
   const autoHintActive = useHintPulse(frame.hash);
   const [manualHintActive, setManualHintActive] = useState(false);
@@ -88,7 +90,7 @@ export default function HotspotLayer({
   const hintActive = autoHintActive || manualHintActive;
   const [hoveredNpc, setHoveredNpc] = useState<string | null>(null);
 
-  const warmRegions = frame.regions.filter((region) => isInteractive(manifest, frame, region));
+  const warmRegions = orderedHotspots(manifest, frame);
 
   return (
     <svg
@@ -96,7 +98,7 @@ export default function HotspotLayer({
       className="absolute inset-0 h-full w-full"
       style={{ pointerEvents: interactive ? "auto" : "none" }}
     >
-      {warmRegions.map((region) => {
+      {warmRegions.map((region, index) => {
         const isNpc = region.kind === "npc";
         const npc = isNpc && region.npc ? manifest.npcs[region.npc] : undefined;
         const [cx, cy] = polygonCentroid(region.polygon);
@@ -139,6 +141,19 @@ export default function HotspotLayer({
                 <rect x={-64} y={-46} width={128} height={28} rx={6} className="fill-black/75" />
                 <text x={0} y={-26} textAnchor="middle" className="fill-amber-100 text-[14px]">
                   {npc.nameEn}
+                </text>
+              </g>
+            )}
+            {numbersVisible && (
+              <g transform={`translate(${cx}, ${cy})`} className="pointer-events-none">
+                <rect x={-11} y={-12} width={22} height={20} rx={4} className="fill-black/80" />
+                <text
+                  x={0}
+                  y={3}
+                  textAnchor="middle"
+                  className="fill-amber-100 text-[13px] font-semibold"
+                >
+                  {badgeLabel(index + 1)}
                 </text>
               </g>
             )}
