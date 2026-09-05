@@ -19715,9 +19715,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1163082430
+        "seed": 1163082430,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "36c286300f8b0925": {
       "id": "36c286300f8b0925",
@@ -19728,9 +19729,10 @@
       "prompt": "along-street",
       "h3": {
         "quality": "extra-fast",
-        "seed": 170324408
+        "seed": 170324408,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "1dddcdafe14909ae": {
       "id": "1dddcdafe14909ae",
@@ -19741,9 +19743,10 @@
       "prompt": "into-doorway-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1194786183
+        "seed": 1194786183,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "bcb8a3555e8afc36": {
       "id": "bcb8a3555e8afc36",
@@ -19754,9 +19757,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 620764672
+        "seed": 620764672,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "0cbbeef9545bb333": {
       "id": "0cbbeef9545bb333",
@@ -19767,9 +19771,10 @@
       "prompt": "into-doorway-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1863447046
+        "seed": 1863447046,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "97c1acbdcf569ad9": {
       "id": "97c1acbdcf569ad9",
@@ -19780,9 +19785,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1502268823
+        "seed": 1502268823,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "c75d08cfe4a5c0fa": {
       "id": "c75d08cfe4a5c0fa",
@@ -19793,9 +19799,10 @@
       "prompt": "into-doorway-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 23681408
+        "seed": 23681408,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "0a6e83c59a695e6c": {
       "id": "0a6e83c59a695e6c",
@@ -19806,9 +19813,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1771173084
+        "seed": 1771173084,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "0c943b0e6b4bcaf8": {
       "id": "0c943b0e6b4bcaf8",
@@ -19819,9 +19827,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1688635424
+        "seed": 1688635424,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "0e5174c84f12faa4": {
       "id": "0e5174c84f12faa4",
@@ -19832,9 +19841,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 107968907
+        "seed": 107968907,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "78f693091d2c5054": {
       "id": "78f693091d2c5054",
@@ -19845,9 +19855,10 @@
       "prompt": "into-doorway-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 451660022
+        "seed": 451660022,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "9b31f04c5c1397fc": {
       "id": "9b31f04c5c1397fc",
@@ -19858,9 +19869,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1244168992
+        "seed": 1244168992,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "7cc3823c8e8f8584": {
       "id": "7cc3823c8e8f8584",
@@ -19871,9 +19883,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1434978954
+        "seed": 1434978954,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "357a5133890fcede": {
       "id": "357a5133890fcede",
@@ -19884,9 +19897,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 288360431
+        "seed": 288360431,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "abc20f16a05fc820": {
       "id": "abc20f16a05fc820",
@@ -19897,9 +19911,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1675485535
+        "seed": 1675485535,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "1d3f92813d732986": {
       "id": "1d3f92813d732986",
@@ -19910,9 +19925,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1112545500
+        "seed": 1112545500,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "3e13aad90a4af2ba": {
       "id": "3e13aad90a4af2ba",
@@ -19923,9 +19939,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 754775069
+        "seed": 754775069,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "f442c39bda59ed3d": {
       "id": "f442c39bda59ed3d",
@@ -19936,9 +19953,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1665672967
+        "seed": 1665672967,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "f0982ad592254edd": {
       "id": "f0982ad592254edd",
@@ -19949,9 +19967,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1975622447
+        "seed": 1975622447,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "db7607c64a0bcd86": {
       "id": "db7607c64a0bcd86",
@@ -19962,9 +19981,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 988971165
+        "seed": 988971165,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "c0ced91de7e89a0f": {
       "id": "c0ced91de7e89a0f",
@@ -19975,9 +19995,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 553649624
+        "seed": 553649624,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "4eeee2846cc7067d": {
       "id": "4eeee2846cc7067d",
@@ -19988,9 +20009,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1846255213
+        "seed": 1846255213,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "60194b411cb79c52": {
       "id": "60194b411cb79c52",
@@ -20001,9 +20023,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1219672173
+        "seed": 1219672173,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "4c5226eb6e2a1085": {
       "id": "4c5226eb6e2a1085",
@@ -20014,9 +20037,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1047531190
+        "seed": 1047531190,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "8f02d0b1c8d712ad": {
       "id": "8f02d0b1c8d712ad",
@@ -20027,9 +20051,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1687916589
+        "seed": 1687916589,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "847837e1901d8653": {
       "id": "847837e1901d8653",
@@ -20040,9 +20065,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 2021451424
+        "seed": 2021451424,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "11e6c47c07366418": {
       "id": "11e6c47c07366418",
@@ -20053,9 +20079,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 308665104
+        "seed": 308665104,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "1dc4e198746b7c76": {
       "id": "1dc4e198746b7c76",
@@ -20066,9 +20093,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1241310397
+        "seed": 1241310397,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "bd405f8a0489c28b": {
       "id": "bd405f8a0489c28b",
@@ -20079,9 +20107,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 649520101
+        "seed": 649520101,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "99f8d92b1015155d": {
       "id": "99f8d92b1015155d",
@@ -20092,9 +20121,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 526459747
+        "seed": 526459747,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "eda2088eafba4094": {
       "id": "eda2088eafba4094",
@@ -20105,9 +20135,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1298794216
+        "seed": 1298794216,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "053bc1a43ec0c35b": {
       "id": "053bc1a43ec0c35b",
@@ -20118,9 +20149,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1776735312
+        "seed": 1776735312,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "5fade612f32d5f4b": {
       "id": "5fade612f32d5f4b",
@@ -20131,9 +20163,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1555916598
+        "seed": 1555916598,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "aa498193cc3dbd54": {
       "id": "aa498193cc3dbd54",
@@ -20144,9 +20177,10 @@
       "prompt": "into-doorway-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 792728122
+        "seed": 792728122,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "c6b66189df4f29fe": {
       "id": "c6b66189df4f29fe",
@@ -20157,9 +20191,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 2069645833
+        "seed": 2069645833,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "74f3ad2b24638b63": {
       "id": "74f3ad2b24638b63",
@@ -20170,9 +20205,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 30390290
+        "seed": 30390290,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "505a42cfd43f72e4": {
       "id": "505a42cfd43f72e4",
@@ -20183,9 +20219,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1595008255
+        "seed": 1595008255,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "52fa81041bb33a66": {
       "id": "52fa81041bb33a66",
@@ -20196,9 +20233,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 930646095
+        "seed": 930646095,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "77c9f515fbed96fd": {
       "id": "77c9f515fbed96fd",
@@ -20209,9 +20247,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 237581890
+        "seed": 237581890,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "6b7e6336a7d5d11e": {
       "id": "6b7e6336a7d5d11e",
@@ -20222,9 +20261,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1584197954
+        "seed": 1584197954,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "a5fa7ff90322cf2b": {
       "id": "a5fa7ff90322cf2b",
@@ -20235,9 +20275,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1065213356
+        "seed": 1065213356,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "d76352c740b66fa1": {
       "id": "d76352c740b66fa1",
@@ -20248,9 +20289,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 2084037592
+        "seed": 2084037592,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "c84d966d9f80cd97": {
       "id": "c84d966d9f80cd97",
@@ -20261,9 +20303,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 828690881
+        "seed": 828690881,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "86f5f6960357397b": {
       "id": "86f5f6960357397b",
@@ -20274,9 +20317,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1630744493
+        "seed": 1630744493,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "4fc0b09e48f677f5": {
       "id": "4fc0b09e48f677f5",
@@ -20287,9 +20331,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 454021777
+        "seed": 454021777,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "f1007ead9267f0c8": {
       "id": "f1007ead9267f0c8",
@@ -20300,9 +20345,10 @@
       "prompt": "into-kitchen-4",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1218053825
+        "seed": 1218053825,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "0130d1f5b5d673b6": {
       "id": "0130d1f5b5d673b6",
@@ -20313,9 +20359,10 @@
       "prompt": "into-kitchen-3",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1739387550
+        "seed": 1739387550,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "06a3a71010d4fe41": {
       "id": "06a3a71010d4fe41",
@@ -20326,9 +20373,10 @@
       "prompt": "into-kitchen",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1389075405
+        "seed": 1389075405,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "3e5c47256cc322af": {
       "id": "3e5c47256cc322af",
@@ -20339,9 +20387,10 @@
       "prompt": "into-doorway",
       "h3": {
         "quality": "extra-fast",
-        "seed": 1994263105
+        "seed": 1994263105,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     },
     "c8e5ff49cb65a3ad": {
       "id": "c8e5ff49cb65a3ad",
@@ -20352,9 +20401,10 @@
       "prompt": "into-kitchen-2",
       "h3": {
         "quality": "extra-fast",
-        "seed": 688770532
+        "seed": 688770532,
+        "firstFrameSimilarity": null
       },
-      "approvedAt": "shabbat-repair"
+      "approvedAt": "2026-09-05T17:08:31Z"
     }
   },
   "npcs": {}
